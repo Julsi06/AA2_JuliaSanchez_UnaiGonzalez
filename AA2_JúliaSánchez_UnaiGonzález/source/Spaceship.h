@@ -23,7 +23,7 @@ public:
 
 	void Update() override
 	{
-		// Player movement -> ARREGLAR
+		// FIX
 		if (IM->GetEvent(SDLK_W, HOLD))
 			_physics->AddForce(Vector2(0.0f, -250.0f));
 		else if (IM->GetEvent(SDLK_S, HOLD))

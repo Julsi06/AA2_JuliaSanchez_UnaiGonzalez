@@ -14,6 +14,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/spaceship.png");
 	RM->LoadTexture("resources/images/bullet.png");
 	RM->LoadTexture("resources/images/button.png");
+	RM->LoadTexture("resources/images/background.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));

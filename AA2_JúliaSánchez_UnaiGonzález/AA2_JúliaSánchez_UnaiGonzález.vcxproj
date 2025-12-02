@@ -34,6 +34,7 @@
     <ClCompile Include="source\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\AABB.h" />
     <ClInclude Include="source\Button.h" />
@@ -56,6 +57,14 @@
     <ClInclude Include="source\TimeManager.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\background.png" />
+    <Image Include="resources\images\bullet.png" />
+    <Image Include="resources\images\button.png" />
+    <Image Include="resources\images\dog.png" />
+    <Image Include="resources\images\image.png" />
+    <Image Include="resources\images\spaceship.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
