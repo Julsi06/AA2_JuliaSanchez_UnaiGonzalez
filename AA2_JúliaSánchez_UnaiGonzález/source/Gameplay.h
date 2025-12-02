@@ -1,6 +1,6 @@
 #pragma once
 #include "Scene.h"
-#include "TestObject.h"
+#include "Spaceship.h"
 #include "TextObject.h"
 
 class Gameplay : public Scene
@@ -10,7 +10,7 @@ public:
 
 	void OnEnter() override
 	{
-		SPAWNER.SpawnObject(new TestObject());
+		SPAWNER.SpawnObject(new Spaceship());
 
 		TextObject* text = new TextObject("Hello");
 		text->GetTransform()->position = { 100.0f, 100.0f };

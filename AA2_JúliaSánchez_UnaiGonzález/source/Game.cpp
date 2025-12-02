@@ -4,17 +4,21 @@
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "Gameplay.h"
+#include "MainMenu.h"
 #include <cassert>
 
 void Game::Init()
 {
 	RM->Init();
 
-	RM->LoadTexture("resources/images/image.png");
+	RM->LoadTexture("resources/images/spaceship.png");
+	RM->LoadTexture("resources/images/bullet.png");
+	RM->LoadTexture("resources/images/button.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
-	// Adds the gameplay scene and initializes it as the first scene
 	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("MainMenu", new MainMenu()));
+
 	assert(SM.InitFirstScene("Gameplay"));
 
 	_isRunning = true;
