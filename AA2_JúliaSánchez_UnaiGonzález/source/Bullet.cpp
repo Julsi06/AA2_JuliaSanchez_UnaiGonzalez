@@ -14,5 +14,11 @@ Bullet::Bullet(Spaceship* spaceship)
 void Bullet::Update()
 {
 	_physics->SetVelocity(Vector2(250.0f, 0.0f));
+
+	if (_transform->position.x >= RM->WINDOW_WIDTH || _transform->position.y >= RM->WINDOW_HEIGHT)
+	{
+		Destroy();
+	}
+
 	Object::Update();
 }

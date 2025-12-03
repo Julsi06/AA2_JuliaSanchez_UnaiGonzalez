@@ -4,15 +4,12 @@
 class Enemy : public ImageObject
 {
 public:
-	Enemy()
-		: ImageObject("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(500.0f, 500.0f))
+	Enemy(std::string path, Vector2 offset, Vector2 size)
+		: ImageObject(path, offset, size) {}
+
+	virtual void Update() override
 	{
-
-	}
-
-	void Update() override
-	{
-
+		Object::Update();
 	}
 };
 
