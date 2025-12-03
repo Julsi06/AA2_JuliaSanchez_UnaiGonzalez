@@ -11,7 +11,7 @@ public:
 	Spaceship()
 		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f), Vector2(500.0f, 500.0f))
 	{
-		_transform->position = Vector2(50, RM->WINDOW_HEIGHT / 2.5f);
+		_transform->position = Vector2(50, RM->WINDOW_HEIGHT / 2.0f);
 		_transform->scale = Vector2(1.0f, 1.0f);
 		_transform->rotation = 0.0f;
 

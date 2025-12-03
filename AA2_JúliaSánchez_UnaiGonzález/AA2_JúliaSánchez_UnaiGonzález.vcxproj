@@ -34,6 +34,7 @@
     <ClCompile Include="source\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\Background.h" />
     <ClInclude Include="source\Bullet.h" />
     <ClInclude Include="source\AABB.h" />

@@ -14,9 +14,9 @@ public:
 		SPAWNER.SpawnObject(new Background());
 		SPAWNER.SpawnObject(new Spaceship());
 
-		TextObject* text = new TextObject("Hello");
+		/*TextObject* text = new TextObject("Hello");
 		text->GetTransform()->position = { 100.0f, 100.0f };
-		_ui.push_back(text);
+		_ui.push_back(text);*/
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override { Scene::Update(); }
