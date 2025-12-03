@@ -19,6 +19,11 @@ public:
 	{
 		//_transform->position = _transform->position - Vector2(1.0f, 0.0f);
 		_physics->SetVelocity(Vector2(-50.0f, 0.0f));
+
+		if (_transform->position == Vector2(2500.0f, RM->WINDOW_HEIGHT / 2.0f))
+		{
+			_physics->SetVelocity(Vector2(0.0f, 0.0f));
+		}
 		Object::Update();
 	}
 };

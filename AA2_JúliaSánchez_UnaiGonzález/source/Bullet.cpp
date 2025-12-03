@@ -4,7 +4,7 @@
 Bullet::Bullet(Spaceship* spaceship)
 	: ImageObject("resources/images/bullet.png", Vector2(0.0f, 0.0f), Vector2(900.0f, 500.0f))
 {
-	_transform->position = spaceship->GetTransform()->position + Vector2(150.0f, 80.0f);
+	_transform->position = spaceship->GetTransform()->position + Vector2(70.0f, 0.0f);
 	_transform->scale = Vector2(0.35f, 0.2f);
 	_transform->rotation = 0.0f;
 
