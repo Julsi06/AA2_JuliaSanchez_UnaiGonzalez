@@ -9,11 +9,12 @@ public:
 		: Object()
 	{
 		_renderer = new TextRenderer(_transform, text);
-		_renderer->SetColor({ 0,0,0,0xFF });
+		_renderer->SetColor({ 255,255,255,0xFF });
 	}
 
 	void SetText(std::string text)
 	{
 		dynamic_cast<TextRenderer*>(_renderer)->SetText(text);
 	}
+	void OnCollisionEnter(Object* other) { }
 };

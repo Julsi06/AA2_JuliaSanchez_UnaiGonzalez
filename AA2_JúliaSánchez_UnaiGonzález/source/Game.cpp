@@ -19,8 +19,9 @@ void Game::Init()
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("MainMenu", new MainMenu()));
 
-	assert(SM.InitFirstScene("Gameplay"));
+	assert(SM.InitFirstScene("MainMenu"));
 
 	_isRunning = true;
 }
