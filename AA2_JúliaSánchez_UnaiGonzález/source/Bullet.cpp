@@ -1,5 +1,6 @@
 #include "Bullet.h"
 #include "Spaceship.h"
+#include "Enemy.h"
 
 Bullet::Bullet(Spaceship* spaceship)
 	: ImageObject("resources/images/bullet.png", Vector2(0.0f, 0.0f), Vector2(900.0f, 500.0f))
@@ -16,9 +17,13 @@ void Bullet::Update()
 	_physics->SetVelocity(Vector2(250.0f, 0.0f));
 
 	if (_transform->position.x >= RM->WINDOW_WIDTH || _transform->position.y >= RM->WINDOW_HEIGHT)
-	{
 		Destroy();
-	}
 
 	Object::Update();
+}
+
+void Bullet::OnCollisionEnter(Object* other)
+{
+	if (dynamic_cast<Enemy*>(other))
+		Destroy();
 }

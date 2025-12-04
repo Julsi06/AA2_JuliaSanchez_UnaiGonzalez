@@ -54,9 +54,11 @@ void Scene::Update()
 	{
 		for (int j = i + 1;j < size;j++)
 		{
-			if (_objects[i]->GetRigidBody()->CheckCollision(_objects[i]->GetRigidBody()))
+			if (_objects[i]->GetRigidBody()->CheckCollision(_objects[j]->GetRigidBody()))
 			{
 				// ...
+				_objects[i]->OnCollisionEnter(_objects[j]);
+				_objects[j]->OnCollisionEnter(_objects[i]);
 			}
 		}
 	}
@@ -66,7 +68,7 @@ void Scene::Update()
 	{
 		for (int j = i + 1;j < size;j++)
 		{
-			if (_ui[i]->GetRigidBody()->CheckCollision(_ui[i]->GetRigidBody()))
+			if (_ui[i]->GetRigidBody()->CheckCollision(_ui[j]->GetRigidBody()))
 			{
 				// ...
 			}

@@ -38,4 +38,6 @@ public:
 
 		Object::Update();
 	}
+
+	void OnCollisionEnter(Object* other) { }
 };

@@ -9,4 +9,5 @@ public:
 	Bullet(Spaceship* spaceship);
 
 	void Update() override;
+	void OnCollisionEnter(Object* other) override;
 };
