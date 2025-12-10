@@ -5,17 +5,17 @@
 
 class Gameplay : public Scene
 {
+private:
+	bool _wave1spawned = false;
 public:
 	Gameplay() = default;
 
 	void OnEnter() override
 	{
 		SPAWNER.SpawnObject(new Background());
-		SPAWNER.SpawnObject(new Spaceship());
-
-		
+		SPAWNER.SpawnObject(new Spaceship());		
 	}
 	void OnExit() override { Scene::OnExit(); }
-	void Update() override { Scene::Update(); }
+	void Update() override;
 	void Render() override { Scene::Render(); }
 };

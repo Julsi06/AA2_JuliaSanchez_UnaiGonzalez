@@ -4,20 +4,23 @@
 
 class Bubble : public Enemy
 {
+protected:
+	float _angle = 0.0f;
+	float _radius = 50.0f;
+	Vector2 _centre;
+	int _phase = 0;
 public:
-	Bubble()
+	Bubble(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
 	{
-		_transform->position = Vector2(600.0f, 100.0f);
+		startPos.x = RM->WINDOW_WIDTH;
+		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);
 		_transform->rotation = 0.0f;
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}
 
-	void Update() override
-	{
-		_transform->rotation += 1.0f;
-		Enemy::Update();
-	}
+	void Update() override;
+	virtual void MovementBubble(int rotationDirectionY, float velocityY);
 };

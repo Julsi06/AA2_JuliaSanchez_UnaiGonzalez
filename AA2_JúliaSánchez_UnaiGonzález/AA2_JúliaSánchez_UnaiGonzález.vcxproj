@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Bubble.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
+    <ClCompile Include="source\Gameplay.cpp" />
     <ClCompile Include="source\ImageRenderer.cpp" />
     <ClCompile Include="source\InputManager.cpp" />
     <ClCompile Include="source\main.cpp" />
