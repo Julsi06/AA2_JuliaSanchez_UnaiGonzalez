@@ -2,13 +2,21 @@
 #include "Enemy.h"
 #include "Bullet.h"
 
+enum State
+{
+	Entering,
+	Rotating,
+	Moving,
+	Leaving
+};
+
 class Bubble : public Enemy
 {
 protected:
 	float _angle = 0.0f;
 	float _radius = 50.0f;
 	Vector2 _centre;
-	int _phase = 0;
+	State _state = Entering;
 public:
 	Bubble(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
