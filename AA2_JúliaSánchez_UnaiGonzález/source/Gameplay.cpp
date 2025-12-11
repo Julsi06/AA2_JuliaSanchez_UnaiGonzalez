@@ -16,7 +16,7 @@ void Gameplay::Update()
 	{
 		Object* obj = SPAWNER.GetSpawnedObject();
 		_objects.push_back(obj);
-
 	}
+
 	Scene::Update();
 }

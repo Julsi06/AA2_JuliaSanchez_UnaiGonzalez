@@ -11,9 +11,9 @@ public:
 
 	virtual void Update() override
 	{ 
-		if (_transform->position.x <= 0.0f || _transform->position.x >= RM->WINDOW_WIDTH
+		/*if (_transform->position.x <= 0.0f || _transform->position.x >= RM->WINDOW_WIDTH
 			|| _transform->position.y <= 0.0f || _transform->position.y >= RM->WINDOW_HEIGHT)
-			Destroy();
+			Destroy();*/
 
 		Object::Update(); 
 	}

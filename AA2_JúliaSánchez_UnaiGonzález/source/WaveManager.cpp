@@ -2,7 +2,7 @@
 
 void WaveManager::SpawnWave()
 {
-    float spacingX = 60.0f;
+    float spacingX = 150.0f;
     float startX = RM->WINDOW_WIDTH - 10.0f;
 
     // Upper enemies
