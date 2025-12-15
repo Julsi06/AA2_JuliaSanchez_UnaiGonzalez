@@ -2,11 +2,13 @@
 #include "Scene.h"
 #include "Spaceship.h"
 #include "Background.h"
+#include "WaveManager.h"
 
 class Gameplay : public Scene
 {
 private:
 	bool _wave1spawned = false;
+	WaveManager WAVEMANAGER;
 public:
 	Gameplay() = default;
 

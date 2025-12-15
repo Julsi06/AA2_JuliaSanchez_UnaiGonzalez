@@ -1,26 +1,15 @@
 #pragma once
 #include "Enemy.h"
-#include "Bullet.h"
 
-enum State
-{
-	Entering,
-	Rotating,
-	Moving,
-	Leaving
-};
-
-class Bubble : public Enemy
+class KillerWhale : public Enemy
 {
 protected:
-	float _angle = 0.0f;
-	float _radius = 50.0f;
-	Vector2 _centre;
 	int _phase = 0;
-	int _rotationDirectionY = 1;
+	float _radius = 50.0f;
+	float _timer = 0.0f;
 
 public:
-	Bubble(Vector2 startPos)
+	KillerWhale(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
@@ -30,7 +19,6 @@ public:
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}
 
-	void SetRotationDirectionY(int dir) { _rotationDirectionY = dir; }
 	void Update() override;
-	virtual void MovementBubble(int rotationDirectionY, float velocityY);
+	virtual void MovementKillerWhale(float velocityY);
 };
