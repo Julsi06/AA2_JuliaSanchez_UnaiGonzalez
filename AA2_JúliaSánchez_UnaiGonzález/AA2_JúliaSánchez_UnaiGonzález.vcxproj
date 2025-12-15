@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\KillerWhale.cpp" />
     <ClCompile Include="source\Bubble.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\AABB.cpp" />
@@ -37,6 +38,7 @@
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Bubble.h" />
     <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\Background.h" />

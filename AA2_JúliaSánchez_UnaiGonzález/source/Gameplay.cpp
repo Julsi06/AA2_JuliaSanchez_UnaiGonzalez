@@ -1,6 +1,7 @@
 #include "Gameplay.h"
 #include "TimeManager.h"
 #include "Bubble.h"
+#include "KillerWhale.h"
 
 void Gameplay::Update()
 {
@@ -8,7 +9,7 @@ void Gameplay::Update()
 
 	if (currentTime >= 4.0f && !_wave1spawned)
 	{
-		WAVEMANAGER.SpawnWave();
+		WAVEMANAGER.SpawnWave2();
         _wave1spawned = true;
 	}
 

@@ -1,6 +1,6 @@
 #include "WaveManager.h"
 
-void WaveManager::SpawnWave()
+void WaveManager::SpawnWave1()
 {
     float spacingX = 150.0f;
     float startX = RM->WINDOW_WIDTH - 10.0f;
@@ -26,9 +26,20 @@ void WaveManager::SpawnWave()
     }
 }
 
+void WaveManager::SpawnWave2()
+{
+    // Upper enemies
+    KillerWhale* wTop = new KillerWhale(Vector2(RM->WINDOW_WIDTH - 100.0f, 100.0f));
+    SPAWNER.SpawnObject(wTop);
+
+    // Lower enemies
+    KillerWhale* wBottom = new KillerWhale(Vector2(RM->WINDOW_WIDTH - 100.0f, RM->WINDOW_HEIGHT - 100.0f));
+    SPAWNER.SpawnObject(wBottom);
+}
+
 void WaveManager::Update()
 {
-    for (auto enemy : _enemies)
+    for (auto enemy : _bubbles)
     {
         enemy->Update();
     }
