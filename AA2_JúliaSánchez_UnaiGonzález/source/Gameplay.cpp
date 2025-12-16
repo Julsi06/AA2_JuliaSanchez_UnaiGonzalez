@@ -5,7 +5,7 @@
 
 void Gameplay::Update()
 {
-	float currentTime = TM.GetElapsedTime();
+	/*float currentTime = TM.GetElapsedTime();
 
 	if (currentTime >= 4.0f && !_wave1spawned)
 	{
@@ -17,7 +17,7 @@ void Gameplay::Update()
 	{
 		WAVEMANAGER.SpawnWave2();
 		_wave2spawned = true;
-	}
+	}*/
 
 	while (SPAWNER.AreObjectsPendingSpawn())
 	{

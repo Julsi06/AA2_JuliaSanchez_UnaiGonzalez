@@ -7,9 +7,9 @@
 class Gameplay : public Scene
 {
 private:
-	bool _wave1spawned = false;
+	/*bool _wave1spawned = false;
 	bool _wave2spawned = false;
-	WaveManager WAVEMANAGER;
+	WaveManager WAVEMANAGER;*/
 public:
 	Gameplay() = default;
 

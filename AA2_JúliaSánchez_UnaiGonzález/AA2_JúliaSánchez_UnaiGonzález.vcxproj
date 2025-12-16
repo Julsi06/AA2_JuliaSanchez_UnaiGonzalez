@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\BubbleWave.cpp" />
+    <ClCompile Include="source\CircularMoveState.cpp" />
     <ClCompile Include="source\KillerWhale.cpp" />
     <ClCompile Include="source\Bubble.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
@@ -33,11 +35,14 @@
     <ClCompile Include="source\RigidBody.cpp" />
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
+    <ClCompile Include="source\SimpleMoveState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\BubbleWave.h" />
+    <ClInclude Include="source\CircularMoveState.h" />
     <ClInclude Include="source\EnemyState.h" />
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Bubble.h" />
