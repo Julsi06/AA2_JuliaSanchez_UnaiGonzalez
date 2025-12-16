@@ -2,21 +2,41 @@
 #include "ImageObject.h"
 #include "Bullet.h"
 #include "Spaceship.h"
+#include "EnemyState.h"
 
 class Enemy : public ImageObject
 {
+protected:
+	std::vector<EnemyState*> _states;
+	EnemyState* _currentState = nullptr;
+	int _currentStateIndex = 0;
 public:
 	Enemy(std::string path, Vector2 offset, Vector2 size)
 		: ImageObject(path, offset, size) {}
 
-	virtual void Update() override
-	{ 
-		/*if (_transform->position.x <= 0.0f || _transform->position.x >= RM->WINDOW_WIDTH
-			|| _transform->position.y <= 0.0f || _transform->position.y >= RM->WINDOW_HEIGHT)
-			Destroy();*/
-
-		Object::Update(); 
+	void AddState(EnemyState* state)
+	{
+		_states.push_back(state);
 	}
+
+	void Start()
+	{
+		if (!_states.empty())
+			_states[_currentStateIndex]->EnterState(this);
+
+		_currentState = _states[_currentStateIndex];
+	}
+
+	void NextState()
+	{
+		_currentState->ExitState(this);
+		_currentState = _states[_currentStateIndex + 1];
+		_currentState->EnterState(this);
+
+		_currentStateIndex++;
+	}
+
+	virtual void Update() override { Object::Update(); }
 
 	virtual void OnCollisionEnter(Object* other) override
 	{

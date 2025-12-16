@@ -1,10 +1,16 @@
 #pragma once
 #include "Enemy.h"
 
+enum WhaleState
+{
+	Still,
+	Moving
+};
+
 class KillerWhale : public Enemy
 {
 protected:
-	int _phase = 0;
+	WhaleState _state = Still;
 	float _radius = 50.0f;
 	float _timer = 0.0f;
 

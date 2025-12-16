@@ -9,8 +9,14 @@ void Gameplay::Update()
 
 	if (currentTime >= 4.0f && !_wave1spawned)
 	{
-		WAVEMANAGER.SpawnWave2();
+		WAVEMANAGER.SpawnWave1();
         _wave1spawned = true;
+	}
+
+	if (currentTime >= 14.0f && !_wave2spawned)
+	{
+		WAVEMANAGER.SpawnWave2();
+		_wave2spawned = true;
 	}
 
 	while (SPAWNER.AreObjectsPendingSpawn())

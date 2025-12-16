@@ -24,15 +24,15 @@ void KillerWhale::MovementKillerWhale(float velocityY)
 {
 	_timer = TM.GetElapsedTime();
 
-	switch (_phase)
+	switch (_state)
 	{
-	case 0:	// 1. START STILL
+	case WhaleState::Still:	// 1. START STILL
 	{
 		_physics->SetVelocity(Vector2(0.0f, 0.0f));
 
 		if (_timer >= 10.0f)
 		{
-			_phase = 1;
+			_state = Moving;
 			if (_transform->position.y <= RM->WINDOW_HEIGHT / 2)
 				_physics->SetVelocity(Vector2(0.0f, 100.0f));
 			else
@@ -41,7 +41,7 @@ void KillerWhale::MovementKillerWhale(float velocityY)
 	}
 	break;
 
-	case 1: // 2. MOVE TOWARDS THE OTHER EDGE
+	case WhaleState::Moving: // 2. MOVE TOWARDS THE OTHER EDGE
 	{
 		_transform->position.x += 100.0f * 0.01f;
 		_transform->position.y += velocityY * 2.0f;

@@ -2,7 +2,7 @@
 #include "Enemy.h"
 #include "Bullet.h"
 
-enum State
+enum BubbleState
 {
 	Entering,
 	Rotating,
@@ -16,7 +16,7 @@ protected:
 	float _angle = 0.0f;
 	float _radius = 50.0f;
 	Vector2 _centre;
-	int _phase = 0;
+	BubbleState _state = Entering;
 	int _rotationDirectionY = 1;
 
 public:

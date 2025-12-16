@@ -1,5 +1,14 @@
 #include "WaveManager.h"
 
+void WaveManager::Start()
+{
+    if (_waves.empty())
+        return;
+
+    _currentWave = _waves[_currentWaveIndex];
+    _currentWave->StartWave();
+}
+
 void WaveManager::SpawnWave1()
 {
     float spacingX = 150.0f;
@@ -40,7 +49,8 @@ void WaveManager::SpawnWave2()
 void WaveManager::Update()
 {
     for (auto enemy : _bubbles)
-    {
         enemy->Update();
-    }
+
+    for (auto enemy : _killerWhales)
+        enemy->Update();
 }

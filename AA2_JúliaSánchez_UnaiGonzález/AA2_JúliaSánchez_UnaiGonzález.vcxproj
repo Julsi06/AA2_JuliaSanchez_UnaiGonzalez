@@ -38,6 +38,7 @@
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\EnemyState.h" />
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Bubble.h" />
     <ClInclude Include="source\Enemy.h" />
@@ -51,6 +52,7 @@
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
     <ClInclude Include="source\MainMenu.h" />
+    <ClInclude Include="source\SimpleMoveState.h" />
     <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
@@ -64,6 +66,7 @@
     <ClInclude Include="source\TimeManager.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
+    <ClInclude Include="source\Wave.h" />
     <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>
   <ItemGroup>

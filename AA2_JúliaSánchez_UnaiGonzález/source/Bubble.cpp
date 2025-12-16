@@ -26,9 +26,9 @@ void Bubble::MovementBubble(int rotationDirectionY, float velocityY)
 {
 	rotationDirectionY = _rotationDirectionY;
 
-	switch (_phase)
+	switch (_state)
 	{
-	case 0:	// 1. MOVE UNTIL 1/3 SCREEN WIDTH
+	case BubbleState::Entering:	// 1. MOVE UNTIL 1/3 SCREEN WIDTH
 	{
 		_physics->SetVelocity(Vector2(-200.0f, 0.0f));
 
@@ -44,7 +44,7 @@ void Bubble::MovementBubble(int rotationDirectionY, float velocityY)
 	}
 	break;
 
-	case 1: // 2. MAKE A CIRCLE OF 300�
+	case BubbleState::Rotating: // 2. MAKE A CIRCLE OF 300�
 	{
 		_angle += 0.07f;
 
@@ -53,23 +53,23 @@ void Bubble::MovementBubble(int rotationDirectionY, float velocityY)
 
 		if (_angle >= 5.236f)
 		{
-			_phase = 2;
+			_state = Moving;
 			_physics->SetVelocity(Vector2(20.0f, rotationDirectionY * 150.0f));
 		}
 	}
 	break;
 
-	case 2: // GOES UP/DOWN DIAGONALLY
+	case BubbleState::Moving: // GOES UP/DOWN DIAGONALLY
 	{
 		_physics->SetVelocity(Vector2(200.0f, rotationDirectionY * 150.0f));
 
 		if ((_transform->position.y >= 550.0f && rotationDirectionY == 1) ||
 			(_transform->position.y <= 150.0f && rotationDirectionY == -1))
-			_phase = 3;
+			_state = Leaving;
 	}
 	break;
 
-	case 3: // MOVES FROM LEFT TO RIGHT
+	case BubbleState::Leaving: // MOVES FROM LEFT TO RIGHT
 		_physics->SetVelocity(Vector2(150.0f, 0));
 	break;
 	}

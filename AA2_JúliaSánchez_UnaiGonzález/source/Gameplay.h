@@ -8,6 +8,7 @@ class Gameplay : public Scene
 {
 private:
 	bool _wave1spawned = false;
+	bool _wave2spawned = false;
 	WaveManager WAVEMANAGER;
 public:
 	Gameplay() = default;
@@ -15,7 +16,7 @@ public:
 	void OnEnter() override
 	{
 		SPAWNER.SpawnObject(new Background());
-		SPAWNER.SpawnObject(new Spaceship());		
+		SPAWNER.SpawnObject(new Spaceship());
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;
