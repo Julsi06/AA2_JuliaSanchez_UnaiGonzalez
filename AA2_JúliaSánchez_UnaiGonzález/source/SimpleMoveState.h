@@ -1,6 +1,7 @@
 #pragma once
 #include "EnemyState.h"
 #include "Vector2.h"
+#include "Enemy.h"
 
 class SimpleMoveState : public EnemyState
 {

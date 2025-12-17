@@ -36,7 +36,13 @@ public:
 		_currentStateIndex++;
 	}
 
-	virtual void Update() override { Object::Update(); }
+	virtual void Update() override 
+	{ 
+		if (_currentState == nullptr) return;
+		_currentState->UpdateState(this);
+
+		Object::Update(); 
+	}
 
 	virtual void OnCollisionEnter(Object* other) override
 	{

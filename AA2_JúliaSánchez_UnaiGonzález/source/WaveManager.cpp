@@ -48,9 +48,22 @@ void WaveManager::Start()
 
 void WaveManager::Update()
 {
-    for (auto enemy : _bubbles)
-        enemy->Update();
+    if (_currentWave == nullptr) return;
 
-    for (auto enemy : _killerWhales)
-        enemy->Update();
+    _currentWave->UpdateWave();
+
+    if (_currentWave->IsFinished())
+    {
+        _currentWave->EndWave();
+
+        _currentWaveIndex++;
+
+        if (_currentWaveIndex < _waves.size())
+        {
+            _currentWave = _waves[_currentWaveIndex];
+            _currentWave->StartWave();
+        }
+        else
+            _currentWave = nullptr;
+    }
 }

@@ -52,27 +52,30 @@ void BubbleWave::StartWave()
      
     for (Enemy* bubble : _enemies)
         bubble->Start();
-
-    _time = TM.GetElapsedTime();
 }
 
 void BubbleWave::UpdateWave()
 {
-    if (_time > 4.0f)
+    _time = TM.GetElapsedTime();
+
+    if (_time >= 8.0f && _currentPhase == 0)
     {
         for (Enemy* bubble : _enemies)
             bubble->NextState();
+        _currentPhase++;
     }
 
-    if (_time > 10.0f)
+    if (_time >= 10.0f && _currentPhase == 1)
     {
         for (Enemy* bubble : _enemies)
             bubble->NextState();
+        _currentPhase++;
     }
 
-    if (_time > 14.0f)
+    if (_time >= 12.0f && _currentPhase == 2)
     {
         for (Enemy* bubble : _enemies)
             bubble->NextState();
+        _currentPhase++;
     }
 }

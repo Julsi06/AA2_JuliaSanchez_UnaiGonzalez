@@ -57,9 +57,6 @@
     <ClCompile Include="source\Gameplay.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="source\Bubble.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="source\WaveManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>

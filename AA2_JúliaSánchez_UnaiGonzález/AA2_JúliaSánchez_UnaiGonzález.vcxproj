@@ -22,7 +22,6 @@
     <ClCompile Include="source\BubbleWave.cpp" />
     <ClCompile Include="source\CircularMoveState.cpp" />
     <ClCompile Include="source\KillerWhale.cpp" />
-    <ClCompile Include="source\Bubble.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\Button.cpp" />

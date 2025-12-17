@@ -13,4 +13,5 @@ public:
 	virtual void StartWave() = 0;
 	virtual void UpdateWave() = 0;
 	virtual void EndWave() = 0;
+	virtual bool IsFinished() = 0;
 };
