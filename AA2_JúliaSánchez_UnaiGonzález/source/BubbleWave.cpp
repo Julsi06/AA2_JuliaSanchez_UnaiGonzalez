@@ -14,37 +14,23 @@ void BubbleWave::StartWave()
 
 	for  (int i = 0; i < _amount; i++)
 	{
-		Vector2 pos;
         float startY;
         float posX = startX + i * spacingX;
+        int dirY;
 
         if (i < half)
         {
             startY = 100.0f;
-            pos = Vector2(posX, startY);
+            dirY = 1;
         }
         else
         {
             startY = RM->WINDOW_HEIGHT - 100.0f;
-            pos = Vector2(posX, startY);
-        }
-
-        Bubble* bubble = new Bubble(pos);
-
-        bubble->AddState(new SimpleMoveState(Vector2(-1.0f, 0.0f), 200.0f));
-        
-        if (i < half)
-        {
-            bubble->AddState(new CircularMoveState(50.0f, 1.0f));
-            bubble->AddState(new SimpleMoveState(Vector2(1.0f, 1.0f), 200.0f));
-        }
-        else
-        {
-            bubble->AddState(new CircularMoveState(50.0f, -1.0f));
-            bubble->AddState(new SimpleMoveState(Vector2(1.0f, -1.0f), 200.0f));
+            dirY = -1;
         }
         
-        bubble->AddState(new SimpleMoveState(Vector2(1.0f, 0.0f), 200.0f));
+        _positions.push_back(Vector2(posX, startY));
+        Bubble* bubble = new Bubble(_positions[i], dirY);
 
         _enemies.push_back(bubble);
         SPAWNER.SpawnObject(bubble);
@@ -57,25 +43,9 @@ void BubbleWave::StartWave()
 void BubbleWave::UpdateWave()
 {
     _time = TM.GetElapsedTime();
-
-    if (_time >= 8.0f && _currentPhase == 0)
+    for (int i = 0; i < _enemies.size(); i++)
     {
-        for (Enemy* bubble : _enemies)
-            bubble->NextState();
-        _currentPhase++;
-    }
-
-    if (_time >= 10.0f && _currentPhase == 1)
-    {
-        for (Enemy* bubble : _enemies)
-            bubble->NextState();
-        _currentPhase++;
-    }
-
-    if (_time >= 12.0f && _currentPhase == 2)
-    {
-        for (Enemy* bubble : _enemies)
-            bubble->NextState();
-        _currentPhase++;
+        if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH)
+            _waveDone = true;
     }
 }

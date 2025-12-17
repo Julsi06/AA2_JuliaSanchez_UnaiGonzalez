@@ -20,4 +20,5 @@ public:
 	{
 		enemy->GetRigidBody()->SetVelocity(Vector2(0.0f, 0.0f));
 	}
+	bool IsFinished() const override { return _angle >= 5.236f; }
 };

@@ -27,19 +27,26 @@ public:
 		_currentState = _states[_currentStateIndex];
 	}
 
-	void NextState()
-	{
-		_currentState->ExitState(this);
-		_currentState = _states[_currentStateIndex + 1];
-		_currentState->EnterState(this);
-
-		_currentStateIndex++;
-	}
-
 	virtual void Update() override 
 	{ 
-		if (_currentState == nullptr) return;
+		if (_currentState == nullptr) 
+			return;
+
 		_currentState->UpdateState(this);
+
+		if (_currentState->IsFinished())
+		{
+			_currentState->ExitState(this);
+			_currentStateIndex++;
+
+			if (_currentStateIndex < _states.size())
+			{
+				_currentState = _states[_currentStateIndex];
+				_currentState->EnterState(this);
+			}
+			else
+				_currentState = nullptr;
+		}
 
 		Object::Update(); 
 	}

@@ -6,7 +6,7 @@ class Wave
 {
 protected:
 	// These variables have to be read from the XML file
-	Vector2 _pos;
+	std::vector<Vector2> _positions;
 	int _amount;
 	std::vector<Enemy*> _enemies;
 public:

@@ -5,6 +5,7 @@
 
 void KillerWhaleWave::StartWave()
 {
+	std::cout << "WHALE START WAVE";
 	_amount = 3; // Will be read from XML
 
 	// This will have to be changed
@@ -13,35 +14,26 @@ void KillerWhaleWave::StartWave()
 
 	for (int i = 0; i < _amount; i++)
 	{
-		Vector2 pos;
 		float startY;
 		float posX = startX + i * spacingX;
+		int dirY;
 
 		if (i == 0 || i == 2)
 		{
 			startY = RM->WINDOW_HEIGHT - 50.0f;
-			pos = Vector2(posX, startY);
+			dirY = -1;
 		}
 		else
 		{
 			startY = 50.0f;
-			pos = Vector2(posX, startY);
+			dirY = 1;
 		}
 
-		KillerWhale* whale = new KillerWhale(Vector2(pos));
-
-		whale->AddState(new StayState());
-
-		if (i == 0 || i == 2)
-			whale->AddState(new SimpleMoveState(Vector2(0.0f, -1.0f), 200.0f));
-		else
-			whale->AddState(new SimpleMoveState(Vector2(0.0f, 1.0f), 200.0f));
-
-		whale->AddState(new StayState());
+		_positions.push_back(Vector2(posX, startY));
+		KillerWhale* whale = new KillerWhale(_positions[i], dirY);
 
 		_enemies.push_back(whale);
 		SPAWNER.SpawnObject(whale);
-		std::cout << "WHALE SPAWNED";
 	}
 
 	for (Enemy* whale : _enemies)
@@ -51,18 +43,9 @@ void KillerWhaleWave::StartWave()
 void KillerWhaleWave::UpdateWave()
 {
 	_time = TM.GetElapsedTime();
-
-	if (_time >= 23.0f && _currentPhase == 0)
+	for (int i = 0; i < _enemies.size(); i++)
 	{
-		for (Enemy* whale : _enemies)
-			whale->NextState();
-		_currentPhase++;
-	}
-
-	if (_time >= 28.0f && _currentPhase == 1)
-	{
-		for (Enemy* whale : _enemies)
-			whale->NextState();
-		_currentPhase++;
+		if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH)
+			_waveDone = true;
 	}
 }
