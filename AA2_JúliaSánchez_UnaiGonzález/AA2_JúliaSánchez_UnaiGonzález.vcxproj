@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\KillerWhaleWave.cpp" />
     <ClCompile Include="source\BubbleWave.cpp" />
     <ClCompile Include="source\CircularMoveState.cpp" />
-    <ClCompile Include="source\KillerWhale.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\Button.cpp" />
@@ -35,11 +35,13 @@
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SimpleMoveState.cpp" />
+    <ClCompile Include="source\StayState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\KillerWhaleWave.h" />
     <ClInclude Include="source\BubbleWave.h" />
     <ClInclude Include="source\CircularMoveState.h" />
     <ClInclude Include="source\EnemyState.h" />
@@ -65,6 +67,7 @@
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\Spaceship.h" />
+    <ClInclude Include="source\StayState.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />

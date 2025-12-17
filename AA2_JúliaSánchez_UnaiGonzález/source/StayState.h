@@ -3,14 +3,14 @@
 #include "EnemyState.h"
 #include "Enemy.h"
 
-class SimpleMoveState : public EnemyState
+class StayState : public EnemyState
 {
 private:
 	Vector2 _dir;
 	float _speed;
 public:
-	SimpleMoveState(Vector2 dir, float speed)
-		: _dir(dir), _speed(speed) { }
+	StayState()
+		: _dir(Vector2(-1.0f, 0.0f)), _speed(100.0f) { }
 	void EnterState(Enemy* enemy) override;
 	void UpdateState(Enemy* enemy) override { }
 	void ExitState(Enemy* enemy) override { }

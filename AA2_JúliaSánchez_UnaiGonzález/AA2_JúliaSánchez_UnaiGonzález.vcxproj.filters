@@ -60,9 +60,6 @@
     <ClCompile Include="source\WaveManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="source\KillerWhale.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="source\BubbleWave.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -70,6 +67,12 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="source\SimpleMoveState.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="source\KillerWhaleWave.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StayState.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -168,6 +171,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="source\CircularMoveState.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="source\KillerWhaleWave.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="source\StayState.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

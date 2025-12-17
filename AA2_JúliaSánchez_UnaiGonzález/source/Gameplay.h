@@ -4,12 +4,11 @@
 #include "Background.h"
 #include "WaveManager.h"
 #include "BubbleWave.h"
+#include "KillerWhaleWave.h"
 
 class Gameplay : public Scene
 {
 private:
-	/*bool _wave1spawned = false;
-	bool _wave2spawned = false;*/
 	WaveManager WAVEMANAGER;
 public:
 	Gameplay() = default;
@@ -20,6 +19,7 @@ public:
 		SPAWNER.SpawnObject(new Spaceship());
 
 		WAVEMANAGER.AddWave(new BubbleWave());
+		WAVEMANAGER.AddWave(new KillerWhaleWave());
 		WAVEMANAGER.Start();
 	}
 	void OnExit() override { Scene::OnExit(); }

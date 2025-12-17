@@ -1,6 +1,5 @@
 #pragma once
 #include "Enemy.h"
-#include "Bullet.h"
 
 class Bubble : public Enemy
 {

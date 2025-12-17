@@ -49,7 +49,7 @@ void BubbleWave::StartWave()
         _enemies.push_back(bubble);
         SPAWNER.SpawnObject(bubble);
 	}
-     
+    
     for (Enemy* bubble : _enemies)
         bubble->Start();
 }

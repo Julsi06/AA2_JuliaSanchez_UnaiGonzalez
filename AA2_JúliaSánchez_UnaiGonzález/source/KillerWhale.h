@@ -1,19 +1,8 @@
 #pragma once
 #include "Enemy.h"
 
-enum WhaleState
-{
-	Still,
-	Moving
-};
-
 class KillerWhale : public Enemy
 {
-protected:
-	WhaleState _state = Still;
-	float _radius = 50.0f;
-	float _timer = 0.0f;
-
 public:
 	KillerWhale(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
@@ -24,7 +13,5 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}
-
-	void Update() override;
-	virtual void MovementKillerWhale(float velocityY);
+	void Update() override { Enemy::Update(); }
 };

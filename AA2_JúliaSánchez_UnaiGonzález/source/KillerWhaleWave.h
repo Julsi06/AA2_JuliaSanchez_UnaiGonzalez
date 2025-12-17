@@ -1,16 +1,17 @@
 #pragma once
-#include "Bubble.h"
+#include "KillerWhale.h"
 #include "Wave.h"
 
-class BubbleWave : public Wave
+class KillerWhaleWave : public Wave
 {
-private:
+private: 
 	float _time;
 	int _currentPhase = 0;
-	int _maxPhase = 3;
+	int _maxPhase = 2;
 public:
 	void StartWave() override;
 	void UpdateWave() override;
-	void EndWave() override { }
+	void EndWave() override {}
 	bool IsFinished() override { return _currentPhase >= _maxPhase; }
 };
+
