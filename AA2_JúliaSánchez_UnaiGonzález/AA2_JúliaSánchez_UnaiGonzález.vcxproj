@@ -42,6 +42,14 @@
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\Amoeba.h" />
+    <ClInclude Include="source\AmoebaWave.h" />
+    <ClInclude Include="source\Beholder.h" />
+    <ClInclude Include="source\BeholderWave.h" />
+    <ClInclude Include="source\Chomper.h" />
+    <ClInclude Include="source\ChomperWave.h" />
+    <ClInclude Include="source\Circler.h" />
+    <ClInclude Include="source\CirclerWave.h" />
     <ClInclude Include="source\HorizontalMedusa.h" />
     <ClInclude Include="source\HorizontalMedusaWave.h" />
     <ClInclude Include="source\KillerWhaleWave.h" />
@@ -76,6 +84,7 @@
     <ClInclude Include="source\TimeManager.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
+    <ClInclude Include="source\VerticalMedusa.h" />
     <ClInclude Include="source\Wave.h" />
     <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>
