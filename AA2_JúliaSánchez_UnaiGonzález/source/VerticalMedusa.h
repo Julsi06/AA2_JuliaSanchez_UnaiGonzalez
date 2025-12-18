@@ -1,12 +1,12 @@
 #pragma once
 #include "Enemy.h"
 #include "SimpleMoveState.h"
-#include "CircularMoveState.h"
+#include "StayState.h"
 
-class Bubble : public Enemy
+class VerticalMedusa : public Enemy
 {
 public:
-	Bubble(Vector2 startPos, int dirY)
+	VerticalMedusa(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
@@ -15,10 +15,9 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
-		AddState(new SimpleMoveState(Vector2(-1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH / 3.0f, true));
-		AddState(new CircularMoveState(50.0f, dirY * 1.0f));
-		//AddState(new SimpleMoveState(Vector2(1.0f, dirY * 1.0f), 200.0f));
-		AddState(new SimpleMoveState(Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH + 50.0f, false));
+		AddState(new SimpleMoveState(Vector2(0.0f, -1.0f), 200.0f, 2.0f));
+		AddState(new StayState(1.0f));
+		// To be continued
 	}
 	void Update() override { Enemy::Update(); }
 };
