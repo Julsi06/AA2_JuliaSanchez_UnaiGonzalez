@@ -16,9 +16,9 @@ private:
 public:
 	WaveManager()
 	{
-		/*_waves.push_back(new BubbleWave());
-		_waves.push_back(new KillerWhaleWave());*/
-		_waves.push_back(new HorizontalMedusaWave());
+		//_waves.push_back(new BubbleWave());
+		_waves.push_back(new KillerWhaleWave());
+		//_waves.push_back(new HorizontalMedusaWave());
 	}
 	void AddWave(Wave* wave) { _waves.push_back(wave); }
 	void Start();
