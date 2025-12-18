@@ -4,9 +4,6 @@
 
 class KillerWhaleWave : public Wave
 {
-private: 
-	float _time;
-	bool _waveDone = false;
 public:
 	void StartWave() override;
 	void UpdateWave() override;

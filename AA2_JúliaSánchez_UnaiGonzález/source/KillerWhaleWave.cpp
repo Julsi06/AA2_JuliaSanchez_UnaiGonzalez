@@ -5,7 +5,7 @@
 
 void KillerWhaleWave::StartWave()
 {
-	std::cout << "WHALE START WAVE";
+	std::cout << "START WHALE WAVE";
 	_amount = 3; // Will be read from XML
 
 	// This will have to be changed
@@ -34,10 +34,11 @@ void KillerWhaleWave::StartWave()
 
 		_enemies.push_back(whale);
 		SPAWNER.SpawnObject(whale);
+		whale->Start();
 	}
 
-	for (Enemy* whale : _enemies)
-		whale->Start();
+	/*for (Enemy* whale : _enemies)
+		whale->Start();*/
 }
 
 void KillerWhaleWave::UpdateWave()
@@ -45,7 +46,7 @@ void KillerWhaleWave::UpdateWave()
 	_time = TM.GetElapsedTime();
 	for (int i = 0; i < _enemies.size(); i++)
 	{
-		if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH)
+		if (_time >= 20.0f && _enemies[_amount - 1]->GetTransform()->position.y <= -50.0f)
 			_waveDone = true;
 	}
 }

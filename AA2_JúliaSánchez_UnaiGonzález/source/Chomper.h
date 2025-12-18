@@ -1,12 +1,10 @@
 #pragma once
 #include "Enemy.h"
-#include "StayState.h"
-#include "SimpleMoveState.h"
 
-class KillerWhale : public Enemy
+class Chomper : public Enemy
 {
 public:
-	KillerWhale(Vector2 startPos, int dirY)
+	Chomper(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
@@ -14,10 +12,6 @@ public:
 		_transform->rotation = 0.0f;
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
-
-		AddState(new StayState(5.0f));
-		AddState(new SimpleMoveState(Vector2(0.0f, dirY * 1.0f), 200.0f, 4.0f));
-		AddState(new StayState(10.0f));
 	}
 	void Update() override { Enemy::Update(); }
 };

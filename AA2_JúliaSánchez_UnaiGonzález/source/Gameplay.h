@@ -9,7 +9,7 @@
 class Gameplay : public Scene
 {
 private:
-	WaveManager WAVEMANAGER;
+	WaveManager _waveManager;
 public:
 	Gameplay() = default;
 
@@ -18,9 +18,8 @@ public:
 		SPAWNER.SpawnObject(new Background());
 		SPAWNER.SpawnObject(new Spaceship());
 
-		WAVEMANAGER.AddWave(new BubbleWave());
-		WAVEMANAGER.AddWave(new KillerWhaleWave());
-		WAVEMANAGER.Start();
+		_waveManager = WaveManager();
+		_waveManager.Start();
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;

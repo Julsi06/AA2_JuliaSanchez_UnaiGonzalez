@@ -5,7 +5,7 @@
 
 void Gameplay::Update()
 {
-	WAVEMANAGER.Update();
+	_waveManager.Update();
 
 	while (SPAWNER.AreObjectsPendingSpawn())
 	{

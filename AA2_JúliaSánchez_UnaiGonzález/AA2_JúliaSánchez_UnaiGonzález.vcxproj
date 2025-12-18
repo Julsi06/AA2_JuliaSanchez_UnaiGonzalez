@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\HorizontalMedusaWave.cpp" />
     <ClCompile Include="source\KillerWhaleWave.cpp" />
     <ClCompile Include="source\BubbleWave.cpp" />
     <ClCompile Include="source\CircularMoveState.cpp" />
@@ -41,6 +42,8 @@
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\HorizontalMedusa.h" />
+    <ClInclude Include="source\HorizontalMedusaWave.h" />
     <ClInclude Include="source\KillerWhaleWave.h" />
     <ClInclude Include="source\BubbleWave.h" />
     <ClInclude Include="source\CircularMoveState.h" />

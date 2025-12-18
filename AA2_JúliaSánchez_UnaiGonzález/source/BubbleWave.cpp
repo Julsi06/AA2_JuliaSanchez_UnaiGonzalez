@@ -5,6 +5,7 @@
 
 void BubbleWave::StartWave()
 {
+    std::cout << "START BUBBLE WAVE";
 	_amount = 8; // Will be read from XML
 	int half = _amount / 2;
 
@@ -34,10 +35,11 @@ void BubbleWave::StartWave()
 
         _enemies.push_back(bubble);
         SPAWNER.SpawnObject(bubble);
+        bubble->Start();
 	}
     
-    for (Enemy* bubble : _enemies)
-        bubble->Start();
+    /*for (Enemy* bubble : _enemies)
+        bubble->Start();*/
 }
 
 void BubbleWave::UpdateWave()
@@ -45,7 +47,7 @@ void BubbleWave::UpdateWave()
     _time = TM.GetElapsedTime();
     for (int i = 0; i < _enemies.size(); i++)
     {
-        if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH)
+        if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH + 50.0f)
             _waveDone = true;
     }
 }
