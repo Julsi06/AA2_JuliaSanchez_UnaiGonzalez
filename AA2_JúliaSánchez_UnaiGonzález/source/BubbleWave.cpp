@@ -41,9 +41,6 @@ void BubbleWave::StartWave()
         SPAWNER.SpawnObject(bubble);
         bubble->Start();
 	}
-    
-    /*for (Enemy* bubble : _enemies)
-        bubble->Start();*/
 }
 
 void BubbleWave::UpdateWave()

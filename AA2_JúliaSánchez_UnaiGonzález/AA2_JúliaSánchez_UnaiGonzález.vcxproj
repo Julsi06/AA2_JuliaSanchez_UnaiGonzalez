@@ -39,6 +39,7 @@
     <ClCompile Include="source\StayState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
+    <ClCompile Include="source\VerticalMedusaWave.cpp" />
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,8 @@
     <ClInclude Include="source\CirclerWave.h" />
     <ClInclude Include="source\HorizontalMedusa.h" />
     <ClInclude Include="source\HorizontalMedusaWave.h" />
+    <ClInclude Include="source\IAttacker.h" />
+    <ClInclude Include="source\IDamagable.h" />
     <ClInclude Include="source\KillerWhaleWave.h" />
     <ClInclude Include="source\BubbleWave.h" />
     <ClInclude Include="source\CircularMoveState.h" />
@@ -85,6 +88,7 @@
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\VerticalMedusa.h" />
+    <ClInclude Include="source\VerticalMedusaWave.h" />
     <ClInclude Include="source\Wave.h" />
     <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>

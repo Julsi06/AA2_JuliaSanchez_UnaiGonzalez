@@ -16,11 +16,11 @@ private:
 
 	bool _finishedState;
 public:
-	StayState(float duration)
-		: _dir(Vector2(-1.0f, 0.0f)), _speed(100.0f), _duration(duration),
+	StayState(Vector2 dir, float duration)
+		: _dir(dir), _speed(100.0f), _duration(duration),
 		_typeOfMovement("Duration") { }
-	StayState(Vector2 maxPosition)
-		: _dir(Vector2(-1.0f, 0.0f)), _speed(100.0f), _maxPosition(maxPosition),
+	StayState(Vector2 dir, Vector2 maxPosition)
+		: _dir(dir), _speed(100.0f), _maxPosition(maxPosition),
 		_typeOfMovement("Distance") { }
 	void EnterState(Enemy* enemy) override;
 	void UpdateState(Enemy* enemy) override;

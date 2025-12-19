@@ -36,9 +36,6 @@ void KillerWhaleWave::StartWave()
 		SPAWNER.SpawnObject(whale);
 		whale->Start();
 	}
-
-	/*for (Enemy* whale : _enemies)
-		whale->Start();*/
 }
 
 void KillerWhaleWave::UpdateWave()

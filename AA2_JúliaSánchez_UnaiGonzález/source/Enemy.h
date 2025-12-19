@@ -3,8 +3,10 @@
 #include "Bullet.h"
 #include "Spaceship.h"
 #include "EnemyState.h"
+#include "IDamagable.h"
+#include "IAttacker.h"
 
-class Enemy : public ImageObject
+class Enemy : public ImageObject, public IAttacker, public IDamagable
 {
 protected:
 	std::vector<EnemyState*> _states;
