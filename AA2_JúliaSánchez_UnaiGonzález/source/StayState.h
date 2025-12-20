@@ -24,6 +24,9 @@ public:
 
 	void EnterState() override;
 	void UpdateState() override;
-	void ExitState() override {}
+	void ExitState() override 
+	{
+		_rb->SetVelocity(Vector2(0.0f, 0.0f));
+	}
 	bool IsFinished() const override { return _finishedState == true; }
 };

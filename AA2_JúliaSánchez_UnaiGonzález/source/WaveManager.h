@@ -6,6 +6,7 @@
 #include "HorizontalMedusaWave.h"
 #include "VerticalMedusaWave.h"
 #include "ChomperWave.h"
+#include "BeholderWave.h"
 
 class WaveManager
 {
@@ -14,7 +15,7 @@ private:
 	int _currentWaveIndex = 0;
 	Wave* _currentWave = nullptr;
 public:
-	WaveManager()
+	WaveManager(Transform* player)
 	{
 		// TESTING ENEMIES
 		// 1. BUBBLE
@@ -27,9 +28,11 @@ public:
 		// 5. V MEDUSA
 		//AddWave(new VerticalMedusaWave());
 		// 6. BEHOLDER
-		// 7. CHOMPER
-		AddWave(new ChomperWave());
-		// 8. AMOEBA
+		//AddWave(new BeholderWave(player));
+		// 7. CHOMPER -> DONE
+		//AddWave(new ChomperWave());
+		// 8. AMOEBA -> DONE
+		//AddWave(new AmoebaWave());
 		// 9. BOSS
 
 	}

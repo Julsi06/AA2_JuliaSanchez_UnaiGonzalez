@@ -9,17 +9,18 @@
 class Gameplay : public Scene
 {
 private:
-	WaveManager _waveManager;
+	WaveManager* _waveManager = nullptr;
 public:
 	Gameplay() = default;
 
 	void OnEnter() override
 	{
 		SPAWNER.SpawnObject(new Background());
-		SPAWNER.SpawnObject(new Spaceship());
+		Spaceship* spaceship = new Spaceship();
+		SPAWNER.SpawnObject(spaceship);
 
-		_waveManager = WaveManager();
-		_waveManager.Start();
+		_waveManager = new WaveManager(spaceship->GetTransform());
+		_waveManager->Start();
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;

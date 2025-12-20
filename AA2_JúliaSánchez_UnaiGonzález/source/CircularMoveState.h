@@ -6,12 +6,14 @@
 class CircularMoveState : public EnemyState
 {
 private:
-	float _angle = 0.0f;
+	float _angle = -1.57f; // Starting from the top (-pi/2)
 	float _radius;
 	Vector2 _centre;
-	float _rotDirY;
+	int _rotDirY;
+
+	bool _finishedState = false;
 public:
-	CircularMoveState(Transform* transf, RigidBody* rb, float radius, float rotDirY)
+	CircularMoveState(Transform* transf, RigidBody* rb, float radius, int rotDirY)
 		: EnemyState(transf, rb), _radius(radius), _rotDirY(rotDirY) { }
 
 	void EnterState() override;
@@ -20,5 +22,5 @@ public:
 	{
 		_rb->SetVelocity(Vector2(0.0f, 0.0f));
 	}
-	bool IsFinished() const override { return _angle >= 6.28f; }
+	bool IsFinished() const override { _finishedState == true; }
 };

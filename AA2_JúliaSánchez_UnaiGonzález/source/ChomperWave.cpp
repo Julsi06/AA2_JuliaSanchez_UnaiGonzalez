@@ -8,7 +8,6 @@ void ChomperWave::StartWave()
 
 	float spacingY = 50.0f;
 	float startX = RM->WINDOW_WIDTH + 10.0f;
-	//float startX = RM->WINDOW_WIDTH - 100.0f;
 	float startY = 100.0f;
 	int dirY = -1;
 
@@ -17,7 +16,7 @@ void ChomperWave::StartWave()
 		float posY = startY + i * spacingY;
 
 		_positions.push_back(Vector2(startX, posY));
-		Chomper* chomper = new Chomper(_positions[i], dirY);
+		Chomper* chomper = new Chomper(_positions[i]);
 
 		_enemies.push_back(chomper);
 		SPAWNER.SpawnObject(chomper);

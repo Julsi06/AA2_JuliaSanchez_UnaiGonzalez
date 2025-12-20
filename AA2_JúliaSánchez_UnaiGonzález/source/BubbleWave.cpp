@@ -12,7 +12,7 @@ void BubbleWave::StartWave()
     // This will have to be changed
     float spacingX = 150.0f;
     float startX = RM->WINDOW_WIDTH - 10.0f;
-    float auxI = 0;
+    int auxI = 0;
 
 	for  (int i = 0; i < _amount; i++)
 	{

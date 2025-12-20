@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\AmoebaWave.cpp" />
+    <ClCompile Include="source\BeholderWave.cpp" />
+    <ClCompile Include="SOURCE\ChaseState.cpp" />
     <ClCompile Include="source\ChomperWave.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
