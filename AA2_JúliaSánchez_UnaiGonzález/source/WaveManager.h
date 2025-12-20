@@ -27,8 +27,8 @@ public:
 		// 4. CIRCLER
 		// 5. V MEDUSA
 		//AddWave(new VerticalMedusaWave());
-		// 6. BEHOLDER
-		//AddWave(new BeholderWave(player));
+		// 6. BEHOLDER -> DONE
+		AddWave(new BeholderWave(player));
 		// 7. CHOMPER -> DONE
 		//AddWave(new ChomperWave());
 		// 8. AMOEBA -> DONE

@@ -23,6 +23,7 @@
     <ClCompile Include="source\BeholderWave.cpp" />
     <ClCompile Include="SOURCE\ChaseState.cpp" />
     <ClCompile Include="source\ChomperWave.cpp" />
+    <ClCompile Include="source\CirclerWave.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
     <ClCompile Include="source\KillerWhaleWave.cpp" />

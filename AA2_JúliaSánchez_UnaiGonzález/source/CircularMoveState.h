@@ -22,5 +22,5 @@ public:
 	{
 		_rb->SetVelocity(Vector2(0.0f, 0.0f));
 	}
-	bool IsFinished() const override { _finishedState == true; }
+	bool IsFinished() const override { return _finishedState == true; }
 };
