@@ -1,7 +1,7 @@
 #pragma once
 #include "Vector2.h"
 #include "EnemyState.h"
-#include "Enemy.h"
+#include "TimeManager.h"
 
 class CircularMoveState : public EnemyState
 {
@@ -11,14 +11,14 @@ private:
 	Vector2 _centre;
 	float _rotDirY;
 public:
-	CircularMoveState(float radius, float rotDirY)
-		: _radius(radius), _rotDirY(rotDirY) { }
+	CircularMoveState(Transform* transf, RigidBody* rb, float radius, float rotDirY)
+		: EnemyState(transf, rb), _radius(radius), _rotDirY(rotDirY) { }
 
-	void EnterState(Enemy* enemy) override;
-	void UpdateState(Enemy* enemy) override;
-	void ExitState(Enemy* enemy) override 
+	void EnterState() override;
+	void UpdateState() override;
+	void ExitState() override
 	{
-		enemy->GetRigidBody()->SetVelocity(Vector2(0.0f, 0.0f));
+		_rb->SetVelocity(Vector2(0.0f, 0.0f));
 	}
-	bool IsFinished() const override { return _angle >= 5.236f; }
+	bool IsFinished() const override { return _angle >= 6.28f; }
 };

@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\ChomperWave.cpp" />
+    <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
     <ClCompile Include="source\KillerWhaleWave.cpp" />
     <ClCompile Include="source\BubbleWave.cpp" />
@@ -47,6 +49,7 @@
     <ClInclude Include="source\AmoebaWave.h" />
     <ClInclude Include="source\Beholder.h" />
     <ClInclude Include="source\BeholderWave.h" />
+    <ClInclude Include="source\ChaseState.h" />
     <ClInclude Include="source\Chomper.h" />
     <ClInclude Include="source\ChomperWave.h" />
     <ClInclude Include="source\Circler.h" />

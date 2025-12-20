@@ -1,13 +1,13 @@
 #include "SimpleMoveState.h"
 
-void SimpleMoveState::EnterState(Enemy* enemy)
+void SimpleMoveState::EnterState()
 {
-	enemy->GetRigidBody()->SetVelocity(_dir * _speed);
+	_rb->SetVelocity(_dir * _speed);
 }
 
-void SimpleMoveState::UpdateState(Enemy* enemy)
+void SimpleMoveState::UpdateState()
 {
-	Vector2 enemyPos = enemy->GetTransform()->position;
+	Vector2 enemyPos = _transform->position;
 	_time += TM.GetDeltaTime();
 
 	if (_typeOfMovement == "Distance")
@@ -18,7 +18,7 @@ void SimpleMoveState::UpdateState(Enemy* enemy)
 		if (!_isLess && enemyPos.x >= _maxDist)
 			_finishedState = true;
 	}
-	
+
 	if (_typeOfMovement == "Duration")
 	{
 		if (_time >= _duration)

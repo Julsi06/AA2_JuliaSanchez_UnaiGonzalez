@@ -14,7 +14,7 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
-		AddState(new SimpleMoveState(Vector2(-1.0f, 0.0f), velocity, -50.0f, true));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), velocity, -50.0f, true));
 	}
 	void Update() override { Enemy::Update(); }
 };

@@ -21,37 +21,8 @@ public:
 		_states.push_back(state);
 	}
 
-	void Start()
-	{
-		if (!_states.empty())
-			_states[_currentStateIndex]->EnterState(this);
-
-		_currentState = _states[_currentStateIndex];
-	}
-
-	virtual void Update() override 
-	{ 
-		if (_currentState == nullptr) 
-			return;
-
-		_currentState->UpdateState(this);
-
-		if (_currentState->IsFinished())
-		{
-			_currentState->ExitState(this);
-			_currentStateIndex++;
-
-			if (_currentStateIndex < _states.size())
-			{
-				_currentState = _states[_currentStateIndex];
-				_currentState->EnterState(this);
-			}
-			else
-				_currentState = nullptr;
-		}
-
-		Object::Update(); 
-	}
+	void Start();
+	virtual void Update() override;
 
 	virtual void OnCollisionEnter(Object* other) override
 	{

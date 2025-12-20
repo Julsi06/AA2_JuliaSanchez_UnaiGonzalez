@@ -6,7 +6,7 @@
 void BubbleWave::StartWave()
 {
     std::cout << "START BUBBLE WAVE";
-	_amount = 8; // Will be read from XML
+	_amount = 12; // Will be read from XML
 	int half = _amount / 2;
 
     // This will have to be changed

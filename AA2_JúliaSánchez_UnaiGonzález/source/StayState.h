@@ -1,7 +1,6 @@
 #pragma once
 #include "Vector2.h"
 #include "EnemyState.h"
-#include "Enemy.h"
 #include "TimeManager.h"
 
 class StayState : public EnemyState
@@ -16,14 +15,15 @@ private:
 
 	bool _finishedState;
 public:
-	StayState(Vector2 dir, float duration)
-		: _dir(dir), _speed(100.0f), _duration(duration),
+	StayState(Transform* transf, RigidBody* rb, Vector2 dir, float duration)
+		: EnemyState(transf, rb), _dir(dir), _speed(100.0f), _duration(duration),
 		_typeOfMovement("Duration") { }
-	StayState(Vector2 dir, Vector2 maxPosition)
-		: _dir(dir), _speed(100.0f), _maxPosition(maxPosition),
+	StayState(Transform* transf, RigidBody* rb, Vector2 dir, Vector2 maxPosition)
+		: EnemyState(transf, rb), _dir(dir), _speed(100.0f), _maxPosition(maxPosition),
 		_typeOfMovement("Distance") { }
-	void EnterState(Enemy* enemy) override;
-	void UpdateState(Enemy* enemy) override;
-	void ExitState(Enemy* enemy) override { }
+
+	void EnterState() override;
+	void UpdateState() override;
+	void ExitState() override {}
 	bool IsFinished() const override { return _finishedState == true; }
 };

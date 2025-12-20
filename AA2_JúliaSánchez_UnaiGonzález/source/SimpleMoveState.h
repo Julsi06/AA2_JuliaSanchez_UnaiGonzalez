@@ -1,7 +1,6 @@
 #pragma once
 #include "Vector2.h"
 #include "EnemyState.h"
-#include "Enemy.h"
 #include "TimeManager.h"
 
 class SimpleMoveState : public EnemyState
@@ -17,14 +16,15 @@ private:
 
 	bool _finishedState;
 public:
-	SimpleMoveState(Vector2 dir, float speed, float maxDist, bool isLess)
-		: _dir(dir), _speed(speed), _maxDist(maxDist),
+	SimpleMoveState(Transform* transf, RigidBody* rb, Vector2 dir, float speed, float maxDist, bool isLess)
+		: EnemyState(transf, rb), _dir(dir), _speed(speed), _maxDist(maxDist),
 		_isLess(isLess), _typeOfMovement("Distance") { }
-	SimpleMoveState(Vector2 dir, float speed, float duration)
-		: _dir(dir), _speed(speed), _duration(duration),
+	SimpleMoveState(Transform* transf, RigidBody* rb, Vector2 dir, float speed, float duration)
+		: EnemyState(transf, rb), _dir(dir), _speed(speed), _duration(duration),
 		_time(0.0f), _typeOfMovement("Duration") { }
-	void EnterState(Enemy* enemy) override;
-	void UpdateState(Enemy* enemy) override;
-	void ExitState(Enemy* enemy) override { }
+
+	void EnterState() override;
+	void UpdateState() override;
+	void ExitState() override {}
 	bool IsFinished() const override { return _finishedState == true; }
 };

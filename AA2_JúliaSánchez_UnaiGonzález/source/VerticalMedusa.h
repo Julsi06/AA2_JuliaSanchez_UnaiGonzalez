@@ -15,12 +15,12 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
-		// NEEDS TO BE FIXED
-		AddState(new SimpleMoveState(Vector2(0.0f, -1.0f), 100.0f, 1.0f));
-		AddState(new StayState(Vector2(0.0f, 0.0f), 1.0f));
-		AddState(new SimpleMoveState(Vector2(0.0f, -1.0f), 100.0f, 1.0f));
-		AddState(new StayState(Vector2(0.0f, 0.0f), 1.0f));
-		AddState(new SimpleMoveState(Vector2(0.0f, -1.0f), 100.0f, 1.0f));
+		// NEEDS FIXING BECAUSE IT HAS TO BE REPEATED UNTIL IT'S DEAD OR OUT OF SCREEN
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 100.0f, 1.0f));
+		AddState(new StayState(_transform, _physics, Vector2(0.0f, 0.0f), 1.0f));
+		/*AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 100.0f, 1.0f));
+		AddState(new StayState(_transform, _physics, Vector2(0.0f, 0.0f), 1.0f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 100.0f, 1.0f));*/
 	}
 	void Update() override { Enemy::Update(); }
 };

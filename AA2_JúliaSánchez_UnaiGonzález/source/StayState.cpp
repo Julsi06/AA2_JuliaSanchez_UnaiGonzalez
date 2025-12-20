@@ -1,13 +1,13 @@
 #include "StayState.h"
 
-void StayState::EnterState(Enemy* enemy)
+void StayState::EnterState()
 {
-	enemy->GetRigidBody()->SetVelocity(_dir * _speed);
+	_rb->SetVelocity(_dir * _speed);
 }
 
-void StayState::UpdateState(Enemy* enemy)
+void StayState::UpdateState()
 {
-	Vector2 enemyPos = enemy->GetTransform()->position;
+	Vector2 enemyPos = _transform->position;
 	_time += TM.GetDeltaTime();
 
 	if (_typeOfMovement == "Distance")

@@ -5,6 +5,7 @@
 #include "KillerWhaleWave.h"
 #include "HorizontalMedusaWave.h"
 #include "VerticalMedusaWave.h"
+#include "ChomperWave.h"
 
 class WaveManager
 {
@@ -15,10 +16,22 @@ private:
 public:
 	WaveManager()
 	{
-		//_waves.push_back(new BubbleWave());
-		//_waves.push_back(new KillerWhaleWave());
-		//_waves.push_back(new HorizontalMedusaWave());
-		_waves.push_back(new VerticalMedusaWave());
+		// TESTING ENEMIES
+		// 1. BUBBLE
+		//AddWave(new BubbleWave());
+		// 2. KILLER WHALE
+		//AddWave(new KillerWhaleWave());
+		// 3. H MEDUSA
+		//AddWave(new HorizontalMedusaWave());
+		// 4. CIRCLER
+		// 5. V MEDUSA
+		//AddWave(new VerticalMedusaWave());
+		// 6. BEHOLDER
+		// 7. CHOMPER
+		AddWave(new ChomperWave());
+		// 8. AMOEBA
+		// 9. BOSS
+
 	}
 	void AddWave(Wave* wave) { _waves.push_back(wave); }
 	void Start();
