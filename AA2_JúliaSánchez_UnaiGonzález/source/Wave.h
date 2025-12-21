@@ -1,5 +1,6 @@
 #pragma once
 #include "Enemy.h"
+#include "Spawner.h"
 #include <vector>
 
 class Wave

@@ -57,8 +57,8 @@ void BeholderWave::StartWave()
 		}
 
 		_positions.push_back(Vector2(posX, startY));
-		std::cout << posX << " " << startY << std::endl;
-		Beholder* beholder = new Beholder(_positions[i], _playerTransform, dir);
+		Beholder* beholder = new Beholder(_positions[i],
+			_playerTransform, dir);
 
 		_enemies.push_back(beholder);
 		SPAWNER.SpawnObject(beholder);
@@ -71,7 +71,12 @@ void BeholderWave::UpdateWave()
 	_time = TM.GetElapsedTime();
 	for (int i = 0; i < _enemies.size(); i++)
 	{
-		if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH + 50.0f)
+		if (!_enemies[i]->IsAlive())
+		{
+			_counter++;
+		}
+
+		if(_counter<_amount)
 			_waveDone = true;
 	}
 }

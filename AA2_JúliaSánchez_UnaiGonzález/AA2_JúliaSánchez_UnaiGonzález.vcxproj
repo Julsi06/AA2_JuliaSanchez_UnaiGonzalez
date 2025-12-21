@@ -42,6 +42,7 @@
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SimpleMoveState.cpp" />
+    <ClCompile Include="source\Spaceship.cpp" />
     <ClCompile Include="source\StayState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
@@ -49,6 +50,9 @@
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\CannonPowerUp.h" />
+    <ClInclude Include="source\IPowerUpEffects.h" />
+    <ClInclude Include="source\PointsPowerUp.h" />
     <ClInclude Include="source\Amoeba.h" />
     <ClInclude Include="source\AmoebaWave.h" />
     <ClInclude Include="source\Beholder.h" />
@@ -79,6 +83,7 @@
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
     <ClInclude Include="source\MainMenu.h" />
+    <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\SimpleMoveState.h" />
     <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\Renderer.h" />

@@ -3,8 +3,7 @@
 #include "Spaceship.h"
 #include "Background.h"
 #include "WaveManager.h"
-#include "BubbleWave.h"
-#include "KillerWhaleWave.h"
+#include "PointsPowerUp.h"
 
 class Gameplay : public Scene
 {
@@ -18,9 +17,11 @@ public:
 		SPAWNER.SpawnObject(new Background());
 		Spaceship* spaceship = new Spaceship();
 		SPAWNER.SpawnObject(spaceship);
+		SPAWNER.SpawnObject(new PointsPowerUp("resources/images/bubble.png", 
+			Vector2(300.0f, 300.0f)));
 
-		_waveManager = new WaveManager(spaceship->GetTransform());
-		_waveManager->Start();
+		/*_waveManager = new WaveManager(spaceship->GetTransform());
+		_waveManager->Start();*/
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;
