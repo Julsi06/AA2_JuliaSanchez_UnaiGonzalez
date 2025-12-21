@@ -50,8 +50,10 @@
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\CannonPowerUp.h" />
+    <ClInclude Include="source\CannonEnergyPowerUp.h" />
+    <ClInclude Include="source\EngineEnergyPowerUp.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
+    <ClInclude Include="source\LaserEnergyPowerUp.h" />
     <ClInclude Include="source\PointsPowerUp.h" />
     <ClInclude Include="source\Amoeba.h" />
     <ClInclude Include="source\AmoebaWave.h" />
@@ -84,6 +86,8 @@
     <ClInclude Include="source\InputManager.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\PowerUp.h" />
+    <ClInclude Include="source\PowerUpManager.h" />
+    <ClInclude Include="source\ShieldEnergyPowerUp.h" />
     <ClInclude Include="source\SimpleMoveState.h" />
     <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\Renderer.h" />
@@ -98,6 +102,7 @@
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
     <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\TwinTurretsPowerUp.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\VerticalMedusa.h" />
     <ClInclude Include="source\VerticalMedusaWave.h" />

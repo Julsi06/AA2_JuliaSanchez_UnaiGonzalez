@@ -64,11 +64,5 @@ public:
 	void SpawnTwinTurrets() override;
 	void EnergyShield() override;
 
-	void OnCollisionEnter(Object* other) override
-	{ 
-		/*if (dynamic_cast<Enemy*>(other))
-		{
-			TakeDamage(50.0f);
-		}*/
-	}
+	void OnCollisionEnter(Object* other) override { }
 };

@@ -3,8 +3,20 @@
 #include "IPowerUpEffects.h"
 #include "IDamagable.h"
 
+enum PowerUpType
+{
+	Points,
+	Cannons,
+	Lasers,
+	Engine,
+	Turrets,
+	Shield
+};
+
 class PowerUp : public ImageObject, public IDamagable
 {
+protected:
+	PowerUpType _type;
 public:
 	PowerUp(std::string path, Vector2 offset, Vector2 size, float health)
 		: ImageObject(path, offset, size), IDamagable(health) { }
@@ -12,8 +24,24 @@ public:
 	virtual void Update() override 
 	{ 
 		_physics->SetVelocity(Vector2(-100.0f, 0.0f));
+		if (!IsAlive()) 
+			Destroy();
 
 		Object::Update(); 
 	}
-	virtual void OnCollisionEnter(Object* other) override { }
+
+	virtual void ApplyPowerUp(IPowerUpEffects* player) = 0;
+
+	void OnCollisionEnter(Object* other) override
+	{
+		IPowerUpEffects* player = dynamic_cast<IPowerUpEffects*>(other);
+
+		if (player != nullptr)
+		{
+			ApplyPowerUp(player);
+			Destroy();
+		}
+	}
+
+	PowerUpType GetType() { return _type; }
 };

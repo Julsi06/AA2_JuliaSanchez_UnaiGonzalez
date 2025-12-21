@@ -1,8 +1,7 @@
 #pragma once
 #include "PowerUp.h"
 
-class CannonPowerUp : public PowerUp
+class PowerUpManager
 {
 public:
-
 };

@@ -1,13 +1,13 @@
 #pragma once
 #include "PowerUp.h"
 
-class PointsPowerUp : public PowerUp
+class LaserEnergyPowerUp : public PowerUp
 {
 public:
-	PointsPowerUp(std::string path, Vector2 startPos, float health)
+	LaserEnergyPowerUp(std::string path, Vector2 startPos, float health)
 		: PowerUp(path, Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), health)
 	{
-		_type = Points;
+		_type = Lasers;
 
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);
@@ -18,6 +18,6 @@ public:
 
 	void ApplyPowerUp(IPowerUpEffects* player)
 	{
-		player->AddPoints();
+		player->EnergyLasers();
 	}
 };
