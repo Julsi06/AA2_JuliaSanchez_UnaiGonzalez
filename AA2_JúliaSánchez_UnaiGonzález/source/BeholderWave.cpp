@@ -68,15 +68,8 @@ void BeholderWave::StartWave()
 
 void BeholderWave::UpdateWave()
 {
-	_time = TM.GetElapsedTime();
-	for (int i = 0; i < _enemies.size(); i++)
-	{
-		if (!_enemies[i]->IsAlive())
-		{
-			_counter++;
-		}
+	_elapsedTime += TM.GetDeltaTime();
 
-		if(_counter<_amount)
-			_waveDone = true;
-	}
+	if (_elapsedTime >= _duration)
+		_waveDone = true;
 }

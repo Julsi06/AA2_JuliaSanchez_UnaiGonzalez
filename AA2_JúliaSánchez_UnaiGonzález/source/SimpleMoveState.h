@@ -13,8 +13,6 @@ private:
 	float _duration;
 	float _time;
 	std::string _typeOfMovement;
-
-	bool _finishedState;
 public:
 	SimpleMoveState(Transform* transf, RigidBody* rb, Vector2 dir, float speed, float maxDist, bool isLess)
 		: EnemyState(transf, rb), _dir(dir), _speed(speed), _maxDist(maxDist),
@@ -26,5 +24,4 @@ public:
 	void EnterState() override;
 	void UpdateState() override;
 	void ExitState() override {}
-	bool IsFinished() const override { return _finishedState == true; }
 };
