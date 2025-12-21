@@ -1,9 +1,10 @@
 #pragma once
 #include "ImageObject.h"
+#include "IAttacker.h"
 
 class Spaceship;
 
-class Bullet : public ImageObject
+class Bullet : public ImageObject, public IAttacker
 {
 public:
 	Bullet(Spaceship* spaceship);

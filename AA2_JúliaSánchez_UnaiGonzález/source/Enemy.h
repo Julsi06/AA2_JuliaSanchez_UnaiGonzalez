@@ -1,7 +1,6 @@
 #pragma once
 #include "ImageObject.h"
 #include "Bullet.h"
-#include "Spaceship.h"
 #include "EnemyState.h"
 #include "IDamagable.h"
 #include "IAttacker.h"
@@ -14,7 +13,7 @@ protected:
 	int _currentStateIndex = 0;
 public:
 	Enemy(std::string path, Vector2 offset, Vector2 size)
-		: ImageObject(path, offset, size) {}
+		: ImageObject(path, offset, size), IDamagable(100.0f), IAttacker(10.0f) {}
 
 	void AddState(EnemyState* state)
 	{
@@ -27,7 +26,11 @@ public:
 	virtual void OnCollisionEnter(Object* other) override
 	{
 		if (dynamic_cast<Bullet*>(other))
-			Destroy();
+		{
+			TakeDamage(50.0f);
+			if (!IsAlive())
+				Destroy();
+		}
 	}
 };
 

@@ -1,9 +1,11 @@
 #include "Bullet.h"
 #include "Spaceship.h"
 #include "Enemy.h"
+#include "PowerUp.h"
 
 Bullet::Bullet(Spaceship* spaceship)
-	: ImageObject("resources/images/bullet.png", Vector2(0.0f, 0.0f), Vector2(900.0f, 500.0f))
+	: ImageObject("resources/images/bullet.png", Vector2(0.0f, 0.0f), Vector2(900.0f, 500.0f)),
+	IAttacker(10.0f)
 {
 	_transform->position = spaceship->GetTransform()->position + Vector2(70.0f, 0.0f);
 	_transform->scale = Vector2(0.35f, 0.2f);
@@ -26,5 +28,14 @@ void Bullet::Update()
 void Bullet::OnCollisionEnter(Object* other)
 {
 	if (dynamic_cast<Enemy*>(other))
+	{
+		// AddDamage to enemy -> IDamagable
 		Destroy();
+	}
+
+	if (dynamic_cast<PowerUp*>(other))
+	{
+		AddDamage((PowerUp*)other);
+		Destroy();
+	}
 }

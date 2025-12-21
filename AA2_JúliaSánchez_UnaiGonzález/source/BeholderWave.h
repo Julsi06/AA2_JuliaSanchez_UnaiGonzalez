@@ -6,6 +6,7 @@ class BeholderWave : public Wave
 {
 private:
 	Transform* _playerTransform = nullptr;
+	int _counter = 0;
 public:
 	BeholderWave(Transform* playerTransform)
 		: _playerTransform(playerTransform) { }

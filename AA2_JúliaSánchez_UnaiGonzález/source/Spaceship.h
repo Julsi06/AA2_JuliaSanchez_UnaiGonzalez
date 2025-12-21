@@ -4,12 +4,27 @@
 #include "InputManager.h"
 #include "Spawner.h"
 #include "Bullet.h"
+#include "IDamagable.h"
+#include "IPowerUpEffects.h"
+#include "Enemy.h"
 
-class Spaceship : public ImageObject
+class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
+private:
+	int _points = 0;
+	float _speed = 150.0f;
+	float _currentCannonEn;
+	float _maxCannonEn;
+	float _currentLaserEn;
+	float _maxLaserEn;
+	float _currentShieldEn;
+	float _maxShieldEn;
 public:
 	Spaceship()
-		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f), Vector2(500.0f, 500.0f))
+		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f),
+			Vector2(500.0f, 500.0f)), IDamagable(250.0f), 
+		_currentCannonEn(_maxCannonEn), _currentLaserEn(_maxLaserEn), 
+		_currentShieldEn(_maxShieldEn)
 	{
 		_transform->position = Vector2(50, RM->WINDOW_HEIGHT / 2.0f);
 		_transform->scale = Vector2(1.0f, 1.0f);
@@ -36,8 +51,18 @@ public:
 		if (IM->GetEvent(SDLK_SPACE, DOWN))
 			SPAWNER.SpawnObject(new Bullet(this));
 
+		if (!IsAlive())
+			Destroy();
+
 		Object::Update();
 	}
 
-	void OnCollisionEnter(Object* other) { }
+	void AddPoints() override;
+	void EnergyCannons() override;
+	void EnergyLasers() override;
+	void IncreaseSpeed(float speed) override;
+	void SpawnTwinTurrets() override;
+	void EnergyShield() override;
+
+	void OnCollisionEnter(Object* other) override { }
 };
