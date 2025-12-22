@@ -7,7 +7,6 @@ class KillerWhaleWave : public Wave
 public:
 	KillerWhaleWave() : Wave(15.0f) { }
 	void StartWave() override;
-	void UpdateWave() override;
 	void EndWave() override { }
 };
 

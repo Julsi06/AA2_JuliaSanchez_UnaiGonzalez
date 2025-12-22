@@ -11,6 +11,7 @@ protected:
 	std::vector<EnemyState*> _states;
 	EnemyState* _currentState = nullptr;
 	int _currentStateIndex = 0;
+	Vector2 _lastPosition;
 public:
 	Enemy(std::string path, Vector2 offset, Vector2 size)
 		: ImageObject(path, offset, size), IDamagable(100.0f), IAttacker(10.0f) {}
@@ -28,9 +29,14 @@ public:
 		if (dynamic_cast<Bullet*>(other))
 		{
 			TakeDamage(50.0f);
+			if (_health <= 0)
+				_lastPosition = _transform->position;
+
 			if (!IsAlive())
 				Destroy();
 		}
 	}
+
+	Vector2 GetLastPosition() { return _lastPosition; }
 };
 

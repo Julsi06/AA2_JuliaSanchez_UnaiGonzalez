@@ -11,6 +11,5 @@ public:
 	BeholderWave(Transform* playerTransform)
 		: Wave(20.0f), _playerTransform(playerTransform) { }
 	void StartWave() override;
-	void UpdateWave() override;
 	void EndWave() override {}
 };

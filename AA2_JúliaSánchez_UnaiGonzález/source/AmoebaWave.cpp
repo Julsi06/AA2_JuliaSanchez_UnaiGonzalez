@@ -61,11 +61,3 @@ void AmoebaWave::StartWave()
 		amoeba->Start();
 	}
 }
-
-void AmoebaWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}

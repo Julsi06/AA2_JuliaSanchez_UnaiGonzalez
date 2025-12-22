@@ -37,11 +37,3 @@ void KillerWhaleWave::StartWave()
 		whale->Start();
 	}
 }
-
-void KillerWhaleWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}

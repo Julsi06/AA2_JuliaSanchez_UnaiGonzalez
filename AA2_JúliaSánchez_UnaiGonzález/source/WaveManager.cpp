@@ -17,9 +17,12 @@ void WaveManager::Update()
 
     _currentWave->UpdateWave();
 
-    if (_currentWave->SpawnPowerUp())
+    if (_currentWave->SpawnPowerUp() && !_powerUpSpawned)
     {
-        PUM->SpawnPowerUp(Points, _currentWave->GetLastEnemyPos());
+        std::cout << "PowerUp spawned: " << _currentWave->GetLastEnemyPosition().x << ", "
+            << _currentWave->GetLastEnemyPosition().y << std::endl;
+        PUM->SpawnPowerUp(Points, _currentWave->GetLastEnemyPosition());
+        _powerUpSpawned = true;
     }
 
     if (_currentWave->IsFinished())

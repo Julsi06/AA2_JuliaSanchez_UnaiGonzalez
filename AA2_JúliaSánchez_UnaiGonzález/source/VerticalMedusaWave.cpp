@@ -21,11 +21,3 @@ void VerticalMedusaWave::StartWave()
 		vMedusa->Start();
 	}
 }
-
-void VerticalMedusaWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}

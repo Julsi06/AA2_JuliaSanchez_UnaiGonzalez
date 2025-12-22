@@ -23,11 +23,3 @@ void ChomperWave::StartWave()
 		chomper->Start();
 	}
 }
-
-void ChomperWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}

@@ -15,8 +15,6 @@ enum PowerUpType
 
 class PowerUp : public ImageObject, public IDamagable
 {
-protected:
-	PowerUpType _type;
 public:
 	PowerUp(std::string path, Vector2 offset, Vector2 size, float health)
 		: ImageObject(path, offset, size), IDamagable(health) { }
@@ -48,6 +46,4 @@ public:
 			Destroy();
 		}
 	}
-
-	PowerUpType GetType() { return _type; }
 };

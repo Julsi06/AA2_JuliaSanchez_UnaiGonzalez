@@ -65,11 +65,3 @@ void BeholderWave::StartWave()
 		beholder->Start();
 	}
 }
-
-void BeholderWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}
