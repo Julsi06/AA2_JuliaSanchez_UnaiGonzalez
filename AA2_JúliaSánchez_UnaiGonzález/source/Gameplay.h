@@ -20,10 +20,10 @@ public:
 		SPAWNER.SpawnObject(new Background());
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
-		PUM->SpawnPowerUp(Points, Vector2(800.0f, 300.0f));
+		//PUM->SpawnPowerUp(Points, Vector2(800.0f, 300.0f));
 
-		/*_waveManager = new WaveManager(_spaceship->GetTransform());
-		_waveManager->Start();*/
+		_waveManager = new WaveManager(_spaceship->GetTransform());
+		_waveManager->Start();
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;

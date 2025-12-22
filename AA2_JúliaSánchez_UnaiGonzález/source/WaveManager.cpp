@@ -17,6 +17,11 @@ void WaveManager::Update()
 
     _currentWave->UpdateWave();
 
+    if (_currentWave->SpawnPowerUp())
+    {
+        PUM->SpawnPowerUp(Points, _currentWave->GetLastEnemyPos());
+    }
+
     if (_currentWave->IsFinished())
     {
         _currentWave->EndWave();

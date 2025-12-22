@@ -13,6 +13,7 @@ protected:
 	float _elapsedTime = 0.0f;
 	bool _waveDone = false;
 	bool _spawnPowerUp = false;
+	Vector2 _lastDeadEnemyPos;
 
 	std::vector<Enemy*> _enemies;
 public:
@@ -21,4 +22,5 @@ public:
 	virtual void UpdateWave() = 0;
 	virtual void EndWave() = 0;
 	virtual bool IsFinished() const { return _waveDone; }
+	virtual bool SpawnPowerUp() const { return _spawnPowerUp; }
 };
