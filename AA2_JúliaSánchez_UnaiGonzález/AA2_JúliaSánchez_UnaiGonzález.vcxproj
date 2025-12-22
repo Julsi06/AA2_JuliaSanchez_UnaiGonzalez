@@ -48,6 +48,7 @@
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\VerticalMedusaWave.cpp" />
+    <ClCompile Include="source\Wave.cpp" />
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>

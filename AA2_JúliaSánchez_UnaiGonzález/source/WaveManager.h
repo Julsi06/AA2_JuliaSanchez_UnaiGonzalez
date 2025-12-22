@@ -18,6 +18,8 @@ private:
 	float _waveIntervalTime = 0.0f;
 	float _waveIntervalDuration = 7.0f;
 	bool _changeWave = false;
+
+	bool _powerUpSpawned = false;
 public:
 	WaveManager(Transform* player)
 	{

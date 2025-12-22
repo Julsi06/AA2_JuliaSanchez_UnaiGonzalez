@@ -16,11 +16,3 @@ void CirclerWave::StartWave()
 	SPAWNER.SpawnObject(circler);
 	circler->Start();
 }
-
-void CirclerWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}

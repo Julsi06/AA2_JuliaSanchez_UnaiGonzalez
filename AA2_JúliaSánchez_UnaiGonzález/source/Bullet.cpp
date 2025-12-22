@@ -29,7 +29,7 @@ void Bullet::OnCollisionEnter(Object* other)
 {
 	if (dynamic_cast<Enemy*>(other))
 	{
-		// AddDamage to enemy -> IDamagable
+		//AddDamage((Enemy*)other);
 		Destroy();
 	}
 

@@ -1,0 +1,23 @@
+#include "Wave.h"
+#include "TimeManager.h"
+
+void Wave::UpdateWave()
+{
+	_elapsedTime += TM.GetDeltaTime();
+	int counter = 0;
+
+	for (Enemy* e : _enemies)
+	{
+		if (!e->IsAlive())
+		{
+			counter++;
+			_lastEnemyPosition = e->GetLastPosition();
+		}
+	}
+
+	if (counter == _enemies.size() && !_spawnPowerUp)
+		_spawnPowerUp = true;
+
+	if (_elapsedTime >= _duration)
+		_waveDone = true;
+}

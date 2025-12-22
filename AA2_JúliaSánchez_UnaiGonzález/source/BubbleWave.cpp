@@ -42,11 +42,3 @@ void BubbleWave::StartWave()
         bubble->Start();
 	}
 }
-
-void BubbleWave::UpdateWave()
-{
-    _elapsedTime += TM.GetDeltaTime();
-
-    if (_elapsedTime >= _duration)
-        _waveDone = true;
-}

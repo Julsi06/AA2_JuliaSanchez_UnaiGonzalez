@@ -26,11 +26,3 @@ void HorizontalMedusaWave::StartWave()
 		hMedusa->Start();
 	}
 }
-
-void HorizontalMedusaWave::UpdateWave()
-{
-	_elapsedTime += TM.GetDeltaTime();
-
-	if (_elapsedTime >= _duration)
-		_waveDone = true;
-}
