@@ -32,21 +32,24 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
-		_physics->SetLinearDrag(1.5f);
-		_physics->SetAngularDrag(0.1f);
+		_physics->SetLinearDrag(0.0f);
+		_physics->SetAngularDrag(0.0f);
 	}
 
 	void Update() override
 	{
-		// FIX
+		Vector2 velocity(0.0f, 0.0f);
+
 		if (IM->GetEvent(SDLK_W, HOLD))
-			_physics->AddForce(Vector2(0.0f, -250.0f));
-		else if (IM->GetEvent(SDLK_S, HOLD))
-			_physics->AddForce(Vector2(0.0f, 250.0f));
-		else if (IM->GetEvent(SDLK_A, HOLD))
-			_physics->AddForce(Vector2(-250.0f, 0.0f));
-		else if (IM->GetEvent(SDLK_D, HOLD))
-			_physics->AddForce(Vector2(250.0f, 0.0f));
+			velocity.y = -_speed;
+		if (IM->GetEvent(SDLK_S, HOLD))
+			velocity.y = _speed;
+		if (IM->GetEvent(SDLK_A, HOLD))
+			velocity.x = -_speed;
+		if (IM->GetEvent(SDLK_D, HOLD))
+			velocity.x = _speed;
+
+		_physics->SetVelocity(velocity);
 
 		if (IM->GetEvent(SDLK_SPACE, DOWN))
 			SPAWNER.SpawnObject(new Bullet(this));

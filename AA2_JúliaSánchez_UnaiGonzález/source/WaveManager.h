@@ -7,6 +7,7 @@
 #include "VerticalMedusaWave.h"
 #include "ChomperWave.h"
 #include "BeholderWave.h"
+#include "AmoebaWave.h"
 
 class WaveManager
 {
@@ -29,16 +30,16 @@ public:
 		// 2. KILLER WHALE
 		AddWave(new KillerWhaleWave());
 		// 3. H MEDUSA
-		//AddWave(new HorizontalMedusaWave());
+		AddWave(new HorizontalMedusaWave());
 		// 4. CIRCLER
 		// 5. V MEDUSA
-		//AddWave(new VerticalMedusaWave());
+		AddWave(new VerticalMedusaWave());
 		// 6. BEHOLDER -> DONE
-		//AddWave(new BeholderWave(player));
+		AddWave(new BeholderWave(player));
 		// 7. CHOMPER -> DONE
-		//AddWave(new ChomperWave());
+		AddWave(new ChomperWave());
 		// 8. AMOEBA -> DONE
-		//AddWave(new AmoebaWave());
+		AddWave(new AmoebaWave());
 		// 9. BOSS
 
 	}
