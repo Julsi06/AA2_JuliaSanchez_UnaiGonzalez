@@ -1,5 +1,6 @@
 #pragma once
 #include "PowerUp.h"
+#include "PowerUpManager.h"
 
 class TwinTurretsPowerUp : public PowerUp
 {
@@ -19,5 +20,10 @@ public:
 	void ApplyPowerUp(IPowerUpEffects* player)
 	{
 		player->SpawnTwinTurrets();
+	}
+
+	void SpawnNextPowerUp(Vector2 lastPos) override
+	{
+		PUM->SpawnPowerUp(Shield, lastPos);
 	}
 };

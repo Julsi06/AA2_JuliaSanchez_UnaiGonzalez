@@ -1,5 +1,6 @@
 #include "WaveManager.h"
 #include "TimeManager.h"
+#include "PowerUpManager.h"
 
 void WaveManager::Start()
 {

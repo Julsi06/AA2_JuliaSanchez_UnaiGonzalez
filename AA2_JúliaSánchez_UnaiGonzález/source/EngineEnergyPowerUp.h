@@ -1,5 +1,6 @@
 #pragma once
 #include "PowerUp.h"
+#include "PowerUpManager.h"
 
 class EngineEnergyPowerUp : public PowerUp
 {
@@ -19,5 +20,10 @@ public:
 	void ApplyPowerUp(IPowerUpEffects* player)
 	{
 		player->IncreaseSpeed(10.0f);
+	}
+
+	void SpawnNextPowerUp(Vector2 lastPos) override
+	{
+		PUM->SpawnPowerUp(Turrets, lastPos);
 	}
 };

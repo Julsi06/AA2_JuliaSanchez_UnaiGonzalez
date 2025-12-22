@@ -24,15 +24,21 @@ public:
 	virtual void Update() override 
 	{ 
 		_physics->SetVelocity(Vector2(-100.0f, 0.0f));
-		if (!IsAlive()) 
+		Vector2 lastPosition = _transform->position;
+		
+		if (!IsAlive())
+		{
 			Destroy();
-
+			SpawnNextPowerUp(lastPosition);
+		}
+			
 		Object::Update(); 
 	}
 
 	virtual void ApplyPowerUp(IPowerUpEffects* player) = 0;
+	virtual void SpawnNextPowerUp(Vector2 lastPos) = 0;
 
-	void OnCollisionEnter(Object* other) override
+	virtual void OnCollisionEnter(Object* other) override
 	{
 		IPowerUpEffects* player = dynamic_cast<IPowerUpEffects*>(other);
 
