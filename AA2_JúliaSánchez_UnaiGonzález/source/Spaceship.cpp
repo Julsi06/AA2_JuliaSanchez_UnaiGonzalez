@@ -2,11 +2,13 @@
 
 void Spaceship::AddPoints()
 {
+	std::cout << "POINTS" << std::endl;
 	_points += 1000;
 }
 
 void Spaceship::EnergyCannons()
 {
+	std::cout << "CANNONS" << std::endl;
 	_currentCannonEn = _maxCannonEn;
 }
 

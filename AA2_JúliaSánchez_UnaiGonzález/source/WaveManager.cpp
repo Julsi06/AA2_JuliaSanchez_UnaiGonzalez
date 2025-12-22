@@ -1,5 +1,6 @@
 #include "WaveManager.h"
 #include "TimeManager.h"
+#include "PowerUpManager.h"
 
 void WaveManager::Start()
 {
@@ -15,6 +16,11 @@ void WaveManager::Update()
     if (_currentWave == nullptr) return;
 
     _currentWave->UpdateWave();
+
+    if (_currentWave->SpawnPowerUp())
+    {
+        PUM->SpawnPowerUp(Points, _currentWave->GetLastEnemyPos());
+    }
 
     if (_currentWave->IsFinished())
     {
