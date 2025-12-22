@@ -19,11 +19,11 @@ public:
 		SPAWNER.SpawnObject(new Background());
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
-		SPAWNER.SpawnObject(new PointsPowerUp("resources/images/bubble.png", 
-			Vector2(700.0f, 300.0f), 30.0f));
+		/*SPAWNER.SpawnObject(new PointsPowerUp("resources/images/bubble.png", 
+			Vector2(700.0f, 300.0f), 30.0f));*/
 
-		/*_waveManager = new WaveManager(spaceship->GetTransform());
-		_waveManager->Start();*/
+		_waveManager = new WaveManager(_spaceship->GetTransform());
+		_waveManager->Start();
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;

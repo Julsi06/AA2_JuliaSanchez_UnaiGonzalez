@@ -8,7 +8,7 @@ void StayState::EnterState()
 void StayState::UpdateState()
 {
 	Vector2 enemyPos = _transform->position;
-	_time += TM.GetDeltaTime();
+	_elapsedTime += TM.GetDeltaTime();
 
 	if (_typeOfMovement == "Distance")
 	{
@@ -18,7 +18,7 @@ void StayState::UpdateState()
 
 	if (_typeOfMovement == "Duration")
 	{
-		if (_time >= _duration)
+		if (_elapsedTime >= _duration)
 			_finishedState = true;
 	}
 }

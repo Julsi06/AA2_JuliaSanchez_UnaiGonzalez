@@ -45,10 +45,8 @@ void BubbleWave::StartWave()
 
 void BubbleWave::UpdateWave()
 {
-    _time = TM.GetElapsedTime();
-    for (int i = 0; i < _enemies.size(); i++)
-    {
-        if (_time >= 10.0f && _enemies[_amount - 1]->GetTransform()->position.x >= RM->WINDOW_WIDTH + 50.0f)
-            _waveDone = true;
-    }
+    _elapsedTime += TM.GetDeltaTime();
+
+    if (_elapsedTime >= _duration)
+        _waveDone = true;
 }

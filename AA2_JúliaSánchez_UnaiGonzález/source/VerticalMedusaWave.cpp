@@ -24,10 +24,8 @@ void VerticalMedusaWave::StartWave()
 
 void VerticalMedusaWave::UpdateWave()
 {
-	_time = TM.GetElapsedTime();
-	for (int i = 0; i < _enemies.size(); i++)
-	{
-		if (_time >= 40.0f && _enemies[_amount - 1]->GetTransform()->position.y <= -50.0f)
-			_waveDone = true;
-	}
+	_elapsedTime += TM.GetDeltaTime();
+
+	if (_elapsedTime >= _duration)
+		_waveDone = true;
 }

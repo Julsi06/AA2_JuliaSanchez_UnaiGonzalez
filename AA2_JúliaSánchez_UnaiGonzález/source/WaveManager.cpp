@@ -1,4 +1,5 @@
 #include "WaveManager.h"
+#include "TimeManager.h"
 
 void WaveManager::Start()
 {
@@ -19,14 +20,20 @@ void WaveManager::Update()
     {
         _currentWave->EndWave();
 
-        _currentWaveIndex++;
+        _waveIntervalTime += TM.GetDeltaTime();
 
-        if (_currentWaveIndex < _waves.size())
+        if (_waveIntervalTime >= _waveIntervalDuration)
         {
-            _currentWave = _waves[_currentWaveIndex];
-            _currentWave->StartWave();
+            _currentWaveIndex++;
+
+            if (_currentWaveIndex < _waves.size())
+            {
+                _currentWave = _waves[_currentWaveIndex];
+                _currentWave->StartWave();
+                _waveIntervalTime = 0.0f;
+            }
+            else
+                _currentWave = nullptr;
         }
-        else
-            _currentWave = nullptr;
     }
 }

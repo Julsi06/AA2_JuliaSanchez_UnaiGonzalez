@@ -1,7 +1,10 @@
 #include "ChaseState.h"
+#include "TimeManager.h"
 
 void ChaseState::UpdateState()
 {
+	_elapsedTime += TM.GetDeltaTime();
+
 	Vector2 enemyPos = _transform->position;
 	Vector2 playerPos = _playerTransform->position;
 
@@ -14,6 +17,6 @@ void ChaseState::UpdateState()
 
 	_rb->SetVelocity(direction * _speed);
 
-	if (dist <= _maxDist)
+	if (_elapsedTime >= _duration)
 		_finishedState = true;
 }
