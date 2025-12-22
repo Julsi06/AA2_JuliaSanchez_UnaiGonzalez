@@ -8,6 +8,8 @@
 #include "ChomperWave.h"
 #include "BeholderWave.h"
 #include "AmoebaWave.h"
+#include "CirclerWave.h"
+#include "BioTitanWave.h"
 
 class WaveManager
 {
@@ -26,21 +28,23 @@ public:
 	{
 		// TESTING ENEMIES
 		// 1. BUBBLE
-		AddWave(new BubbleWave());
+		//AddWave(new BubbleWave());
 		// 2. KILLER WHALE
-		AddWave(new KillerWhaleWave());
+		//AddWave(new KillerWhaleWave());
 		// 3. H MEDUSA
-		AddWave(new HorizontalMedusaWave());
+		//AddWave(new HorizontalMedusaWave());
 		// 4. CIRCLER
+		//AddWave(new CirclerWave());
 		// 5. V MEDUSA
-		AddWave(new VerticalMedusaWave());
+		//AddWave(new VerticalMedusaWave());
 		// 6. BEHOLDER -> DONE
-		AddWave(new BeholderWave(player));
+		//AddWave(new BeholderWave(player));
 		// 7. CHOMPER -> DONE
-		AddWave(new ChomperWave());
+		//AddWave(new ChomperWave());
 		// 8. AMOEBA -> DONE
-		AddWave(new AmoebaWave());
+		//AddWave(new AmoebaWave());
 		// 9. BOSS
+		AddWave(new BioTitanWave());
 
 	}
 	void AddWave(Wave* wave) { _waves.push_back(wave); }

@@ -21,8 +21,12 @@
   <ItemGroup>
     <ClCompile Include="source\AmoebaWave.cpp" />
     <ClCompile Include="source\BeholderWave.cpp" />
+    <ClCompile Include="source\BioTitan.cpp" />
+    <ClCompile Include="source\BioTitanWave.cpp" />
+    <ClCompile Include="source\BossBullet.cpp" />
     <ClCompile Include="SOURCE\ChaseState.cpp" />
     <ClCompile Include="source\ChomperWave.cpp" />
+    <ClCompile Include="source\Circler.cpp" />
     <ClCompile Include="source\CirclerWave.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
@@ -46,12 +50,16 @@
     <ClCompile Include="source\Spaceship.cpp" />
     <ClCompile Include="source\StayState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
+    <ClCompile Include="source\TrailBullet.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\VerticalMedusaWave.cpp" />
     <ClCompile Include="source\Wave.cpp" />
     <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\BioTitan.h" />
+    <ClInclude Include="source\BioTitanWave.h" />
+    <ClInclude Include="source\BossBullet.h" />
     <ClInclude Include="source\CannonEnergyPowerUp.h" />
     <ClInclude Include="source\EngineEnergyPowerUp.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
@@ -103,6 +111,7 @@
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
+    <ClInclude Include="source\TrailBullet.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\TwinTurretsPowerUp.h" />
     <ClInclude Include="source\Vector2.h" />
