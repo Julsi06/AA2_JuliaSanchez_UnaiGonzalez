@@ -16,23 +16,10 @@ enum PowerUpType
 class PowerUp : public ImageObject, public IDamagable
 {
 public:
-	PowerUp(std::string path, Vector2 offset, Vector2 size, float health)
-		: ImageObject(path, offset, size), IDamagable(health) { }
+	PowerUp(std::string path, Vector2 offset, Vector2 size)
+		: ImageObject(path, offset, size), IDamagable(40.0f) { }
 
-	virtual void Update() override 
-	{ 
-		_physics->SetVelocity(Vector2(-100.0f, 0.0f));
-		Vector2 lastPosition = _transform->position;
-		
-		if (!IsAlive())
-		{
-			Destroy();
-			SpawnNextPowerUp(lastPosition);
-		}
-			
-		Object::Update(); 
-	}
-
+	virtual void Update() = 0;
 	virtual void ApplyPowerUp(IPowerUpEffects* player) = 0;
 	virtual void SpawnNextPowerUp(Vector2 lastPos) = 0;
 
@@ -42,7 +29,9 @@ public:
 
 		if (player != nullptr)
 		{
-			ApplyPowerUp(player);
+			// Only receive the power up when fully charged
+			if (_health == 1)
+				ApplyPowerUp(player);
 			Destroy();
 		}
 	}
