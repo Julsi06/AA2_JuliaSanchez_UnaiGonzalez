@@ -19,7 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Bubble.cpp" />
+    <ClCompile Include="source\AmoebaWave.cpp" />
+    <ClCompile Include="source\BeholderWave.cpp" />
+    <ClCompile Include="source\BioTitan.cpp" />
+    <ClCompile Include="source\BioTitanWave.cpp" />
+    <ClCompile Include="source\BossBullet.cpp" />
+    <ClCompile Include="SOURCE\ChaseState.cpp" />
+    <ClCompile Include="source\ChomperWave.cpp" />
+    <ClCompile Include="source\Circler.cpp" />
+    <ClCompile Include="source\CirclerWave.cpp" />
+    <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\HorizontalMedusaWave.cpp" />
+    <ClCompile Include="source\KillerWhaleWave.cpp" />
+    <ClCompile Include="source\BubbleWave.cpp" />
+    <ClCompile Include="source\CircularMoveState.cpp" />
     <ClCompile Include="source\Bullet.cpp" />
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\Button.cpp" />
@@ -28,14 +41,48 @@
     <ClCompile Include="source\ImageRenderer.cpp" />
     <ClCompile Include="source\InputManager.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\PowerUpManager.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
     <ClCompile Include="source\RigidBody.cpp" />
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
+    <ClCompile Include="source\SimpleMoveState.cpp" />
+    <ClCompile Include="source\Spaceship.cpp" />
+    <ClCompile Include="source\StayState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
+    <ClCompile Include="source\TrailBullet.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
+    <ClCompile Include="source\VerticalMedusaWave.cpp" />
+    <ClCompile Include="source\Wave.cpp" />
+    <ClCompile Include="source\WaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\BioTitan.h" />
+    <ClInclude Include="source\BioTitanWave.h" />
+    <ClInclude Include="source\BossBullet.h" />
+    <ClInclude Include="source\CannonEnergyPowerUp.h" />
+    <ClInclude Include="source\EngineEnergyPowerUp.h" />
+    <ClInclude Include="source\IPowerUpEffects.h" />
+    <ClInclude Include="source\LaserEnergyPowerUp.h" />
+    <ClInclude Include="source\PointsPowerUp.h" />
+    <ClInclude Include="source\Amoeba.h" />
+    <ClInclude Include="source\AmoebaWave.h" />
+    <ClInclude Include="source\Beholder.h" />
+    <ClInclude Include="source\BeholderWave.h" />
+    <ClInclude Include="source\ChaseState.h" />
+    <ClInclude Include="source\Chomper.h" />
+    <ClInclude Include="source\ChomperWave.h" />
+    <ClInclude Include="source\Circler.h" />
+    <ClInclude Include="source\CirclerWave.h" />
+    <ClInclude Include="source\HorizontalMedusa.h" />
+    <ClInclude Include="source\HorizontalMedusaWave.h" />
+    <ClInclude Include="source\IAttacker.h" />
+    <ClInclude Include="source\IDamagable.h" />
+    <ClInclude Include="source\KillerWhaleWave.h" />
+    <ClInclude Include="source\BubbleWave.h" />
+    <ClInclude Include="source\CircularMoveState.h" />
+    <ClInclude Include="source\EnemyState.h" />
+    <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Bubble.h" />
     <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\Background.h" />
@@ -48,6 +95,10 @@
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
     <ClInclude Include="source\MainMenu.h" />
+    <ClInclude Include="source\PowerUp.h" />
+    <ClInclude Include="source\PowerUpManager.h" />
+    <ClInclude Include="source\ShieldEnergyPowerUp.h" />
+    <ClInclude Include="source\SimpleMoveState.h" />
     <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
@@ -56,11 +107,18 @@
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\Spaceship.h" />
+    <ClInclude Include="source\StayState.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
+    <ClInclude Include="source\TrailBullet.h" />
     <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\TwinTurretsPowerUp.h" />
     <ClInclude Include="source\Vector2.h" />
+    <ClInclude Include="source\VerticalMedusa.h" />
+    <ClInclude Include="source\VerticalMedusaWave.h" />
+    <ClInclude Include="source\Wave.h" />
+    <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\images\background.png" />

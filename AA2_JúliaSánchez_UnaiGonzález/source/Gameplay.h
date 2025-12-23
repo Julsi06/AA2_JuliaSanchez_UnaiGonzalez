@@ -2,20 +2,39 @@
 #include "Scene.h"
 #include "Spaceship.h"
 #include "Background.h"
+#include "WaveManager.h"
+#include "WaveManager.h"
+#include "PointsPowerUp.h"
+#include "PowerUpManager.h"
 
 class Gameplay : public Scene
 {
 private:
-	bool _wave1spawned = false;
+	WaveManager* _waveManager = nullptr;
+	Spaceship* _spaceship = nullptr;
+
 public:
 	Gameplay() = default;
 
 	void OnEnter() override
 	{
-		SPAWNER.SpawnObject(new Background());
-		SPAWNER.SpawnObject(new Spaceship());		
+		Background* bg1 = new Background(Vector2(0, RM->WINDOW_HEIGHT / 2));
+		Background* bg2 = new Background(Vector2(7000, RM->WINDOW_HEIGHT / 2));
+		bg1->SetOtherBackground(bg2);
+		bg2->SetOtherBackground(bg1);
+		SPAWNER.SpawnObject(bg1);
+		SPAWNER.SpawnObject(bg2);
+
+		_spaceship = new Spaceship();
+		SPAWNER.SpawnObject(_spaceship);
+
+		_waveManager = new WaveManager();
+		Level1Config(_spaceship->GetTransform());
+		_waveManager->Start();
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;
 	void Render() override { Scene::Render(); }
+
+	void Level1Config(Transform* playerTransform);
 };

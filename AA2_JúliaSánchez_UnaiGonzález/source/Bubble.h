@@ -1,26 +1,24 @@
 #pragma once
 #include "Enemy.h"
-#include "Bullet.h"
+#include "SimpleMoveState.h"
+#include "CircularMoveState.h"
 
 class Bubble : public Enemy
 {
-protected:
-	float _angle = 0.0f;
-	float _radius = 50.0f;
-	Vector2 _centre;
-	int _phase = 0;
 public:
-	Bubble(Vector2 startPos)
-		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
+	Bubble(Vector2 startPos, int dirY)
+		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 150.0f, 100)
 	{
-		startPos.x = RM->WINDOW_WIDTH;
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);
 		_transform->rotation = 0.0f;
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
-	}
 
-	void Update() override;
-	virtual void MovementBubble(int rotationDirectionY, float velocityY);
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH / 3.0f, true));
+		AddState(new CircularMoveState(_transform, _physics, 50.0f, dirY * 1));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, dirY * 1.0f), 200.0f, 2.0f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH + 50.0f, false));
+	}
+	void Update() override { Enemy::Update(); }
 };

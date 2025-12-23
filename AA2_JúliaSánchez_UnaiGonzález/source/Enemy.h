@@ -1,27 +1,55 @@
 #pragma once
 #include "ImageObject.h"
 #include "Bullet.h"
+#include "EnemyState.h"
+#include "IDamagable.h"
+#include "IAttacker.h"
 #include "Spaceship.h"
 
-class Enemy : public ImageObject
+class Enemy : public ImageObject, public IAttacker, public IDamagable
 {
+protected:
+	std::vector<EnemyState*> _states;
+	EnemyState* _currentState = nullptr;
+	int _currentStateIndex = 0;
+	Vector2 _lastPosition;
+	int _pointsToGive;
 public:
-	Enemy(std::string path, Vector2 offset, Vector2 size)
-		: ImageObject(path, offset, size) {}
+	Enemy(std::string path, Vector2 offset, Vector2 size, float health, int points)
+		: ImageObject(path, offset, size), IDamagable(health), IAttacker(10.0f), _pointsToGive(points) {}
 
-	virtual void Update() override
-	{ 
-		if (_transform->position.x <= 0.0f || _transform->position.x >= RM->WINDOW_WIDTH
-			|| _transform->position.y <= 0.0f || _transform->position.y >= RM->WINDOW_HEIGHT)
-			Destroy();
-
-		Object::Update(); 
+	void AddState(EnemyState* state)
+	{
+		_states.push_back(state);
 	}
+
+	void Start();
+	virtual void Update() override;
 
 	virtual void OnCollisionEnter(Object* other) override
 	{
-		if (dynamic_cast<Bullet*>(other))
-			Destroy();
+		// NEEDS FIXING -> ADD POINTS TO PLAYER
+		Bullet* bullet = dynamic_cast<Bullet*>(other);
+		if (bullet != nullptr)
+		{
+			TakeDamage(50.0f);
+			if (_health <= 0)
+				_lastPosition = _transform->position;
+
+			if (!IsAlive())
+				Destroy();
+
+			other->Destroy();
+		}
+
+		// NEEDS FIXING -> CHECK IF HEALTH GOES ACCORDING TO DAMAGE DONE
+		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
+		if (spaceship != nullptr)
+		{
+			//AddDamage(spaceship);
+		}
 	}
+
+	Vector2 GetLastPosition() { return _lastPosition; }
 };
 
