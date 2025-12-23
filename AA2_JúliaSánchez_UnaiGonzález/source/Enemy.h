@@ -4,6 +4,7 @@
 #include "EnemyState.h"
 #include "IDamagable.h"
 #include "IAttacker.h"
+#include "Spaceship.h"
 
 class Enemy : public ImageObject, public IAttacker, public IDamagable
 {
@@ -13,8 +14,8 @@ protected:
 	int _currentStateIndex = 0;
 	Vector2 _lastPosition;
 public:
-	Enemy(std::string path, Vector2 offset, Vector2 size)
-		: ImageObject(path, offset, size), IDamagable(100.0f), IAttacker(10.0f) {}
+	Enemy(std::string path, Vector2 offset, Vector2 size, float health)
+		: ImageObject(path, offset, size), IDamagable(health), IAttacker(10.0f) {}
 
 	void AddState(EnemyState* state)
 	{
@@ -34,6 +35,14 @@ public:
 
 			if (!IsAlive())
 				Destroy();
+
+			other->Destroy();
+		}
+
+		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
+		if (spaceship != nullptr)
+		{
+			AddDamage(spaceship);
 		}
 	}
 
