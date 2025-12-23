@@ -2,6 +2,16 @@
 
 void Circler::Update()
 {
+	if (_health <= 0)
+	{
+		for (auto b : _trail)
+		{
+			delete b;
+		}
+		_trail.clear();
+		return;
+	}
+
 	_positionHistory.push_front(_transform->position);
 
 	if (_positionHistory.size() > _trailSize * _segmentSpacing)

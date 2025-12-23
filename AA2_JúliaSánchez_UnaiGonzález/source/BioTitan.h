@@ -21,6 +21,7 @@ public:
         _health = 2000.0f;
 
         AddState(new SimpleMoveState(_transform, _physics, Vector2(0, 0), 0.0f, 0.0f));
+        _physics->AddCollider(new AABB(_transform->position, _transform->size));
     }
 
     void Start();
