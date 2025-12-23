@@ -31,13 +31,13 @@ public:
 	{
 		// TESTING ENEMIES
 		// 1. BUBBLE
-		//AddWave(new BubbleWave());
+		AddWave(new BubbleWave());
 		// 2. KILLER WHALE
 		//AddWave(new KillerWhaleWave());
 		// 3. H MEDUSA
 		//AddWave(new HorizontalMedusaWave());
 		// 4. CIRCLER
-		AddWave(new CirclerWave());
+		//AddWave(new CirclerWave());
 		// 5. V MEDUSA
 		//AddWave(new VerticalMedusaWave());
 		// 6. BEHOLDER -> DONE

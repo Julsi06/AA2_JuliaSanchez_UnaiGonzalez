@@ -6,7 +6,6 @@
 #include "Bullet.h"
 #include "IDamagable.h"
 #include "IPowerUpEffects.h"
-#include "Enemy.h"
 
 class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
@@ -19,11 +18,15 @@ private:
 	float _maxLaserEn;
 	float _currentShieldEn;
 	float _maxShieldEn;
+
+	bool _cannonsActive = false;
+	bool _lasersActive = false;
+	bool _turretsActive = false;
 public:
 	Spaceship()
 		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f),
-			Vector2(500.0f, 500.0f)), IDamagable(250.0f), 
-		_currentCannonEn(_maxCannonEn), _currentLaserEn(_maxLaserEn), 
+			Vector2(500.0f, 500.0f)), IDamagable(2500.0f), 
+		_currentCannonEn(0.0f), _currentLaserEn(0.0f), 
 		_currentShieldEn(_maxShieldEn)
 	{
 		_transform->position = Vector2(50, RM->WINDOW_HEIGHT / 2.0f);
@@ -51,8 +54,15 @@ public:
 
 		_physics->SetVelocity(velocity);
 
-		if (IM->GetEvent(SDLK_SPACE, DOWN))
-			SPAWNER.SpawnObject(new Bullet(this));
+		if (IM->GetEvent(SDLK_SPACE, HOLD))
+		{
+			SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, 0.0f)));
+			if (_cannonsActive)
+				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, 50.0f)));
+			if (_lasersActive)
+				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, -50.0f)));
+		}
+			
 
 		if (!IsAlive())
 			Destroy();
