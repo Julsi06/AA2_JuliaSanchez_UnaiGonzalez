@@ -12,12 +12,19 @@ class Gameplay : public Scene
 private:
 	WaveManager* _waveManager = nullptr;
 	Spaceship* _spaceship = nullptr;
+
 public:
 	Gameplay() = default;
 
 	void OnEnter() override
 	{
-		SPAWNER.SpawnObject(new Background());
+		Background* bg1 = new Background(Vector2(0, RM->WINDOW_HEIGHT / 2));
+		Background* bg2 = new Background(Vector2(7000, RM->WINDOW_HEIGHT / 2));
+		bg1->SetOtherBackground(bg2);
+		bg2->SetOtherBackground(bg1);
+		SPAWNER.SpawnObject(bg1);
+		SPAWNER.SpawnObject(bg2);
+
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
 		//PUM->SpawnPowerUp(Points, Vector2(800.0f, 300.0f));

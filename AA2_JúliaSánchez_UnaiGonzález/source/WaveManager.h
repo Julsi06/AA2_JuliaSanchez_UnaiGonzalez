@@ -10,6 +10,7 @@
 #include "AmoebaWave.h"
 #include "CirclerWave.h"
 #include "BioTitanWave.h"
+#include "Background.h"
 
 class WaveManager
 {
@@ -23,6 +24,8 @@ private:
 	bool _changeWave = false;
 
 	bool _powerUpSpawned = false;
+
+	Background* _background;
 public:
 	WaveManager(Transform* player)
 	{
@@ -34,7 +37,7 @@ public:
 		// 3. H MEDUSA
 		//AddWave(new HorizontalMedusaWave());
 		// 4. CIRCLER
-		//AddWave(new CirclerWave());
+		AddWave(new CirclerWave());
 		// 5. V MEDUSA
 		//AddWave(new VerticalMedusaWave());
 		// 6. BEHOLDER -> DONE
@@ -44,7 +47,7 @@ public:
 		// 8. AMOEBA -> DONE
 		//AddWave(new AmoebaWave());
 		// 9. BOSS
-		AddWave(new BioTitanWave());
+		//AddWave(new BioTitanWave());
 
 	}
 	void AddWave(Wave* wave) { _waves.push_back(wave); }
