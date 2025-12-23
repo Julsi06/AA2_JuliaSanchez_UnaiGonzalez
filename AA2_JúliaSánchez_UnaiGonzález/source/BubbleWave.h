@@ -5,7 +5,7 @@
 class BubbleWave : public Wave
 {
 public:
-	BubbleWave() : Wave(10.0f) { }
+	BubbleWave() : Wave(14.0f) { }
 	void StartWave() override;
 	void EndWave() override { }
 };

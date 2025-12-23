@@ -39,10 +39,11 @@ public:
 			other->Destroy();
 		}
 
+		// NEEDS FIXING
 		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
 		if (spaceship != nullptr)
 		{
-			AddDamage(spaceship);
+			//AddDamage(spaceship);
 		}
 	}
 

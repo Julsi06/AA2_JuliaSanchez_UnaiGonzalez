@@ -5,7 +5,7 @@
 class HorizontalMedusaWave : public Wave
 {
 public:
-	HorizontalMedusaWave() : Wave(15.0f) { }
+	HorizontalMedusaWave() : Wave(10.0f) { }
 	void StartWave() override;
 	void EndWave() override {}
 };

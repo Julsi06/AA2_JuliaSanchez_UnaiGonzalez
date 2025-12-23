@@ -5,7 +5,7 @@
 class AmoebaWave : public Wave
 {
 public:
-	AmoebaWave() : Wave(15.0f) { }
+	AmoebaWave() : Wave(12.0f) { }
 	void StartWave() override;
 	void EndWave() override {}
 };
