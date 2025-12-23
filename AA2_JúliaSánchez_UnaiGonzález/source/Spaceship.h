@@ -13,15 +13,16 @@ private:
 	int _points = 0;
 	float _speed = 150.0f;
 	float _currentCannonEn;
-	float _maxCannonEn;
+	float _maxCannonEn = 2000.0f;
 	float _currentLaserEn;
-	float _maxLaserEn;
+	float _maxLaserEn = 2000.0f;
 	float _currentShieldEn;
-	float _maxShieldEn;
+	float _maxShieldEn = 200.0f;
 
 	bool _cannonsActive = false;
 	bool _lasersActive = false;
-	bool _turretsActive = false;
+	bool _turret1Active = false;
+	bool _turret2Active = false;
 public:
 	Spaceship()
 		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f),
@@ -54,15 +55,23 @@ public:
 
 		_physics->SetVelocity(velocity);
 
-		if (IM->GetEvent(SDLK_SPACE, HOLD))
+		// NEEDS FIXING
+		if (IM->GetEvent(SDLK_SPACE, DOWN))
 		{
 			SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, 0.0f)));
-			if (_cannonsActive)
+
+			if (_cannonsActive && _currentCannonEn > 0.0f)
+			{
 				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, 50.0f)));
-			if (_lasersActive)
+				_currentCannonEn -= 10.0f;
+			}
+				
+			if (_lasersActive && _currentLaserEn > 0.0f)
+			{
 				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, -50.0f)));
+				_currentLaserEn -= 10.0f;
+			}
 		}
-			
 
 		if (!IsAlive())
 			Destroy();
