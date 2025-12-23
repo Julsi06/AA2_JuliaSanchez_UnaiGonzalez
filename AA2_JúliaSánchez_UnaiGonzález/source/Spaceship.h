@@ -71,6 +71,16 @@ public:
 				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, -50.0f)));
 				_currentLaserEn -= 10.0f;
 			}
+
+			if (_turret1Active)
+			{
+				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(-50.0f, -60.0f)));
+			}
+
+			if (_turret2Active)
+			{
+				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(-50.0f, 60.0f)));
+			}
 		}
 
 		if (!IsAlive())
