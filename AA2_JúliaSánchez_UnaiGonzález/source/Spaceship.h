@@ -87,4 +87,5 @@ public:
 	void EnergyShield() override;
 
 	void OnCollisionEnter(Object* other) override { }
+	void AddScore(int score) { _points += score; }
 };
