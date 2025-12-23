@@ -13,9 +13,10 @@ protected:
 	EnemyState* _currentState = nullptr;
 	int _currentStateIndex = 0;
 	Vector2 _lastPosition;
+	int _pointsToGive;
 public:
-	Enemy(std::string path, Vector2 offset, Vector2 size, float health)
-		: ImageObject(path, offset, size), IDamagable(health), IAttacker(10.0f) {}
+	Enemy(std::string path, Vector2 offset, Vector2 size, float health, int points)
+		: ImageObject(path, offset, size), IDamagable(health), IAttacker(10.0f), _pointsToGive(points) {}
 
 	void AddState(EnemyState* state)
 	{
@@ -27,7 +28,9 @@ public:
 
 	virtual void OnCollisionEnter(Object* other) override
 	{
-		if (dynamic_cast<Bullet*>(other))
+		// NEEDS FIXING -> ADD POINTS TO PLAYER
+		Bullet* bullet = dynamic_cast<Bullet*>(other);
+		if (bullet != nullptr)
 		{
 			TakeDamage(50.0f);
 			if (_health <= 0)
@@ -39,7 +42,7 @@ public:
 			other->Destroy();
 		}
 
-		// NEEDS FIXING
+		// NEEDS FIXING -> CHECK IF HEALTH GOES ACCORDING TO DAMAGE DONE
 		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
 		if (spaceship != nullptr)
 		{
