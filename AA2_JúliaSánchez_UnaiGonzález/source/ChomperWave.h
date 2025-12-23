@@ -5,7 +5,7 @@
 class ChomperWave : public Wave
 {
 public:
-	ChomperWave() : Wave(20.0f) { }
+	ChomperWave() : Wave(25.0f) { }
 	void StartWave() override;
 	void EndWave() override {}
 };
