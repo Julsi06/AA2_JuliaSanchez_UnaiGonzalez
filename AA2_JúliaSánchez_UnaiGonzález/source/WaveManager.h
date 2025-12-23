@@ -7,6 +7,10 @@
 #include "VerticalMedusaWave.h"
 #include "ChomperWave.h"
 #include "BeholderWave.h"
+#include "AmoebaWave.h"
+#include "CirclerWave.h"
+#include "BioTitanWave.h"
+#include "Background.h"
 
 class WaveManager
 {
@@ -20,17 +24,20 @@ private:
 	bool _changeWave = false;
 
 	bool _powerUpSpawned = false;
+
+	Background* _background;
 public:
 	WaveManager(Transform* player)
 	{
 		// TESTING ENEMIES
 		// 1. BUBBLE
-		AddWave(new BubbleWave());
+		//AddWave(new BubbleWave());
 		// 2. KILLER WHALE
-		AddWave(new KillerWhaleWave());
+		//AddWave(new KillerWhaleWave());
 		// 3. H MEDUSA
 		//AddWave(new HorizontalMedusaWave());
 		// 4. CIRCLER
+		AddWave(new CirclerWave());
 		// 5. V MEDUSA
 		//AddWave(new VerticalMedusaWave());
 		// 6. BEHOLDER -> DONE
@@ -40,6 +47,7 @@ public:
 		// 8. AMOEBA -> DONE
 		//AddWave(new AmoebaWave());
 		// 9. BOSS
+		//AddWave(new BioTitanWave());
 
 	}
 	void AddWave(Wave* wave) { _waves.push_back(wave); }

@@ -1,6 +1,8 @@
 #include "WaveManager.h"
 #include "TimeManager.h"
 #include "PowerUpManager.h"
+#include "Background.h"
+#include "Gameplay.h"
 
 void WaveManager::Start()
 {
@@ -16,6 +18,10 @@ void WaveManager::Update()
     if (_currentWave == nullptr) return;
 
     _currentWave->UpdateWave();
+
+    if (_currentWave && _background)
+        if (_currentWave->IsBossWave())
+            _background->StopScroll();
 
     if (_currentWave->SpawnPowerUp() && !_powerUpSpawned)
     {

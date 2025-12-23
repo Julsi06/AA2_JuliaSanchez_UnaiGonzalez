@@ -2,6 +2,9 @@
 #include "Enemy.h"
 #include "CircularMoveState.h"
 #include "SimpleMoveState.h"
+#include "Spawner.h"
+#include <deque>
+#include "TrailBullet.h"
 
 class Circler : public Enemy
 {
@@ -18,6 +21,20 @@ public:
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, 1.0f), 200.0f, 1.0f));
 		AddState(new CircularMoveState(_transform, _physics, 200.0f, 1));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, -0.5), 200.0f, RM->WINDOW_WIDTH + 50.0f, false));
+		
+		for (int i = 0; i < _trailSize; i++)
+		{
+			TrailBullet* b = new TrailBullet();
+			_trail.push_back(b);
+			SPAWNER.SpawnObject(b);
+		}
 	}
-	void Update() override { Enemy::Update(); }
+	void Update() override;
+
+private:
+	std::vector<TrailBullet*> _trail;
+	std::deque<Vector2> _positionHistory;
+
+	int _trailSize = 8;
+	float _segmentSpacing = 12;
 };

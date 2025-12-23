@@ -5,24 +5,46 @@
 class Background : public ImageObject
 {
 private:
-	bool _spawned = false;
+    float _speed = 1.0f;
+    bool _stopScroll = false;
+    float _width;
+    Background* _other = nullptr;
+
 public:
-	Background()
-		: ImageObject("resources/images/background.png", Vector2(0.0f, 0.0f), Vector2(7136.0f, 795.0f))
-	{
-		_transform->position = Vector2(3500.0f, RM->WINDOW_HEIGHT / 2.0f);
-		// FULLSCREEN SCALE
-		// _transform->scale = Vector2(90.0f, 12.5f);
-		_transform->scale = Vector2(70.0f, 7.7f);
-		_transform->rotation = 0.0f;
-	}
+    Background(Vector2 position)
+        : ImageObject("resources/images/background.png", position, Vector2(7136.0f, 795.0f))
+    {
+        _transform->position = position;
+        _transform->scale = Vector2(70.0f, 7.7f);
+        _width = 7136.0f *_transform->scale.x;
+    }
 
-	void Update() override
-	{
-		_physics->SetVelocity(Vector2(-100.0f, 0.0f));
+    Background(Background* other)
+        : ImageObject("resources/images/background.png", Vector2(other->_width, other->_transform->position.y), Vector2(7136.0f, 795.0f))
+    {
+        _transform->scale = other->_transform->scale;
+        _transform->rotation = other->_transform->rotation;
+        _width = 7136.0f * _transform->scale.x;
+    }
 
-		Object::Update();
-	}
+    void SetOtherBackground(Background* other) { _other = other; }
+    void StopScroll() { _stopScroll = true; }
 
-	void OnCollisionEnter(Object* other) override {	}
+    void Update() override
+    {
+        if (_stopScroll) return;
+
+        _transform->position.x -= _speed;
+
+        if (_transform->position.x <= -_width && _other)
+        {
+            _transform->position.x = _other->_transform->position.x + _width;
+        }
+
+        Object::Update();
+    }
+
+    void Render() override { ImageObject::Render(); }
+
+    void OnCollisionEnter(Object* other) override { }
 };
