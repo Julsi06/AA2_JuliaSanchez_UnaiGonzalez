@@ -1,14 +1,12 @@
 #pragma once
 #include "Enemy.h"
-#include "StayState.h"
 #include "SimpleMoveState.h"
-#include "CircularMoveState.h"
-#include "ChaseState.h"
+#include "JumpToPlayerState.h"
 
 class RoboKrabs : public Enemy
 {
 public:
-	RoboKrabs(Vector2 startPos, Transform* player, Vector2 dir)
+	RoboKrabs(Vector2 startPos, Transform* player, Vector2 dir, float duration)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 100.0f, 300)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
@@ -17,10 +15,12 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
-		AddState(new SimpleMoveState(_transform, _physics, dir, 150.0f, 2.5f));
-		AddState(new StayState(_transform, _physics, Vector2(-1.0f, 0.0f), 1.0f));
-		// create a new state -> JumpToPlayerState
-		//AddState(new ChaseState(_transform, _physics, player, 150.0f, 1.0f));
+		AddState(new SimpleMoveState(_transform, _physics, dir, 150.0f, 3.0f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 75.0f, duration));
+		AddState(new JumpToPlayerState(_transform, _physics, player, 350.0f, 0.3f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 75.0f, duration));
+		AddState(new JumpToPlayerState(_transform, _physics, player, 350.0f, 0.3f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 75.0f, RM->WINDOW_WIDTH + 50.0f, false));
 	}
 	void Update() override { Enemy::Update(); }
 };
