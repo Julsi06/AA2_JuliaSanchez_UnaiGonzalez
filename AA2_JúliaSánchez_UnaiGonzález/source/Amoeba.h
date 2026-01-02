@@ -18,7 +18,7 @@ public:
 
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 150.0f, RM->WINDOW_WIDTH / 2.0f, false));
 		AddState(new SimpleMoveState(_transform, _physics, separateDir, 150.0f, 0.5f));
-		AddState(new CircularMoveState(_transform, _physics, 100.0f, 1));
+		AddState(new CircularMoveState(_transform, _physics, 100.0f, 1, 1));
 		AddState(new SimpleMoveState(_transform, _physics, groupDir, 150.0f, 0.5f));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), 150.0f, -50.0f, true));
 	}

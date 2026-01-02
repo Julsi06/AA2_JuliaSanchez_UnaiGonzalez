@@ -9,10 +9,11 @@ private:
 	float _angle = -1.57f; // Starting from the top (-pi/2)
 	float _radius;
 	Vector2 _centre;
+	int _rotDirX;
 	int _rotDirY;
 public:
-	CircularMoveState(Transform* transf, RigidBody* rb, float radius, int rotDirY)
-		: EnemyState(transf, rb), _radius(radius), _rotDirY(rotDirY) { }
+	CircularMoveState(Transform* transf, RigidBody* rb, float radius, int rotDirX, int rotDirY)
+		: EnemyState(transf, rb), _radius(radius), _rotDirX(rotDirX), _rotDirY(rotDirY) { }
 
 	void EnterState() override;
 	void UpdateState() override;

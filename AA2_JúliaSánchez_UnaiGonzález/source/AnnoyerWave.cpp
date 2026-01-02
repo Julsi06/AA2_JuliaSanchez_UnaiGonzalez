@@ -1,8 +1,9 @@
-#include "BeholderWave.h"
+#include "AnnoyerWave.h"
 #include "TimeManager.h"
 
-void BeholderWave::StartWave()
+void AnnoyerWave::StartWave()
 {
+	std::cout << "START ANNOYER WAVE";
 	_amount = 12;
 	int firstQuarter = _amount / 4;
 	int half = _amount / 2;
@@ -56,11 +57,11 @@ void BeholderWave::StartWave()
 		}
 
 		_positions.push_back(Vector2(posX, startY));
-		Beholder* beholder = new Beholder(_positions[i],
+		Annoyer* annoyer = new Annoyer(_positions[i],
 			_playerTransform, dir);
 
-		_enemies.push_back(beholder);
-		SPAWNER.SpawnObject(beholder);
-		beholder->Start();
+		_enemies.push_back(annoyer);
+		SPAWNER.SpawnObject(annoyer);
+		annoyer->Start();
 	}
 }
