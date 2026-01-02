@@ -33,6 +33,7 @@
     <ClCompile Include="source\DanielsWave.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
+    <ClCompile Include="source\JumpToPlayerState.cpp" />
     <ClCompile Include="source\KillerWhaleWave.cpp" />
     <ClCompile Include="source\BubbleWave.cpp" />
     <ClCompile Include="source\CircularMoveState.cpp" />
@@ -49,6 +50,7 @@
     <ClCompile Include="source\PowerUpManager.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
     <ClCompile Include="source\RigidBody.cpp" />
+    <ClCompile Include="source\RoboKrabsWave.cpp" />
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SimpleMoveState.cpp" />
@@ -77,6 +79,7 @@
     <ClInclude Include="source\DanielsWave.h" />
     <ClInclude Include="source\EngineEnergyPowerUp.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
+    <ClInclude Include="source\JumpToPlayerState.h" />
     <ClInclude Include="source\LaserEnergyPowerUp.h" />
     <ClInclude Include="source\Missile.h" />
     <ClInclude Include="source\MissileWave.h" />
@@ -116,6 +119,7 @@
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\PowerUpManager.h" />
     <ClInclude Include="source\RoboKrabs.h" />
+    <ClInclude Include="source\RoboKrabsWave.h" />
     <ClInclude Include="source\ShieldEnergyPowerUp.h" />
     <ClInclude Include="source\SimpleMoveState.h" />
     <ClInclude Include="source\Object.h" />
