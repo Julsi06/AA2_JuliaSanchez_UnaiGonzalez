@@ -16,7 +16,7 @@ public:
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH / 3.0f, true));
-		AddState(new CircularMoveState(_transform, _physics, 50.0f, dirY * 1));
+		AddState(new CircularMoveState(_transform, _physics, 50.0f, 1, dirY * 1));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, dirY * 1.0f), 200.0f, 2.0f));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH + 50.0f, false));
 	}

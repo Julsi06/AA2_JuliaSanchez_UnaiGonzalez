@@ -15,7 +15,7 @@ void CircularMoveState::UpdateState()
 {
 	_angle += 0.05f;
 
-	_transform->position.x = _centre.x + cos(_angle) * _radius;
+	_transform->position.x = _centre.x + _rotDirX * cos(_angle) * _radius;
 	_transform->position.y = _centre.y + _rotDirY * sin(_angle) * _radius;
 
 	if (_angle >= 4.71f)

@@ -5,7 +5,7 @@
 class Missile : public Enemy
 {
 public:
-	Missile(Vector2 startPos, float velocity)
+	Missile(Vector2 startPos)
 		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 100.0f, 100)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
@@ -14,7 +14,7 @@ public:
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
-		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), velocity, -50.0f, true));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), 200.0f, -50.0f, true));
 	}
 	void Update() override { Enemy::Update(); }
 };
