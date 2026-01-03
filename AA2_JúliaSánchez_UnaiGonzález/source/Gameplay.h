@@ -2,6 +2,7 @@
 #include "Scene.h"
 #include "Spaceship.h"
 #include "Background.h"
+#include "BackgroundVine.h"
 #include "WaveManager.h"
 #include "WaveManager.h"
 #include "PointsPowerUp.h"
@@ -26,6 +27,7 @@ public:
 		SPAWNER.SpawnObject(bg2);*/
 
 		Background::SetBackgrounds();
+		BackgroundVine::SetVines();
 
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);

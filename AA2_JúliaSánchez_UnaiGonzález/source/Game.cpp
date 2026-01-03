@@ -16,6 +16,8 @@ void Game::Init()
 	RM->LoadTexture("resources/images/button.png");
 	RM->LoadTexture("resources/images/bubble.png");
 	RM->LoadTexture("resources/images/pattern.jpg");
+	RM->LoadTexture("resources/images/topVine1.png");
+	RM->LoadTexture("resources/images/bottomVine1.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));
