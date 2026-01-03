@@ -10,4 +10,6 @@ public:
 	{
 		_renderer = new ImageRenderer(_transform, texturePath, sourceOffset, sourceSize);
 	}
+
+	void OnCollisionEnter(Object* other) override { }
 };

@@ -55,6 +55,7 @@
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SimpleMoveState.cpp" />
     <ClCompile Include="source\Spaceship.cpp" />
+    <ClCompile Include="source\SplashScreen.cpp" />
     <ClCompile Include="source\StayState.cpp" />
     <ClCompile Include="source\TextRenderer.cpp" />
     <ClCompile Include="source\TorpedoWave.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\Spaceship.h" />
+    <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\StayState.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />

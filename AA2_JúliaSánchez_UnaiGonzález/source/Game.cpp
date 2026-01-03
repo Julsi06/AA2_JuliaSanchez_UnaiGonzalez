@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "Gameplay.h"
 #include "MainMenu.h"
+#include "SplashScreen.h"
 #include <cassert>
 
 void Game::Init()
@@ -12,6 +13,8 @@ void Game::Init()
 	RM->Init();
 
 	RM->LoadTexture("resources/images/spaceship.png");
+	RM->LoadTexture("resources/images/splashScreen.png");
+	RM->LoadTexture("resources/images/splashImage.png");
 	RM->LoadTexture("resources/images/bullet.png");
 	RM->LoadTexture("resources/images/button.png");
 	RM->LoadTexture("resources/images/bubble.png");
@@ -21,9 +24,10 @@ void Game::Init()
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 
-	assert(SM.InitFirstScene("MainMenu"));
+	assert(SM.InitFirstScene("SplashScreen"));
 
 	_isRunning = true;
 }
