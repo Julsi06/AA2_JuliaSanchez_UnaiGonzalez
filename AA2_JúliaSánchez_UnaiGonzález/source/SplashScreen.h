@@ -9,6 +9,7 @@ private:
 	ImageObject* _screen;
 	float _elapsedTime = 0.0f;
 	float _maxDuration = 1.5f;
+	float _maxDurationImage = 3.0f;
 public:
 	SplashScreen()
 	{
@@ -26,7 +27,7 @@ public:
 	void Render() override { Scene::Render(); }
 	void OnExit() override 
 	{
-		_screen->Destroy();
+		// _screen->Destroy();
 		Scene::OnExit(); 
 	}
 };
