@@ -1,50 +1,49 @@
 #pragma once
 #include "ImageObject.h"
 #include "RenderManager.h"
+#include "Spawner.h"
 
 class Background : public ImageObject
 {
 private:
-    float _speed = 1.0f;
     bool _stopScroll = false;
-    float _width;
-    Background* _other = nullptr;
-
 public:
-    Background(Vector2 position)
-        : ImageObject("resources/images/background.png", position, Vector2(7136.0f, 795.0f))
+    Background() 
+        : ImageObject("resources/images/pattern.jpg", Vector2(0.0f, 0.0f), 
+            Vector2(612.0f, 408.0f)) 
     {
-        _transform->position = position;
-        _transform->scale = Vector2(70.0f, 7.7f);
-        _width = 7136.0f *_transform->scale.x;
-    }
+        // setting the size of the background to be the same size as the screen
+        _transform->size.x = RM->WINDOW_WIDTH;
+        _transform->size.y = RM->WINDOW_HEIGHT;
 
-    Background(Background* other)
-        : ImageObject("resources/images/background.png", Vector2(other->_width, other->_transform->position.y), Vector2(7136.0f, 795.0f))
-    {
-        _transform->scale = other->_transform->scale;
-        _transform->rotation = other->_transform->rotation;
-        _width = 7136.0f * _transform->scale.x;
+        _physics->SetVelocity(Vector2(-150.0f, 0.0f));
     }
-
-    void SetOtherBackground(Background* other) { _other = other; }
+    
     void StopScroll() { _stopScroll = true; }
 
     void Update() override
     {
-        if (_stopScroll) return;
+       if (_stopScroll) return;
 
-        _transform->position.x -= _speed;
-
-        if (_transform->position.x <= -_width && _other)
-        {
-            _transform->position.x = _other->_transform->position.x + _width;
-        }
+       // checking if background's position is out of screen, then reespawning it
+        if ((_transform->position.x + _transform->size.x / 2.0f) <= 0.0f)
+            _transform->position.x = _transform->size.x + (_transform->size.x / 2.0f);
 
         Object::Update();
     }
 
-    void Render() override { ImageObject::Render(); }
-
     void OnCollisionEnter(Object* other) override { }
+
+    static void SetBackgrounds()
+    {
+        Background* background1 = new Background();
+        background1->GetTransform()->position.x = RM->WINDOW_WIDTH / 2.0f;
+        background1->GetTransform()->position.y = RM->WINDOW_HEIGHT / 2.0f;
+        SPAWNER.SpawnObject(background1);
+
+        Background* background2 = new Background();
+        background2->GetTransform()->position.x = RM->WINDOW_WIDTH + background1->GetTransform()->position.x;
+        background2->GetTransform()->position.y = RM->WINDOW_HEIGHT / 2.0f;
+        SPAWNER.SpawnObject(background2);
+    }
 };

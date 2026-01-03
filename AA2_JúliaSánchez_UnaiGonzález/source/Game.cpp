@@ -15,7 +15,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/bullet.png");
 	RM->LoadTexture("resources/images/button.png");
 	RM->LoadTexture("resources/images/bubble.png");
-	RM->LoadTexture("resources/images/background.png");
+	RM->LoadTexture("resources/images/pattern.jpg");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay", new Gameplay()));

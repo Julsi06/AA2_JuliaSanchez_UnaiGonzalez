@@ -18,12 +18,14 @@ public:
 
 	void OnEnter() override
 	{
-		Background* bg1 = new Background(Vector2(0, RM->WINDOW_HEIGHT / 2));
-		Background* bg2 = new Background(Vector2(7000, RM->WINDOW_HEIGHT / 2));
+		/*Background* bg1 = new Background(Vector2(0, RM->WINDOW_HEIGHT / 2));
+		Background* bg2 = new Background(Vector2(613, RM->WINDOW_HEIGHT / 2));
 		bg1->SetOtherBackground(bg2);
 		bg2->SetOtherBackground(bg1);
 		SPAWNER.SpawnObject(bg1);
-		SPAWNER.SpawnObject(bg2);
+		SPAWNER.SpawnObject(bg2);*/
+
+		Background::SetBackgrounds();
 
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
