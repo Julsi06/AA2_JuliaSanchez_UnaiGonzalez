@@ -17,7 +17,7 @@ Bullet::Bullet(Vector2 position)
 	_physics->SetLinearDrag(0.0f);
 	_physics->SetAngularDrag(0.0f);
 
-	_physics->SetVelocity(Vector2(250.0f, 0.0f));
+	_physics->SetVelocity(Vector2(400.0f, 0.0f));
 }
 
 void Bullet::Update()

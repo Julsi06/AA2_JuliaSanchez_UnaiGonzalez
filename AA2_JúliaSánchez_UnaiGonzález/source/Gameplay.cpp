@@ -26,7 +26,7 @@ void Gameplay::Update()
 
 void Gameplay::Level1Config(Transform* playerTransform)
 {
-	_waveManager->AddWave(new BubbleWave());
+	/*_waveManager->AddWave(new BubbleWave());
 	_waveManager->AddWave(new KillerWhaleWave());
 	_waveManager->AddWave(new HorizontalMedusaWave());
 	_waveManager->AddWave(new CirclerWave());
@@ -41,7 +41,7 @@ void Gameplay::Level1Config(Transform* playerTransform)
 	_waveManager->AddWave(new CirclerWave());
 	_waveManager->AddWave(new VerticalMedusaWave());
 	_waveManager->AddWave(new BeholderWave(playerTransform));
-	_waveManager->AddWave(new ChomperWave());
+	_waveManager->AddWave(new ChomperWave());*/
 	_waveManager->AddWave(new AmoebaWave());
 	_waveManager->AddWave(new BioTitanWave());
 }
