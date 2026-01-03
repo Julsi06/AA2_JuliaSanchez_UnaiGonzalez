@@ -71,6 +71,7 @@
     <ClInclude Include="source\AngrygonsWave.h" />
     <ClInclude Include="source\Annoyer.h" />
     <ClInclude Include="source\AnnoyerWave.h" />
+    <ClInclude Include="source\BackgroundDecor.h" />
     <ClInclude Include="source\BioTitan.h" />
     <ClInclude Include="source\BioTitanWave.h" />
     <ClInclude Include="source\BossBullet.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="source\TwinTurretsPowerUp.h" />
     <ClInclude Include="source\Ufo.h" />
     <ClInclude Include="source\UfoWave.h" />
+    <ClInclude Include="source\BackgroundVine.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\VerticalMedusa.h" />
     <ClInclude Include="source\VerticalMedusaWave.h" />
