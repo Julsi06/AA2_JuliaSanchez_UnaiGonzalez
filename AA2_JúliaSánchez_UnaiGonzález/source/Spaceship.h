@@ -98,4 +98,5 @@ public:
 
 	void OnCollisionEnter(Object* other) override { }
 	void AddScore(int score) { _points += score; }
+	int GetScore() { return _points; }
 };

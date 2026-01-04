@@ -8,12 +8,15 @@
 #include "PointsPowerUp.h"
 #include "PowerUpManager.h"
 #include "ScoreUI.h"
+#include "ScoreManager.h"
+#include "TextObject.h"
 
 class Gameplay : public Scene
 {
 private:
 	WaveManager* _waveManager = nullptr;
 	Spaceship* _spaceship = nullptr;
+	TextObject* _score = nullptr;
 	ScoreUI* _scoreUI = nullptr;
 	int _index;
 
@@ -22,6 +25,7 @@ public:
 
 	void OnEnter() override
 	{
+		// FIX HERIARCHY OF APARITION
 		if (_index == 1)
 		{
 			Background::SetBackgrounds();
@@ -33,8 +37,6 @@ public:
 			BackgroundVine::SetVines(2);
 		}
 
-		_scoreUI = new ScoreUI();
-		SPAWNER.SpawnObject(_scoreUI);
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
 
@@ -43,6 +45,17 @@ public:
 			Level1Config(_spaceship->GetTransform());
 		/*else if (_index == 2)
 			Level2Config(_spaceship->GetTransform());*/
+
+		_scoreUI = new ScoreUI();
+		SPAWNER.SpawnObject(_scoreUI);
+		SCORE->SetPlayer(_spaceship);
+
+		std::string textScore = std::to_string(SCORE->GetCurrentPoints());
+		_score = new TextObject(textScore);
+		_score->GetTransform()->position = Vector2(223.0f, RM->WINDOW_HEIGHT - 63.0f);
+		_ui.push_back(_score);
+
+		_scoreUI->SetUpScore(_score);
 
 		_waveManager->Start();
 	}

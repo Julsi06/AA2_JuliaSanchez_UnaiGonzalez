@@ -5,6 +5,7 @@
 #include "IDamagable.h"
 #include "IAttacker.h"
 #include "Spaceship.h"
+#include "ScoreManager.h"
 
 class Enemy : public ImageObject, public IAttacker, public IDamagable
 {
@@ -40,6 +41,9 @@ public:
 				Destroy();
 
 			other->Destroy();
+
+			SCORE->AddPoints(_pointsToGive);
+			//std::cout << SCORE->GetCurrentPoints();
 		}
 
 		// NEEDS FIXING -> CHECK IF HEALTH GOES ACCORDING TO DAMAGE DONE

@@ -123,6 +123,7 @@
     <ClInclude Include="source\PowerUpManager.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\RoboKrabsWave.h" />
+    <ClInclude Include="source\ScoreManager.h" />
     <ClInclude Include="source\ShieldEnergyPowerUp.h" />
     <ClInclude Include="source\SimpleMoveState.h" />
     <ClInclude Include="source\Object.h" />
