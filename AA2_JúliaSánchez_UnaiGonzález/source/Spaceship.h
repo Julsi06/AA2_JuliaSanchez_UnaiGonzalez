@@ -10,6 +10,8 @@
 class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
 private:
+	int _extraLives = 0;
+
 	int _points = 0;
 	float _speed = 150.0f;
 	float _currentCannonEn;
@@ -30,7 +32,7 @@ public:
 		_currentCannonEn(0.0f), _currentLaserEn(0.0f), 
 		_currentShieldEn(_maxShieldEn)
 	{
-		_transform->position = Vector2(50, RM->WINDOW_HEIGHT / 2.0f);
+		_transform->position = Vector2(50.0f, RM->WINDOW_HEIGHT / 2.0f);
 		_transform->scale = Vector2(1.0f, 1.0f);
 		_transform->rotation = 0.0f;
 
@@ -86,6 +88,8 @@ public:
 		if (!IsAlive())
 			Destroy();
 
+		std::cout << "HEALTH: " << _health << std::endl;
+
 		Object::Update();
 	}
 
@@ -99,4 +103,6 @@ public:
 	void OnCollisionEnter(Object* other) override { }
 	void AddScore(int score) { _points += score; }
 	int GetScore() { return _points; }
+	int GetExtraLives() { return _extraLives; }
+	void RemoveExtraLife() { _extraLives--; }
 };
