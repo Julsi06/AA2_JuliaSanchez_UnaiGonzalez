@@ -7,12 +7,14 @@
 #include "WaveManager.h"
 #include "PointsPowerUp.h"
 #include "PowerUpManager.h"
+#include "ScoreUI.h"
 
 class Gameplay : public Scene
 {
 private:
 	WaveManager* _waveManager = nullptr;
 	Spaceship* _spaceship = nullptr;
+	ScoreUI* _scoreUI = nullptr;
 	int _index;
 
 public:
@@ -31,6 +33,8 @@ public:
 			BackgroundVine::SetVines(2);
 		}
 
+		_scoreUI = new ScoreUI();
+		SPAWNER.SpawnObject(_scoreUI);
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
 
