@@ -83,6 +83,7 @@
     <ClInclude Include="source\IPowerUpEffects.h" />
     <ClInclude Include="source\JumpToPlayerState.h" />
     <ClInclude Include="source\LaserEnergyPowerUp.h" />
+    <ClInclude Include="source\LevelSelector.h" />
     <ClInclude Include="source\Missile.h" />
     <ClInclude Include="source\MissileWave.h" />
     <ClInclude Include="source\Nuke.h" />

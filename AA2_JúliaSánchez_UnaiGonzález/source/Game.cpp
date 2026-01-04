@@ -6,6 +6,7 @@
 #include "Gameplay.h"
 #include "MainMenu.h"
 #include "SplashScreen.h"
+#include "LevelSelector.h"
 #include <cassert>
 
 void Game::Init()
@@ -23,7 +24,9 @@ void Game::Init()
 	RM->LoadTexture("resources/images/bottomVine1.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
-	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("Gameplay1", new Gameplay(1)));
+	assert(SM.AddScene("Gameplay2", new Gameplay(2)));
+	assert(SM.AddScene("LevelSelector", new LevelSelector()));
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 

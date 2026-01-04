@@ -7,13 +7,13 @@ class Button : public ImageObject
 public:
 	typedef std::function<void()> OnClick;
 
-	Button(OnClick onClick)
+	Button(Vector2 startPos, OnClick onClick)
 		: ImageObject("resources/images/button.png", Vector2(0.0f, 0.0f), Vector2(966.0f, 350.0f))
 	{
 		_onClick = onClick;
 
 		// Test
-		_transform->position = Vector2(660.0f, 350.0f);
+		_transform->position = startPos;
 		_transform->scale = Vector2(1.5f, 0.9f);
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
