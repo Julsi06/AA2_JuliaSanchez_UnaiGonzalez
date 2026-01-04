@@ -28,5 +28,5 @@ public:
 		_player->AddScore(_currentPoints);
 	}
 
-	int GetCurrentPoints() { return _currentPoints; }
+	int GetCurrentPoints() { return _player->GetScore(); }
 };
