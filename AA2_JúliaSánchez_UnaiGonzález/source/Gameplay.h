@@ -8,6 +8,7 @@
 #include "PointsPowerUp.h"
 #include "PowerUpManager.h"
 #include "ScoreUI.h"
+#include "ScoreManager.h"
 
 class Gameplay : public Scene
 {
@@ -37,6 +38,8 @@ public:
 		SPAWNER.SpawnObject(_scoreUI);
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
+
+		SCORE->SetPlayer(_spaceship);
 
 		_waveManager = new WaveManager();
 		if (_index == 1)
