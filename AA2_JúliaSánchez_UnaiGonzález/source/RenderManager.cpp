@@ -52,8 +52,7 @@ void RenderManager::Init()
 		return;
 	}
 
-	// SDL_SetRenderDrawColor(_renderer, 225, 0, 0, 0xFF);
-	SDL_SetRenderDrawColor(_renderer, 225, 255, 255, 0xFF);
+	SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 0xFF);
 }
 
 void RenderManager::Release()
