@@ -10,14 +10,14 @@ public:
 	MainMenu() = default;
 	void OnEnter() override
 	{
-		Button* button = new Button([]()
+		Button* button = new Button(Vector2(RM->WINDOW_WIDTH / 2.0f, 350.0f), []()
 			{
-				SM.SetNextScene("Gameplay");
+				SM.SetNextScene("LevelSelector");
 			}
 		);
 		
-		TextObject* text = new TextObject("Play");
-		text->GetTransform()->position = Vector2(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
+		TextObject* text = new TextObject("Select Level");
+		text->GetTransform()->position = Vector2(RM->WINDOW_WIDTH / 2.0f - 35.0f, RM->WINDOW_HEIGHT / 2.0f);
 
 		_ui.push_back(button);
 		_ui.push_back(text);

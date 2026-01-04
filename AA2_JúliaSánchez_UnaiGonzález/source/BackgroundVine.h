@@ -30,29 +30,36 @@ public:
 
     void OnCollisionEnter(Object* other) override {}
 
-    static void SetVines()
+    static void SetVines(int index)
     {
-        // Top vine
-        BackgroundVine* topVine1 = new BackgroundVine("resources/images/topVine1.png",
-            Vector2(RM->WINDOW_WIDTH / 2.0f, 25.0f), Vector2(1617.0f, 77.0f), 
-            Vector2(RM->WINDOW_WIDTH, 50.0f));
-        SPAWNER.SpawnObject(topVine1);
+        if (index == 1)
+        {
+            // Top vine
+            BackgroundVine* topVine1 = new BackgroundVine("resources/images/topVine1.png",
+                Vector2(RM->WINDOW_WIDTH / 2.0f, 25.0f), Vector2(1617.0f, 77.0f),
+                Vector2(RM->WINDOW_WIDTH, 50.0f));
+            SPAWNER.SpawnObject(topVine1);
 
-        BackgroundVine* topVine2 = new BackgroundVine("resources/images/topVine1.png",
-            Vector2(RM->WINDOW_WIDTH + topVine1->GetTransform()->position.x, 25.0f),
-            Vector2(1617.0f, 77.0f), Vector2(RM->WINDOW_WIDTH, 50.0f));
-        SPAWNER.SpawnObject(topVine2);
+            BackgroundVine* topVine2 = new BackgroundVine("resources/images/topVine1.png",
+                Vector2(RM->WINDOW_WIDTH + topVine1->GetTransform()->position.x, 25.0f),
+                Vector2(1617.0f, 77.0f), Vector2(RM->WINDOW_WIDTH, 50.0f));
+            SPAWNER.SpawnObject(topVine2);
 
-        // Bottom vine
-        BackgroundVine* bottomVine1 = new BackgroundVine("resources/images/bottomVine1.png",
-            Vector2(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT - 150.0f), Vector2(1614.0f, 74.0f),
-            Vector2(RM->WINDOW_WIDTH, 60.0f));
-        SPAWNER.SpawnObject(bottomVine1);
+            // Bottom vine
+            BackgroundVine* bottomVine1 = new BackgroundVine("resources/images/bottomVine1.png",
+                Vector2(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT - 150.0f), Vector2(1614.0f, 74.0f),
+                Vector2(RM->WINDOW_WIDTH, 60.0f));
+            SPAWNER.SpawnObject(bottomVine1);
 
-        BackgroundVine* bottomVine2 = new BackgroundVine("resources/images/bottomVine1.png",
-            Vector2(RM->WINDOW_WIDTH + bottomVine1->GetTransform()->position.x, 
-                RM->WINDOW_HEIGHT - 150.0f), Vector2(1614.0f, 74.0f), 
-            Vector2(RM->WINDOW_WIDTH, 60.0f));
-        SPAWNER.SpawnObject(bottomVine2);
+            BackgroundVine* bottomVine2 = new BackgroundVine("resources/images/bottomVine1.png",
+                Vector2(RM->WINDOW_WIDTH + bottomVine1->GetTransform()->position.x,
+                    RM->WINDOW_HEIGHT - 150.0f), Vector2(1614.0f, 74.0f),
+                Vector2(RM->WINDOW_WIDTH, 60.0f));
+            SPAWNER.SpawnObject(bottomVine2);
+        }
+        else if (index == 2)
+        {
+
+        }
     }
 };
