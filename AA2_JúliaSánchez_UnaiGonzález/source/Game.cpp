@@ -22,6 +22,8 @@ void Game::Init()
 	RM->LoadTexture("resources/images/pattern.jpg");
 	RM->LoadTexture("resources/images/topVine1.png");
 	RM->LoadTexture("resources/images/bottomVine1.png");
+	RM->LoadTexture("resources/images/scoreUI.png");
+
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay1", new Gameplay(1)));
@@ -30,7 +32,7 @@ void Game::Init()
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 
-	assert(SM.InitFirstScene("SplashScreen"));
+	assert(SM.InitFirstScene("Gameplay1"));
 
 	_isRunning = true;
 }
