@@ -30,5 +30,6 @@ public:
 	void AddWave(Wave* wave) { _waves.push_back(wave); }
 	void Start();
 	void Update();
+	bool EndedWaves() { return _currentWaveIndex >= _waves.size(); }
 };
 

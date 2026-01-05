@@ -18,6 +18,7 @@ void Scene::OnExit()
 
 void Scene::Update()
 {
+	std::cout << "UPDATING OBJECTS";
 	// 1. Destroy
 	for (int i = _objects.size() - 1;i >= 0;i--)
 	{

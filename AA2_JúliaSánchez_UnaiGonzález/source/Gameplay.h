@@ -10,6 +10,15 @@
 #include "ScoreUI.h"
 #include "ScoreManager.h"
 #include "TextObject.h"
+#include "InputManager.h"
+
+enum GameplayState
+{
+	GAMEPLAY,
+	PAUSED,
+	FINISHED,
+	DEATH
+};
 
 class Gameplay : public Scene
 {
@@ -19,9 +28,12 @@ private:
 	TextObject* _score = nullptr;
 	ScoreUI* _scoreUI = nullptr;
 	int _index;
+	GameplayState _currentState;
+	float _deathTimer = 0.0f;
+	bool _gamePaused = false;
 
 public:
-	Gameplay(int index) : _index(index) { }
+	Gameplay(int index) : _index(index), _currentState(GameplayState::GAMEPLAY) {}
 
 	void OnEnter() override
 	{
@@ -63,6 +75,13 @@ public:
 	void Update() override;
 	void Render() override { Scene::Render(); }
 
+	// different updates depending on the states of gameplay
+	void GameplayUpdate();
+	void PausedUpdate();
+	void FinishedUpdate();
+	void DeathUpdate();
+
+	// configuration of waves on each level
 	void Level1Config(Transform* playerTransform);
 	//void Level2Config(Transform* playerTransform);
 };

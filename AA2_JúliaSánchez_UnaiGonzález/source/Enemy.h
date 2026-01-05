@@ -50,7 +50,7 @@ public:
 		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
 		if (spaceship != nullptr)
 		{
-			//AddDamage(spaceship);
+			AddDamage(spaceship);
 		}
 	}
 
