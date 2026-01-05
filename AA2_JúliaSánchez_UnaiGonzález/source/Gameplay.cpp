@@ -32,6 +32,8 @@ void Gameplay::Update()
 
 void Gameplay::GameplayUpdate()
 {
+	_score->SetText(std::to_string(SCORE->GetCurrentPoints()));
+
 	if (IM->GetEvent(SDLK_P, DOWN))
 		_currentState = GameplayState::PAUSED;
 
@@ -102,10 +104,10 @@ void Gameplay::DeathUpdate()
 
 void Gameplay::Level1Config(Transform* playerTransform)
 {
-	/*_waveManager->AddWave(new BubbleWave());
+	_waveManager->AddWave(new BubbleWave());
 	_waveManager->AddWave(new KillerWhaleWave());
 	_waveManager->AddWave(new HorizontalMedusaWave());
-	_waveManager->AddWave(new CirclerWave());
+	/*_waveManager->AddWave(new CirclerWave());
 	_waveManager->AddWave(new VerticalMedusaWave());
 	_waveManager->AddWave(new BeholderWave(playerTransform));
 	_waveManager->AddWave(new KillerWhaleWave());
