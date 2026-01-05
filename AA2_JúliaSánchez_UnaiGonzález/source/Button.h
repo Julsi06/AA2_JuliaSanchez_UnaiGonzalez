@@ -13,7 +13,7 @@ public:
 		_onClick = onClick;
 
 		_transform->position = startPos;
-		_transform->size = Vector2(300.0f, 150.0f);
+		_transform->size = Vector2(450.0f, 200.0f);
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 	}

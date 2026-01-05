@@ -7,6 +7,7 @@
 #include "MainMenu.h"
 #include "SplashScreen.h"
 #include "LevelSelector.h"
+#include "Ranking.h"
 #include <cassert>
 
 void Game::Init()
@@ -29,10 +30,11 @@ void Game::Init()
 	assert(SM.AddScene("Gameplay1", new Gameplay(1)));
 	assert(SM.AddScene("Gameplay2", new Gameplay(2)));
 	assert(SM.AddScene("LevelSelector", new LevelSelector()));
+	assert(SM.AddScene("Ranking", new Ranking()));
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 
-	assert(SM.InitFirstScene("Gameplay2"));
+	assert(SM.InitFirstScene("MainMenu"));
 
 	_isRunning = true;
 }
