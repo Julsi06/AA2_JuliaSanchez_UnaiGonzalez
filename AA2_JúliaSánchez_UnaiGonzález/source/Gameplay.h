@@ -61,8 +61,8 @@ public:
 		_waveManager = new WaveManager();
 		if (_levelIndex == 1)
 			Level1Config(_spaceship->GetTransform());
-		/*else if (_index == 2)
-			Level2Config(_spaceship->GetTransform());*/
+		else if (_levelIndex == 2)
+			Level2Config(_spaceship->GetTransform());
 
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
@@ -97,5 +97,5 @@ public:
 
 	// configuration of waves on each level
 	void Level1Config(Transform* playerTransform);
-	//void Level2Config(Transform* playerTransform);
+	void Level2Config(Transform* playerTransform);
 };

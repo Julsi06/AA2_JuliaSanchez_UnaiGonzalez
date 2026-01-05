@@ -55,6 +55,8 @@
     <ClCompile Include="source\Scene.cpp" />
     <ClCompile Include="source\SceneManager.cpp" />
     <ClCompile Include="source\SimpleMoveState.cpp" />
+    <ClCompile Include="source\SpaceBoss.cpp" />
+    <ClCompile Include="source\SpaceBossWave.cpp" />
     <ClCompile Include="source\Spaceship.cpp" />
     <ClCompile Include="source\SplashScreen.cpp" />
     <ClCompile Include="source\StayState.cpp" />
@@ -134,6 +136,8 @@
     <ClInclude Include="source\RigidBody.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
+    <ClInclude Include="source\SpaceBoss.h" />
+    <ClInclude Include="source\SpaceBossWave.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\Spaceship.h" />
     <ClInclude Include="source\SplashScreen.h" />

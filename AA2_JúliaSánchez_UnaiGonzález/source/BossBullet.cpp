@@ -1,8 +1,11 @@
 #include "BossBullet.h"
+#include "TimeManager.h"
 
 void BossBullet::Update()
 {
-    if (_transform->position.x + _transform->size.x / 2 < 0.0f)
+    _timePassed += TM.GetDeltaTime();
+
+    if ((_transform->position.x + _transform->size.x / 2 < 0.0f) || (_timePassed >= 4.0f))
     {
         Destroy();
     }

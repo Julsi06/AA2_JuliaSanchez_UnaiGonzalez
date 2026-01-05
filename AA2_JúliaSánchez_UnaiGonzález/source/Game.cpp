@@ -32,7 +32,7 @@ void Game::Init()
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 
-	assert(SM.InitFirstScene("Gameplay1"));
+	assert(SM.InitFirstScene("Gameplay2"));
 
 	_isRunning = true;
 }

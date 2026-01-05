@@ -1,8 +1,8 @@
-#include "BioTitan.h"
+#include "SpaceBoss.h"
 #include "BossBullet.h"
 #include "Spawner.h"
 
-void BioTitan::Update()
+void SpaceBoss::Update()
 {
     _timer += TM.GetDeltaTime();
     if (_timer >= _shootCooldown)
@@ -14,10 +14,10 @@ void BioTitan::Update()
     Enemy::Update();
 }
 
-void BioTitan::Shoot()
+void SpaceBoss::Shoot()
 {
-    float spacingY = 45.0f;
-    float startY = 125.0f;
+    float spacingY = 105.0f;
+    float startY = 100.0f;
 
     float minX = RM->WINDOW_WIDTH / 2.0f;
     float maxX = RM->WINDOW_WIDTH - 250.0f;
