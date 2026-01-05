@@ -52,3 +52,9 @@ void WaveManager::Update()
         }
     }
 }
+
+void WaveManager::Restart()
+{
+    _currentWave->ResetWave();
+    _currentWave->StartWave();
+}

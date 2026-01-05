@@ -21,3 +21,11 @@ void Wave::UpdateWave()
 	if (_elapsedTime >= _duration)
 		_waveDone = true;
 }
+
+void Wave::ResetWave()
+{
+	for (Enemy* e : _enemies)
+	{
+		e->Destroy();
+	}
+}

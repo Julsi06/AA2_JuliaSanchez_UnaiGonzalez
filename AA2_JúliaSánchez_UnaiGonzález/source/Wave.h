@@ -21,6 +21,7 @@ public:
 	virtual void StartWave() = 0;
 	virtual void UpdateWave();
 	virtual void EndWave() = 0;
+	virtual void ResetWave();
 	virtual bool IsFinished() const { return _waveDone; }
 	virtual bool SpawnPowerUp() const { return _spawnPowerUp; }
 	Vector2 GetLastEnemyPosition() { return _lastEnemyPosition; }
