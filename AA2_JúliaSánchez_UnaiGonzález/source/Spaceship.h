@@ -6,6 +6,7 @@
 #include "Bullet.h"
 #include "IDamagable.h"
 #include "IPowerUpEffects.h"
+#include "ScoreManager.h"
 
 class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
@@ -88,8 +89,6 @@ public:
 		if (!IsAlive())
 			Destroy();
 
-		std::cout << "HEALTH: " << _health << std::endl;
-
 		Object::Update();
 	}
 
@@ -101,7 +100,7 @@ public:
 	void EnergyShield() override;
 
 	void OnCollisionEnter(Object* other) override { }
-	void AddScore(int score) { _points += score; }
+	void AddScore(int score) { _points = SCORE->GetCurrentPoints(); }
 	int GetScore() { return _points; }
 	int GetExtraLives() { return _extraLives; }
 	void RemoveExtraLife() { _extraLives--; }

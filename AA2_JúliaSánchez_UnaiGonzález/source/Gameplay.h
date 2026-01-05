@@ -60,14 +60,11 @@ public:
 
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
-		SCORE->SetPlayer(_spaceship);
 
 		std::string textScore = std::to_string(SCORE->GetCurrentPoints());
 		_score = new TextObject(textScore);
-		_score->GetTransform()->position = Vector2(223.0f, RM->WINDOW_HEIGHT - 63.0f);
+		_score->GetTransform()->position = Vector2(200.0f, RM->WINDOW_HEIGHT - 64.0f);
 		_ui.push_back(_score);
-
-		_scoreUI->SetUpScore(_score);
 
 		_waveManager->Start();
 	}
