@@ -33,6 +33,7 @@ void Gameplay::Update()
 void Gameplay::GameplayUpdate()
 {
 	_score->SetText(std::to_string(SCORE->GetCurrentPoints()));
+	_extraLives->SetText(std::to_string(_playerExtraLives));
 
 	if (IM->GetEvent(SDLK_P, DOWN))
 		_currentState = GameplayState::PAUSED;
@@ -41,8 +42,8 @@ void Gameplay::GameplayUpdate()
 		_currentState = GameplayState::DEATH;
 
 	// NEEDS TO BE FINISHED AND MODIFIED
-	if (_waveManager->EndedWaves())
-		_currentState = GameplayState::FINISHED;
+	/*if (_waveManager->EndedWaves())
+		_currentState = GameplayState::FINISHED;*/
 
 	_waveManager->Update();
 
@@ -81,17 +82,15 @@ void Gameplay::DeathUpdate()
 		// play spaceship death animation
 	}
 
-	if (_deathTimer >= 3.0f)
+	else if (_deathTimer >= 3.0f)
 	{
 		// show black screen and destroy all objects
-	}
-
-	else
-	{
-		if (_spaceship->GetExtraLives() > 0)
+		if (_playerExtraLives > 0)
 		{
 			// respawn player and restart from last wave (?)
-			_spaceship->RemoveExtraLife();
+			_playerExtraLives--;
+			RespawnPlayer();
+			_waveManager->Restart();
 			_deathTimer = 0.0f;
 			_currentState = GameplayState::GAMEPLAY;
 		}
@@ -100,6 +99,14 @@ void Gameplay::DeathUpdate()
 			// show stage stats and ask player for their name, save score
 		}
 	}
+}
+
+void Gameplay::RespawnPlayer()
+{
+	_spaceship->Destroy();
+
+	_spaceship = new Spaceship();
+	SPAWNER.SpawnObject(_spaceship);
 }
 
 void Gameplay::Level1Config(Transform* playerTransform)

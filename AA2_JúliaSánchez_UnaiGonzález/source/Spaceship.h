@@ -11,8 +11,6 @@
 class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
 private:
-	int _extraLives = 0;
-
 	int _points = 0;
 	float _speed = 150.0f;
 	float _currentCannonEn;
@@ -29,7 +27,7 @@ private:
 public:
 	Spaceship()
 		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f),
-			Vector2(500.0f, 500.0f)), IDamagable(2500.0f), 
+			Vector2(500.0f, 500.0f)), IDamagable(250.0f), 
 		_currentCannonEn(0.0f), _currentLaserEn(0.0f), 
 		_currentShieldEn(_maxShieldEn)
 	{
@@ -102,6 +100,4 @@ public:
 	void OnCollisionEnter(Object* other) override { }
 	void AddScore(int score) { _points = SCORE->GetCurrentPoints(); }
 	int GetScore() { return _points; }
-	int GetExtraLives() { return _extraLives; }
-	void RemoveExtraLife() { _extraLives--; }
 };
