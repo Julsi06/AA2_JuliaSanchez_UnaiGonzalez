@@ -15,6 +15,7 @@ void WaveManager::Start()
 
 void WaveManager::Update()
 {
+    // NEEDS FIXING
     if (_currentWave == nullptr) return;
 
     _currentWave->UpdateWave();

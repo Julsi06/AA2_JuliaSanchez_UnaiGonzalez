@@ -1,11 +1,11 @@
 #pragma once
 #include "Wave.h"
-#include "BioTitan.h"
+#include "SpaceBoss.h"
 
-class BioTitanWave : public Wave
+class SpaceBossWave : public Wave
 {
 public:
-    BioTitanWave() : Wave(40.0f) {}
+    SpaceBossWave() : Wave(40.0f) {}
     bool IsBossWave() const override { return true; }
     void StartWave() override;
     void EndWave() override {}

@@ -11,6 +11,17 @@
 #include "CirclerWave.h"
 #include "BioTitanWave.h"
 
+#include "TorpedoWave.h"
+#include "TurboChainsawWave.h"
+#include "RoboKrabsWave.h"
+#include "NukeWave.h"
+#include "MissileWave.h"
+#include "DanielsWave.h"
+#include "UfoWave.h"
+#include "AnnoyerWave.h"
+#include "AngrygonsWave.h"
+#include "SpaceBossWave.h"
+
 void Gameplay::Update()
 {
 	switch (_currentState)
@@ -114,7 +125,7 @@ void Gameplay::Level1Config(Transform* playerTransform)
 	_waveManager->AddWave(new BubbleWave());
 	_waveManager->AddWave(new KillerWhaleWave());
 	_waveManager->AddWave(new HorizontalMedusaWave());
-	/*_waveManager->AddWave(new CirclerWave());
+	_waveManager->AddWave(new CirclerWave());
 	_waveManager->AddWave(new VerticalMedusaWave());
 	_waveManager->AddWave(new BeholderWave(playerTransform));
 	_waveManager->AddWave(new KillerWhaleWave());
@@ -128,5 +139,29 @@ void Gameplay::Level1Config(Transform* playerTransform)
 	_waveManager->AddWave(new BeholderWave(playerTransform));
 	_waveManager->AddWave(new ChomperWave());
 	_waveManager->AddWave(new AmoebaWave());
-	_waveManager->AddWave(new BioTitanWave());*/
+	_waveManager->AddWave(new BioTitanWave());
+}
+
+void Gameplay::Level2Config(Transform* playerTransform)
+{
+	_waveManager->AddWave(new TorpedoWave());
+	_waveManager->AddWave(new TurboChainsawWave());
+	_waveManager->AddWave(new RoboKrabsWave(playerTransform));
+	_waveManager->AddWave(new NukeWave());
+	_waveManager->AddWave(new MissileWave());
+	_waveManager->AddWave(new DanielsWave());
+	_waveManager->AddWave(new UfoWave());
+	_waveManager->AddWave(new AnnoyerWave(playerTransform));
+	_waveManager->AddWave(new AngrygonsWave());
+	_waveManager->AddWave(new NukeWave());
+	_waveManager->AddWave(new TorpedoWave());
+	_waveManager->AddWave(new TurboChainsawWave());
+	_waveManager->AddWave(new RoboKrabsWave(playerTransform));
+	_waveManager->AddWave(new MissileWave());
+	_waveManager->AddWave(new DanielsWave());
+	_waveManager->AddWave(new UfoWave());
+	_waveManager->AddWave(new AnnoyerWave(playerTransform));
+	_waveManager->AddWave(new AngrygonsWave());
+	_waveManager->AddWave(new NukeWave());
+	_waveManager->AddWave(new SpaceBossWave());
 }
