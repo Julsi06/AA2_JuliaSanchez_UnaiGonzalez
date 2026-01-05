@@ -7,7 +7,7 @@ void BossBullet::Update()
         Destroy();
     }
 
-    Object::Update();
+    Bullet::Update();
 }
 
 void BossBullet::OnCollisionEnter(Object* other)

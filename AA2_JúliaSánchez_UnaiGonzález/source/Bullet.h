@@ -4,12 +4,13 @@
 
 class Bullet : public ImageObject, public IAttacker
 {
-private:
+protected:
 	int _score = 0;
 	float _timePassed = 0.0f;
+	float _speed = 0.0f;
 public:
-	Bullet(Vector2 position);
+	Bullet(Vector2 position, Vector2 dir, float speed, float rotation, float dmg);
 
-	void Update() override;
-	void OnCollisionEnter(Object* other) override;
+	virtual void Update() override;
+	virtual void OnCollisionEnter(Object* other) = 0;
 };
