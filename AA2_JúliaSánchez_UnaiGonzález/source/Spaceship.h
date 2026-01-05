@@ -3,7 +3,7 @@
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "Spawner.h"
-#include "Bullet.h"
+#include "PlayerBullet.h"
 #include "IDamagable.h"
 #include "IPowerUpEffects.h"
 #include "ScoreManager.h"
@@ -59,21 +59,21 @@ public:
 		// NEEDS FIXING
 		if (IM->GetEvent(SDLK_SPACE, DOWN))
 		{
-			SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, 0.0f)));
+			SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 0.0f), Vector2(1.0f, 0.0f), 400.0f, 0.0f));
 
 			if (_cannonsActive && _currentCannonEn > 0.0f)
 			{
-				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, 50.0f)));
+				SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 50.0f), Vector2(1.0f, 0.0f), 400.0f, 0.0f));
 				_currentCannonEn -= 10.0f;
 			}
 				
 			if (_lasersActive && _currentLaserEn > 0.0f)
 			{
-				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(70.0f, -50.0f)));
+				SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, -50.0f), Vector2(1.0f, 0.0f), 400.0f, 0.0f));
 				_currentLaserEn -= 10.0f;
 			}
 
-			if (_turret1Active)
+			/*if (_turret1Active)
 			{
 				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(-50.0f, -60.0f)));
 			}
@@ -81,7 +81,7 @@ public:
 			if (_turret2Active)
 			{
 				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(-50.0f, 60.0f)));
-			}
+			}*/
 		}
 
 		if (!IsAlive())

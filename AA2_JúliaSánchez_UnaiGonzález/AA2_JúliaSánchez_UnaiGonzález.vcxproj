@@ -47,6 +47,7 @@
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MissileWave.cpp" />
     <ClCompile Include="source\NukeWave.cpp" />
+    <ClCompile Include="source\PlayerBullet.cpp" />
     <ClCompile Include="source\PowerUpManager.cpp" />
     <ClCompile Include="source\RenderManager.cpp" />
     <ClCompile Include="source\RigidBody.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="source\MissileWave.h" />
     <ClInclude Include="source\Nuke.h" />
     <ClInclude Include="source\NukeWave.h" />
+    <ClInclude Include="source\PlayerBullet.h" />
     <ClInclude Include="source\PointsPowerUp.h" />
     <ClInclude Include="source\Amoeba.h" />
     <ClInclude Include="source\AmoebaWave.h" />

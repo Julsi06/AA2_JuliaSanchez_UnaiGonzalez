@@ -1,6 +1,6 @@
 #pragma once
 #include "ImageObject.h"
-#include "Bullet.h"
+#include "PlayerBullet.h"
 #include "EnemyState.h"
 #include "IDamagable.h"
 #include "IAttacker.h"
@@ -29,24 +29,19 @@ public:
 
 	virtual void OnCollisionEnter(Object* other) override
 	{
-		// NEEDS FIXING -> ADD POINTS TO PLAYER
-		Bullet* bullet = dynamic_cast<Bullet*>(other);
+		PlayerBullet* bullet = dynamic_cast<PlayerBullet*>(other);
 		if (bullet != nullptr)
 		{
-			TakeDamage(50.0f);
 			if (_health <= 0)
 				_lastPosition = _transform->position;
 
 			if (!IsAlive())
+			{
+				SCORE->AddPoints(_pointsToGive);
 				Destroy();
-
-			other->Destroy();
-
-			SCORE->AddPoints(_pointsToGive);
-			//std::cout << SCORE->GetCurrentPoints();
+			}
 		}
 
-		// NEEDS FIXING -> CHECK IF HEALTH GOES ACCORDING TO DAMAGE DONE
 		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
 		if (spaceship != nullptr)
 		{
