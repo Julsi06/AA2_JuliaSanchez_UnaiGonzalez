@@ -2,7 +2,7 @@
 #include "Spawner.h"
 #include <iostream>
 
-void BioTitanWave::StartWave()
+void BioTitanWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START BIO TITAN WAVE\n";
 

@@ -1,9 +1,9 @@
 #include "UfoWave.h"
 
-void UfoWave::StartWave()
+void UfoWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START UFO WAVE";
-    _amount = 5; // Will be read from XML
+    _amount = waveData.amount;
 
     // This will have to be changed
     float startX = RM->WINDOW_WIDTH - 10.0f;

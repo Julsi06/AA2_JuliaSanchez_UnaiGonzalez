@@ -1,9 +1,9 @@
 #include "VerticalMedusaWave.h"
 
-void VerticalMedusaWave::StartWave()
+void VerticalMedusaWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START V MEDUSA WAVE";
-	_amount = 8; // Will be read from XML
+	_amount = waveData.amount;
 
 	float startY = RM->WINDOW_HEIGHT - 100.0f;
 	float spacingX = 125.0f;

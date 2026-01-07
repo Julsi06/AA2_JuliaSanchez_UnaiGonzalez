@@ -1,9 +1,9 @@
 #include "TurboChainsawWave.h"
 
-void TurboChainsawWave::StartWave()
+void TurboChainsawWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START BUBBLE WAVE";
-    _amount = 12; // Will be read from XML
+    _amount = waveData.amount;
     int half = _amount / 2;
 
     // This will have to be changed

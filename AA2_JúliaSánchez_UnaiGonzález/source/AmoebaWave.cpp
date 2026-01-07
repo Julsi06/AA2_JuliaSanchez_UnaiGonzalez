@@ -1,9 +1,9 @@
 #include "AmoebaWave.h"
 
-void AmoebaWave::StartWave()
+void AmoebaWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START AMOEBA WAVE";
-	_amount = 8; // Will be read from XML
+	_amount = waveData.amount;
 
 	float startX = -50.0f;
 	float startY = RM->WINDOW_HEIGHT / 2.0f;

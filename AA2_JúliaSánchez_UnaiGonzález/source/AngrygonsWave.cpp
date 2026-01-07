@@ -1,9 +1,9 @@
 #include "AngrygonsWave.h"
 
-void AngrygonsWave::StartWave()
+void AngrygonsWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START ANGRYGONS WAVE";
-    _amount = 11; // Will be read from XML
+    _amount = waveData.amount;
 
     // This will have to be changed
     float spacingX = 100.0f;

@@ -6,6 +6,6 @@ class BubbleWave : public Wave
 {
 public:
 	BubbleWave() : Wave(14.0f) { }
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override { }
 };

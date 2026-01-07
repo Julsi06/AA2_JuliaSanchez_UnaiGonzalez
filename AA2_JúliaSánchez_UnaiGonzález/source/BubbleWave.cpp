@@ -3,10 +3,10 @@
 #include "CircularMoveState.h"
 #include "TimeManager.h"
 
-void BubbleWave::StartWave()
+void BubbleWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START BUBBLE WAVE";
-	_amount = 12; // Will be read from XML
+	_amount = waveData.amount;
 	int half = _amount / 2;
 
     // This will have to be changed

@@ -3,10 +3,10 @@
 #include "SimpleMoveState.h"
 #include "TimeManager.h"
 
-void KillerWhaleWave::StartWave()
+void KillerWhaleWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START WHALE WAVE";
-	_amount = 3; // Will be read from XML
+	_amount = waveData.amount;
 
 	// This will have to be changed
 	float spacingX = 300.0f;

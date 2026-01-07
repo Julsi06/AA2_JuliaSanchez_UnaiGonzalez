@@ -1,10 +1,10 @@
 #include "ChomperWave.h"
 #include "Chomper.h"
 
-void ChomperWave::StartWave()
+void ChomperWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START CHOMPER WAVE";
-	_amount = 12; // Will be read from XML
+	_amount = waveData.amount;
 
 	float spacingY = 50.0f;
 	float startX = RM->WINDOW_WIDTH + 10.0f;

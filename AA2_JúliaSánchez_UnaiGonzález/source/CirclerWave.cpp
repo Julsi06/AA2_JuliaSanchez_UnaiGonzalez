@@ -1,10 +1,10 @@
 #include "CirclerWave.h"
 
-void CirclerWave::StartWave()
+void CirclerWave::StartWave(const WaveData& waveData)
 {
 	// Needs to implement the rest of the body (bullets)
 	std::cout << "START CIRCLER WAVE";
-	_amount = 12;
+	_amount = waveData.amount;
 
 	float startX = -50.0f;
 	float startY = 50.0f;

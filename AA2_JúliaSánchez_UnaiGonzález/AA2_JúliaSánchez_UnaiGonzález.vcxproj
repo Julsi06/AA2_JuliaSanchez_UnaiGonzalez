@@ -44,6 +44,7 @@
     <ClCompile Include="source\Gameplay.cpp" />
     <ClCompile Include="source\ImageRenderer.cpp" />
     <ClCompile Include="source\InputManager.cpp" />
+    <ClCompile Include="source\Level.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MissileWave.cpp" />
     <ClCompile Include="source\NukeWave.cpp" />
@@ -82,10 +83,12 @@
     <ClInclude Include="source\CannonEnergyPowerUp.h" />
     <ClInclude Include="source\Daniels.h" />
     <ClInclude Include="source\DanielsWave.h" />
+    <ClInclude Include="source\EnemyType.h" />
     <ClInclude Include="source\EngineEnergyPowerUp.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
     <ClInclude Include="source\JumpToPlayerState.h" />
     <ClInclude Include="source\LaserEnergyPowerUp.h" />
+    <ClInclude Include="source\Level.h" />
     <ClInclude Include="source\LevelSelector.h" />
     <ClInclude Include="source\Missile.h" />
     <ClInclude Include="source\MissileWave.h" />
@@ -160,6 +163,7 @@
     <ClInclude Include="source\VerticalMedusa.h" />
     <ClInclude Include="source\VerticalMedusaWave.h" />
     <ClInclude Include="source\Wave.h" />
+    <ClInclude Include="source\WaveData.h" />
     <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>
   <ItemGroup>

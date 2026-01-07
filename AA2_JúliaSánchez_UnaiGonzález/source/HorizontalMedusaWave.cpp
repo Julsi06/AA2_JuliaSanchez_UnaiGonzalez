@@ -2,10 +2,10 @@
 #include "HorizontalMedusa.h"
 #include <ctime>
 
-void HorizontalMedusaWave::StartWave()
+void HorizontalMedusaWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START H MEDUSA WAVE";
-	_amount = 12; // Will be read from XML
+	_amount = waveData.amount;
 
 	float startX = RM->WINDOW_WIDTH - 10.0f;
 

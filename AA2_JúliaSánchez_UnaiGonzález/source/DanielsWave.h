@@ -6,6 +6,6 @@ class DanielsWave : public Wave
 {
 public:
 	DanielsWave() : Wave(12.0f) {}
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override {}
 };

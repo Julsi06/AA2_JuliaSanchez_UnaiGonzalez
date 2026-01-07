@@ -1,9 +1,9 @@
 #include "TorpedoWave.h"
 
-void TorpedoWave::StartWave()
+void TorpedoWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START TORPEDO WAVE";
-	_amount = 12;
+	_amount = waveData.amount;
 
 	for (int i = 0;i < _amount;i++)
 	{
