@@ -29,6 +29,13 @@ void Wave::ResetWave()
 {
 	for (Enemy* e : _enemies)
 	{
-		e->Destroy();
+		if (e && e->IsAlive())
+			e->Destroy();
 	}
+
+	_enemies.clear();
+
+	_elapsedTime = 0.0f;
+	_waveDone = false;
+	_spawnPowerUp = false;
 }

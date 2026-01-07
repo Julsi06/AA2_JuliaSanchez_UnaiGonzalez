@@ -88,12 +88,15 @@ void Gameplay::DeathUpdate()
 {
 	_deathTimer += TM.GetDeltaTime();
 
-	if (_deathTimer >= 1.0f)
+	if (_deathTimer >= 1.0f && !_playerDied)
 	{
 		// play spaceship death animation
+		_deathTimer = 0.0f;
+		_playerDied = true;
+		return;
 	}
 
-	else if (_deathTimer >= 3.0f)
+	if (_deathTimer >= 2.0f)
 	{
 		// show black screen and destroy all objects
 		if (_playerExtraLives > 0)
@@ -103,6 +106,7 @@ void Gameplay::DeathUpdate()
 			RespawnPlayer();
 			_waveManager->Restart();
 			_deathTimer = 0.0f;
+			_playerDied = false;
 			_currentState = GameplayState::GAMEPLAY;
 		}
 		else

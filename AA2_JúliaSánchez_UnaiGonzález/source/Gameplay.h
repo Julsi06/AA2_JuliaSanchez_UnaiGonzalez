@@ -37,6 +37,7 @@ private:
 	GameplayState _currentState;
 	float _deathTimer = 0.0f;
 	bool _gamePaused = false;
+	bool _playerDied = false;
 
 public:
 	Gameplay(int levelIndex) : _levelIndex(levelIndex), _currentState(GameplayState::GAMEPLAY) {}
