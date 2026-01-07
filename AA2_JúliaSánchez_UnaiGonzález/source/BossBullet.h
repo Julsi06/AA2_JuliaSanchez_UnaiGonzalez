@@ -1,12 +1,12 @@
 #pragma once
-#include "ImageObject.h"
+#include "AnimatedImageObject.h"
 #include "IAttacker.h"
 
-class BossBullet : public ImageObject, public IAttacker
+class BossBullet : public AnimatedImageObject, public IAttacker
 {
 public:
     BossBullet(const Vector2& position, float speed)
-        : ImageObject("resources/images/bullet.png", position, Vector2(900.0f, 500.0f)),
+        : AnimatedImageObject("resources/images/BioTitanBullet.png", Vector2(0.0f, 0.0f), Vector2(95.0f, 34.0f), 4, 1, 95.0f, 34.0f, true, 1), 
         IAttacker(10.0f),
         _speed(speed)
     {

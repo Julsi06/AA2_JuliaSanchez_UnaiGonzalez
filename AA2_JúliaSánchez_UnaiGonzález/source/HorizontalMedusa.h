@@ -6,7 +6,7 @@ class HorizontalMedusa : public Enemy
 {
 public:
 	HorizontalMedusa(Vector2 startPos, float velocity)
-		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 100.0f, 100)
+		: Enemy("resources/images/HMedusa.png", Vector2(0.0f, 0.0f), Vector2(118.0f, 115.0f), 4, 2, 118.0, 115.0f, true, 0.1, 100.0f, 100)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);

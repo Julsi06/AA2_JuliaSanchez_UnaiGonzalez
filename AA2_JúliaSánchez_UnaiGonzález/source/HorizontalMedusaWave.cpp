@@ -12,7 +12,7 @@ void HorizontalMedusaWave::StartWave()
 	for (int i = 0; i < _amount; i++)
 	{
 		// This will have to be changed
-		float startY = (float)(200 + (rand() % RM->WINDOW_HEIGHT - 200));
+		float startY = (float)(200 + (rand() % RM->WINDOW_HEIGHT - 500));
 		float spacingX = (float)(10 + rand() % 100);
 
 		float posX = startX + i * spacingX;

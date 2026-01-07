@@ -39,7 +39,7 @@ void BeholderWave::StartWave()
 
 		if (i >= half && i < thirdQuarter)
 		{
-			startY = RM->WINDOW_HEIGHT + 50.0f;
+			startY = RM->WINDOW_HEIGHT - 250.0f;
 			startX = -100.0f;
 			dir = Vector2(1.0f, -1.0f);
 			posX = startX + auxI2 * spacingX;
@@ -48,7 +48,7 @@ void BeholderWave::StartWave()
 
 		if (i >= thirdQuarter && i < _amount)
 		{
-			startY = RM->WINDOW_HEIGHT + 50.0f;
+			startY = RM->WINDOW_HEIGHT - 250.0f;
 			startX = RM->WINDOW_WIDTH - 200.0f;
 			dir = Vector2(-1.0f, -1.0f);
 			posX = startX + auxI3 * spacingX;

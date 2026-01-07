@@ -7,7 +7,7 @@ class Bubble : public Enemy
 {
 public:
 	Bubble(Vector2 startPos, int dirY)
-		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 150.0f, 100)
+		: Enemy("resources/images/Bubble.png", Vector2(0.0f, 0.0f), Vector2(110.0f, 110.0f), 3, 2, 110.0f, 110.f, true, 0.03f, 150.0f, 100)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);

@@ -28,7 +28,7 @@ void BubbleWave::StartWave()
         }
         else
         {
-            startY = RM->WINDOW_HEIGHT - 100.0f;
+            startY = RM->WINDOW_HEIGHT - 325.0f;
             posX = startX + auxI * spacingX;
             dirY = -1;
             auxI++;

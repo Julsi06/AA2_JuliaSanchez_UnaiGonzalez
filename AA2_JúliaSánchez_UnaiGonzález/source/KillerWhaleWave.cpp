@@ -20,12 +20,12 @@ void KillerWhaleWave::StartWave()
 
 		if (i == 0 || i == 2)
 		{
-			startY = RM->WINDOW_HEIGHT - 50.0f;
+			startY = RM->WINDOW_HEIGHT - 330.0f;
 			dirY = -1;
 		}
 		else
 		{
-			startY = 50.0f;
+			startY = 40.0f;
 			dirY = 1;
 		}
 

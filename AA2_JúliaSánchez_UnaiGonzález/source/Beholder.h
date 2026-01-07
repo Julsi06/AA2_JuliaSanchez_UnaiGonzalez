@@ -8,10 +8,10 @@ class Beholder : public Enemy
 {
 public:
 	Beholder(Vector2 startPos, Transform* player, Vector2 dir)
-		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 200.0f, 200)
+		: Enemy("resources/images/Beholder.png", Vector2(0.0f, 0.0f), Vector2(155.0f, 111.5f), 11, 3, 155.0f, 111.5f, true, 0.15, 200.0f, 200)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
-		_transform->scale = Vector2(1.0f, 1.0f);
+		_transform->scale = Vector2(0.65f, 0.65f);
 		_transform->rotation = 0.0f;
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));

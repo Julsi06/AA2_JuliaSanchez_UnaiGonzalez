@@ -10,7 +10,7 @@ class Circler : public Enemy
 {
 public:
 	Circler(Vector2 startPos)
-		: Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 300.0f, 200)
+		: Enemy("resources/images/Circler.png", Vector2(0.0f, 0.0f), Vector2(133.0f, 118.0f), 3, 2, 133.0f, 118.0f, true, 0.1, 300.0f, 200)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);
@@ -36,5 +36,5 @@ private:
 	std::deque<Vector2> _positionHistory;
 
 	int _trailSize = 8;
-	float _segmentSpacing = 12;
+	float _segmentSpacing = 20;
 };

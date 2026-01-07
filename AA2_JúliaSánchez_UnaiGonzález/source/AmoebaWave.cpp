@@ -6,7 +6,7 @@ void AmoebaWave::StartWave()
 	_amount = 8; // Will be read from XML
 
 	float startX = -50.0f;
-	float startY = RM->WINDOW_HEIGHT / 2.0f;
+	float startY = RM->WINDOW_HEIGHT - 550.0f;
 
 	for (int i = 0;i < _amount;i++)
 	{
