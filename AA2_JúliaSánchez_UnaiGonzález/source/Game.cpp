@@ -33,7 +33,9 @@ void Game::Init()
 	RM->LoadTexture("resources/images/KillerWhale.png");
 	RM->LoadTexture("resources/images/pattern.jpg");
 	RM->LoadTexture("resources/images/topVine1.png");
+	RM->LoadTexture("resources/images/topVine2.png");
 	RM->LoadTexture("resources/images/bottomVine1.png");
+	RM->LoadTexture("resources/images/bottomVine2.png");
 	RM->LoadTexture("resources/images/scoreUI.png");
 
 	RM->LoadTexture("resources/images/1.png");
