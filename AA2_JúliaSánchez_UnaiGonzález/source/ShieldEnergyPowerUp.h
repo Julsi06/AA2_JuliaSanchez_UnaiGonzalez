@@ -28,6 +28,6 @@ public:
 
 	void SpawnNextPowerUp(Vector2 lastPos) override
 	{
-		PUM->SpawnPowerUp(Health, lastPos);
+		//PUM->SpawnPowerUp(Health, lastPos);
 	}
 };

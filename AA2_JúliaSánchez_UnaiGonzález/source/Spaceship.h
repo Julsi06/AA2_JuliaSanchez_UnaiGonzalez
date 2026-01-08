@@ -18,19 +18,17 @@ private:
 	float _maxCannonEn = 2000.0f;
 	float _currentLaserEn;
 	float _maxLaserEn = 2000.0f;
-	float _currentShieldEn;
-	float _maxShieldEn = 200.0f;
 
 	bool _cannonsActive = false;
 	bool _lasersActive = false;
 	bool _turret1Active = false;
 	bool _turret2Active = false;
+	bool _haveForceField = false;
 public:
 	Spaceship()
 		: ImageObject("resources/images/Forward_Backwards.png", Vector2(0.0f, 0.0f),
 			Vector2(205.0f, 135.0f)), IDamagable(2500.0f), 
-		_currentCannonEn(0.0f), _currentLaserEn(0.0f), 
-		_currentShieldEn(0.0f)
+		_currentCannonEn(0.0f), _currentLaserEn(0.0f)
 	{
 		_transform->position = Vector2(50.0f, RM->WINDOW_HEIGHT / 2.0f);
 		_transform->scale = Vector2(1.0f, 1.0f);
@@ -96,8 +94,8 @@ public:
 	void EnergyLasers() override;
 	void IncreaseSpeed(float speed) override;
 	void SpawnTwinTurrets() override;
+	void ForceField() override;
 	void EnergyShield() override;
-	void ReplenishHealth() override;
 
 	void OnCollisionEnter(Object* other) override { }
 	void AddScore() { _points = SCORE->GetCurrentPoints(); }

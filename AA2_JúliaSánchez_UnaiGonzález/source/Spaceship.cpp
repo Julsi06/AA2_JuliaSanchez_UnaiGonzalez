@@ -30,12 +30,12 @@ void Spaceship::SpawnTwinTurrets()
 		_turret2Active = true;
 }
 
-void Spaceship::EnergyShield()
+void Spaceship::ForceField()
 {
-	_currentShieldEn = _maxShieldEn;
+	// FORCE FIELD TRUE
 }
 
-void Spaceship::ReplenishHealth()
+void Spaceship::EnergyShield()
 {
 	_health = _maxHealth;
 }

@@ -5,7 +5,7 @@
 #include "EngineEnergyPowerUp.h"
 #include "TwinTurretsPowerUp.h"
 #include "PointsPowerUp.h"
-#include "ReplenishHealthPowerUp.h"
+#include "ForceFieldPowerUp.h"
 
 void PowerUpManager::SpawnPowerUp(PowerUpType type, Vector2 position)
 {
@@ -32,11 +32,11 @@ void PowerUpManager::SpawnPowerUp(PowerUpType type, Vector2 position)
 			position);
 		break;
 	case PowerUpType::Shield:
-		_currentPowerUp = new ShieldEnergyPowerUp("resources/images/6.png",
+		_currentPowerUp = new ForceFieldPowerUp("resources/images/6.png",
 			position);
 		break;
 	case PowerUpType::Health:
-		_currentPowerUp = new ReplenishHealthPowerUp("resources/images/7.png",
+		_currentPowerUp = new ShieldEnergyPowerUp("resources/images/7.png",
 			position);
 		break;
 	}
