@@ -10,7 +10,8 @@ enum PowerUpType
 	Lasers,
 	Engine,
 	Turrets,
-	Shield
+	Shield,
+	Health
 };
 
 class PowerUp : public ImageObject, public IDamagable

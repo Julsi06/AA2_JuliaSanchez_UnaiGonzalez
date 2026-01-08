@@ -13,6 +13,7 @@ class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 private:
 	int _points = 0;
 	float _speed = 150.0f;
+	float _maxHealth = 2500.0f;
 	float _currentCannonEn;
 	float _maxCannonEn = 2000.0f;
 	float _currentLaserEn;
@@ -29,7 +30,7 @@ public:
 		: ImageObject("resources/images/Forward_Backwards.png", Vector2(0.0f, 0.0f),
 			Vector2(205.0f, 135.0f)), IDamagable(2500.0f), 
 		_currentCannonEn(0.0f), _currentLaserEn(0.0f), 
-		_currentShieldEn(_maxShieldEn)
+		_currentShieldEn(0.0f)
 	{
 		_transform->position = Vector2(50.0f, RM->WINDOW_HEIGHT / 2.0f);
 		_transform->scale = Vector2(1.0f, 1.0f);
@@ -59,17 +60,17 @@ public:
 		// NEEDS FIXING
 		if (IM->GetEvent(SDLK_SPACE, DOWN))
 		{
-			SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 0.0f), Vector2(1.0f, 0.0f), 400.0f, 0.0f));
+			SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 0.0f)));
 
 			if (_cannonsActive && _currentCannonEn > 0.0f)
 			{
-				SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 50.0f), Vector2(1.0f, 0.0f), 400.0f, 0.0f));
+				SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 50.0f)));
 				_currentCannonEn -= 10.0f;
 			}
 				
 			if (_lasersActive && _currentLaserEn > 0.0f)
 			{
-				SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, -50.0f), Vector2(1.0f, 0.0f), 400.0f, 0.0f));
+				SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, -50.0f)));
 				_currentLaserEn -= 10.0f;
 			}
 
@@ -96,8 +97,8 @@ public:
 	void IncreaseSpeed(float speed) override;
 	void SpawnTwinTurrets() override;
 	void EnergyShield() override;
+	void ReplenishHealth() override;
 
 	void OnCollisionEnter(Object* other) override { }
-	void AddScore(int score) { _points = SCORE->GetCurrentPoints(); }
-	int GetScore() { return _points; }
+	void AddScore() { _points = SCORE->GetCurrentPoints(); }
 };

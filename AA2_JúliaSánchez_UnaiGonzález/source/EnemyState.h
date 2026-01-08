@@ -2,7 +2,6 @@
 #include "Transform.h"
 #include "RigidBody.h"
 #include <string>
-//class Enemy;
 
 class EnemyState
 {

@@ -57,6 +57,7 @@ void Gameplay::GameplayUpdate()
 		_currentState = GameplayState::FINISHED;*/
 
 	_waveManager->Update();
+	_spaceship->AddScore();
 
 	while (SPAWNER.AreObjectsPendingSpawn())
 	{

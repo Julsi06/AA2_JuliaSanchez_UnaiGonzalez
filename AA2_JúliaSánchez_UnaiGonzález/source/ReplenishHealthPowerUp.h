@@ -1,11 +1,10 @@
 #pragma once
 #include "PowerUp.h"
-#include "PowerUpManager.h"
 
-class ShieldEnergyPowerUp : public PowerUp
+class ReplenishHealthPowerUp : public PowerUp
 {
 public:
-	ShieldEnergyPowerUp(std::string path, Vector2 startPos)
+	ReplenishHealthPowerUp(std::string path, Vector2 startPos)
 		: PowerUp(path, Vector2(0.0f, 0.0f), Vector2(150.0f, 90.0f))
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
@@ -23,11 +22,11 @@ public:
 
 	void ApplyPowerUp(IPowerUpEffects* player)
 	{
-		player->EnergyShield();
+		player->ReplenishHealth();
 	}
 
 	void SpawnNextPowerUp(Vector2 lastPos) override
 	{
-		PUM->SpawnPowerUp(Health, lastPos);
+		//PUM->SpawnPowerUp(Points, lastPos);
 	}
 };

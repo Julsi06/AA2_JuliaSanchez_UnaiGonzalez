@@ -4,8 +4,8 @@
 #include "PowerUp.h"
 #include "TimeManager.h"
 
-Bullet::Bullet(Vector2 position, Vector2 dir, float speed, float rotation, float dmg)
-	: ImageObject("resources/images/bullet.png", Vector2(0.0f, 0.0f), Vector2(900.0f, 500.0f)),
+Bullet::Bullet(std::string path, Vector2 position, Vector2 dir, float speed, float rotation, float dmg)
+	: ImageObject(path, Vector2(0.0f, 0.0f), Vector2(900.0f, 500.0f)),
 	IAttacker(dmg), _speed(speed)
 {
 	_transform->position = position;
