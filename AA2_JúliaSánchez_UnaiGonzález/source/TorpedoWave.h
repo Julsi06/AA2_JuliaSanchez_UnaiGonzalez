@@ -6,6 +6,6 @@ class TorpedoWave : public Wave
 {
 public:
 	TorpedoWave() : Wave(22.0f) {}
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override {}
 };

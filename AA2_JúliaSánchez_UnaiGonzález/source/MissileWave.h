@@ -6,6 +6,6 @@ class MissileWave : public Wave
 {
 public:
 	MissileWave() : Wave(14.0f) {}
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override {}
 };

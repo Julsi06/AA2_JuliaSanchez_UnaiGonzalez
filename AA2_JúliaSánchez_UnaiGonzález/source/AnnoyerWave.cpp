@@ -1,10 +1,10 @@
 #include "AnnoyerWave.h"
 #include "TimeManager.h"
 
-void AnnoyerWave::StartWave()
+void AnnoyerWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START ANNOYER WAVE";
-	_amount = 12;
+	_amount = waveData.amount;
 	int firstQuarter = _amount / 4;
 	int half = _amount / 2;
 	int thirdQuarter = 3 * _amount / 4;

@@ -2,7 +2,7 @@
 #include "Spawner.h"
 #include <iostream>
 
-void SpaceBossWave::StartWave()
+void SpaceBossWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START SPACE BOSS WAVE\n";
 

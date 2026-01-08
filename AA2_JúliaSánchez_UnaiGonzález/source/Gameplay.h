@@ -11,6 +11,7 @@
 #include "ScoreManager.h"
 #include "TextObject.h"
 #include "InputManager.h"
+#include "Level.h"
 
 enum GameplayState
 {
@@ -52,10 +53,9 @@ public:
 		SPAWNER.SpawnObject(_spaceship);
 
 		_waveManager = new WaveManager();
-		if (_levelIndex == 1)
-			Level1Config(_spaceship->GetTransform());
-		else if (_levelIndex == 2)
-			Level2Config(_spaceship->GetTransform());
+		Level level = LoadLevelFromFile("Level1Config.xml");
+		std::cout << "LEVEL WAVES: " << level.waves.size() << std::endl;
+		_waveManager->LoadLevel(level);
 
 		_waveManager->Start();
 

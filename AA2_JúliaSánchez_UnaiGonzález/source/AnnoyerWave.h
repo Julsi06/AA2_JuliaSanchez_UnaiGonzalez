@@ -9,6 +9,6 @@ class AnnoyerWave : public Wave
 public:
 	AnnoyerWave(Transform* playerTransform)
 		: Wave(15.0f), _playerTransform(playerTransform) { }
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override {}
 };

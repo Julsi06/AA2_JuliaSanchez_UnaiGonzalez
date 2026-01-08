@@ -1,9 +1,9 @@
 #include "MissileWave.h"
 
-void MissileWave::StartWave()
+void MissileWave::StartWave(const WaveData& waveData)
 {
 	std::cout << "START MISSILE WAVE";
-	_amount = 10; // Will be read from XML
+	_amount = waveData.amount;
 
 	float startX;
 	float startY;

@@ -1,9 +1,9 @@
 #include "DanielsWave.h"
 
-void DanielsWave::StartWave()
+void DanielsWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START DANIELS WAVE";
-    _amount = 12; // Will be read from XML
+    _amount = waveData.amount;
     int half = _amount / 2;
 
     // This will have to be changed

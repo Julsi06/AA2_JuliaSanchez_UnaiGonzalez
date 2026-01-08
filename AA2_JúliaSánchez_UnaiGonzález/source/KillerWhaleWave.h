@@ -6,7 +6,7 @@ class KillerWhaleWave : public Wave
 {
 public:
 	KillerWhaleWave() : Wave(17.0f) { }
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override { }
 };
 

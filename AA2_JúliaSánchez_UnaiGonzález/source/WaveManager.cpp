@@ -4,13 +4,36 @@
 #include "Background.h"
 #include "Gameplay.h"
 
+void WaveManager::LoadLevel(const Level& level)
+{
+    _waveData = level.waves;
+}
+
+Wave* CreateWave(const WaveData& data, Transform* playerTransform)
+{
+    switch (data.enemyType)
+    {
+    case EnemyType::AMOEBA:        return new AmoebaWave();
+    case EnemyType::BUBBLE:        return new BubbleWave();
+    case EnemyType::BEHOLDER:      return new BeholderWave(playerTransform);
+    case EnemyType::CHOMPER:       return new ChomperWave();
+    case EnemyType::CIRCLER:       return new CirclerWave();
+    case EnemyType::HMEDUSA:       return new HorizontalMedusaWave();
+    case EnemyType::VMEDUSA:       return new VerticalMedusaWave();
+    case EnemyType::KILLERWHALE:   return new KillerWhaleWave();
+    case EnemyType::BIOTITAN:      return new BioTitanWave();
+    default: return nullptr;
+    }
+}
+
 void WaveManager::Start()
 {
-    if (_waves.empty())
+    if (_waveData.empty())
         return;
 
-    _currentWave = _waves[_currentWaveIndex];
-    _currentWave->StartWave();
+    Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
+    _currentWave = wave;
+    _currentWave->StartWave(_waveData[_currentWaveIndex]);
 }
 
 void WaveManager::Update()
@@ -44,9 +67,8 @@ void WaveManager::Update()
 
             if (_currentWaveIndex < _waves.size())
             {
-                _currentWave = _waves[_currentWaveIndex];
-                _currentWave->StartWave();
-                _waveIntervalTime = 0.0f;
+                _currentWave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
+                _currentWave->StartWave(_waveData[_currentWaveIndex]);
             }
             else
                 _currentWave = nullptr;
@@ -57,5 +79,5 @@ void WaveManager::Update()
 void WaveManager::Restart()
 {
     _currentWave->ResetWave();
-    _currentWave->StartWave();
+    _currentWave->StartWave(_waveData[_currentWaveIndex]);
 }

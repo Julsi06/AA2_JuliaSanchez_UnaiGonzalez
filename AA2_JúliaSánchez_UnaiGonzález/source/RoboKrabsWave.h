@@ -10,6 +10,6 @@ public:
 	RoboKrabsWave(Transform* playerTransform)
 		: Wave(18.0f), _playerTransform(playerTransform) {
 	}
-	void StartWave() override;
+	void StartWave(const WaveData& waveData) override;
 	void EndWave() override {}
 };

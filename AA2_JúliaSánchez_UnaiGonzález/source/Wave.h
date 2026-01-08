@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include "Spawner.h"
 #include <vector>
+#include "WaveData.h"
 
 class Wave
 {
@@ -18,7 +19,7 @@ protected:
 	std::vector<Enemy*> _enemies;
 public:
 	Wave(float duration) : _duration(duration) { }
-	virtual void StartWave() = 0;
+	virtual void StartWave(const WaveData& waveData) = 0;
 	virtual void UpdateWave();
 	virtual void EndWave() = 0;
 	virtual void ResetWave();

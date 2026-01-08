@@ -1,9 +1,9 @@
 #include "NukeWave.h"
 
-void NukeWave::StartWave()
+void NukeWave::StartWave(const WaveData& waveData)
 {
     std::cout << "START NUKE WAVE";
-    _amount = 6; // Will be read from XML
+    _amount = waveData.amount;
 
     // This will have to be changed
     float spacingX = 150.0f;
