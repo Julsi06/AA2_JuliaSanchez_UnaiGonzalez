@@ -43,5 +43,5 @@ void Gameplay::Level1Config(Transform* playerTransform)
 	_waveManager->AddWave(new BeholderWave(playerTransform));
 	_waveManager->AddWave(new ChomperWave());
 	_waveManager->AddWave(new AmoebaWave());*/
-	//_waveManager->AddWave(new BioTitanWave());
+	_waveManager->AddWave(new BioTitanWave());
 }
