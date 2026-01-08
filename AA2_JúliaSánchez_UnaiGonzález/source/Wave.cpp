@@ -16,8 +16,11 @@ void Wave::UpdateWave()
 	}
 
 	if (counter == _enemies.size() && !_spawnPowerUp)
+	{
 		_spawnPowerUp = true;
-
+		_waveDone = true;
+	}
+		
 	if (_elapsedTime >= _duration)
 		_waveDone = true;
 }

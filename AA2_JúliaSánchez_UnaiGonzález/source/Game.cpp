@@ -36,6 +36,13 @@ void Game::Init()
 	RM->LoadTexture("resources/images/bottomVine1.png");
 	RM->LoadTexture("resources/images/scoreUI.png");
 
+	RM->LoadTexture("resources/images/1.png");
+	RM->LoadTexture("resources/images/2.png");
+	RM->LoadTexture("resources/images/3.png");
+	RM->LoadTexture("resources/images/4.png");
+	RM->LoadTexture("resources/images/5.png");
+	RM->LoadTexture("resources/images/6.png");
+
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay1", new Gameplay(1)));

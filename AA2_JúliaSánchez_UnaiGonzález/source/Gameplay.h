@@ -46,6 +46,8 @@ public:
 		/*else if (_index == 2)
 			Level2Config(_spaceship->GetTransform());*/
 
+		_waveManager->Start();
+
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
 		SCORE->SetPlayer(_spaceship);
@@ -55,9 +57,7 @@ public:
 		_score->GetTransform()->position = Vector2(223.0f, RM->WINDOW_HEIGHT - 63.0f);
 		_ui.push_back(_score);
 
-		_scoreUI->SetUpScore(_score);
-
-		_waveManager->Start();
+		_scoreUI->SetUpScore(_score);		
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;
