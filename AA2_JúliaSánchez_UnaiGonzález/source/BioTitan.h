@@ -14,10 +14,11 @@ private:
 
 public:
     BioTitan(const Vector2& startPos)
-        : Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(6000.0f, 6000.0f), 1000.0f, 1000.0f)
+        : Enemy("resources/images/BioTitanAlive.png", Vector2(0.0f, 0.0f), Vector2(725.0f, 589.0f), 1, 1, 725.0f, 589.0f, true, 1, 400.0f, 1000)
     {
         GetTransform()->position = startPos;
-        GetTransform()->scale = Vector2(2.0f, 2.0f);
+        GetTransform()->scale = Vector2(1.0f, 1.0f);
+        _health = 2000.0f;
 
         AddState(new StayState(_transform, _physics, Vector2(0.0f, 0.0f), 0.0f));
         _physics->AddCollider(new AABB(_transform->position, _transform->size));

@@ -37,6 +37,7 @@ public:
 
 	float GetDeltaTime() const { return _deltaTime; }
 	float GetElapsedTime() const { return _elapsedTime; }
+	float GetFrameTime() const { return _frameTime;  }
 
 	bool ShouldUpdateGame() { return _deltaTime >= _frameTime; }
 	void ResetDeltaTime()

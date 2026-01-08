@@ -1,13 +1,13 @@
 #pragma once
-#include "ImageObject.h"
-#include "PlayerBullet.h"
+#include "AnimatedImageObject.h"
+#include "Bullet.h"
 #include "EnemyState.h"
 #include "IDamagable.h"
 #include "IAttacker.h"
 #include "Spaceship.h"
 #include "ScoreManager.h"
 
-class Enemy : public ImageObject, public IAttacker, public IDamagable
+class Enemy : public AnimatedImageObject, public IAttacker, public IDamagable
 {
 protected:
 	std::vector<EnemyState*> _states;
@@ -16,8 +16,8 @@ protected:
 	Vector2 _lastPosition;
 	int _pointsToGive;
 public:
-	Enemy(std::string path, Vector2 offset, Vector2 size, float health, int points)
-		: ImageObject(path, offset, size), IDamagable(health), IAttacker(10.0f), _pointsToGive(points) {}
+	Enemy(std::string path, Vector2 offset, Vector2 size, int frames, int columns, float width, float height, bool loop, float frameDuration, float health, int points)
+		: AnimatedImageObject(path, offset, size, frames, columns, width, height, loop, frameDuration), IDamagable(health), IAttacker(10.0f), _pointsToGive(points) {}
 
 	void AddState(EnemyState* state)
 	{

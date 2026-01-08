@@ -4,11 +4,11 @@
 void ChomperWave::StartWave()
 {
 	std::cout << "START CHOMPER WAVE";
-	_amount = 12; // Will be read from XML
+	_amount = 7; // Will be read from XML
 
-	float spacingY = 50.0f;
+	float spacingY = 70.0f;
 	float startX = RM->WINDOW_WIDTH + 10.0f;
-	float startY = 100.0f;
+	float startY = 50.0f;
 	int dirY = -1;
 
 	for (int i = 0;i < _amount;i++)

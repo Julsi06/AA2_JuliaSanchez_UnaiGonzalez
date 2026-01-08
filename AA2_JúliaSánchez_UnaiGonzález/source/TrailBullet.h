@@ -6,10 +6,10 @@ class TrailBullet : public ImageObject, public IAttacker
 {
 public:
 	TrailBullet()
-		: ImageObject("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f)),
+		: ImageObject("resources/images/TrailBullet.png", Vector2(0.0f, 0.0f), Vector2(121.0f, 137.0f)),
 		IAttacker(10.0f)
 	{
-		_transform->scale = Vector2(0.3f, 0.3f);
+		_transform->scale = Vector2(1.0f, 1.0f);
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
 		_physics->SetLinearDrag(0.0f);

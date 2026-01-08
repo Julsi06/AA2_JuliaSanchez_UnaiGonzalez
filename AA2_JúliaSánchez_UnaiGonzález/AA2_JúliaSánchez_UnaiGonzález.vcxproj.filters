@@ -434,16 +434,10 @@
     <ClInclude Include="source\ScoreManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="source\PlayerBullet.h">
+    <ClInclude Include="source\AnimatedImageObject.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="source\SpaceBoss.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\SpaceBossWave.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Ranking.h">
+    <ClInclude Include="source\AnimatedImageRenderer.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -61,6 +61,8 @@ public:
 
 		BackgroundVine::SetVines(_levelIndex);
 
+		_waveManager->Start();
+
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
 
@@ -69,14 +71,7 @@ public:
 		_score->GetTransform()->position = Vector2(200.0f, RM->WINDOW_HEIGHT - 64.0f);
 		_ui.push_back(_score);
 
-		_extraLivesText = new TextObject("EXTRA LIVES");
-		_extraLivesText->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 200.0f, RM->WINDOW_HEIGHT - 5.0f);
-		_ui.push_back(_extraLivesText);
-
-		std::string textExtraLives = std::to_string(_playerExtraLives);
-		_extraLives = new TextObject(textExtraLives);
-		_extraLives->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 125.0f, RM->WINDOW_HEIGHT - 64.0f);
-		_ui.push_back(_extraLives);
+		_scoreUI->SetUpScore(_score);		
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;

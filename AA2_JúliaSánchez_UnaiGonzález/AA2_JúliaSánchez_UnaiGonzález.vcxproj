@@ -75,6 +75,8 @@
   <ItemGroup>
     <ClInclude Include="source\Angrygons.h" />
     <ClInclude Include="source\AngrygonsWave.h" />
+    <ClInclude Include="source\AnimatedImageObject.h" />
+    <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Annoyer.h" />
     <ClInclude Include="source\AnnoyerWave.h" />
     <ClInclude Include="source\BackgroundDecor.h" />

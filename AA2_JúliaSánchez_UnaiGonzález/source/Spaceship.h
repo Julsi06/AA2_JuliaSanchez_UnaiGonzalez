@@ -26,8 +26,8 @@ private:
 	bool _turret2Active = false;
 public:
 	Spaceship()
-		: ImageObject("resources/images/spaceship.png", Vector2(0.0f, 0.0f),
-			Vector2(500.0f, 500.0f)), IDamagable(250.0f), 
+		: ImageObject("resources/images/Forward_Backwards.png", Vector2(0.0f, 0.0f),
+			Vector2(205.0f, 135.0f)), IDamagable(2500.0f), 
 		_currentCannonEn(0.0f), _currentLaserEn(0.0f), 
 		_currentShieldEn(_maxShieldEn)
 	{
