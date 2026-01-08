@@ -22,6 +22,8 @@
     <ClCompile Include="source\AmoebaWave.cpp" />
     <ClCompile Include="source\AngrygonsWave.cpp" />
     <ClCompile Include="source\AnnoyerWave.cpp" />
+    <ClCompile Include="source\Background.cpp" />
+    <ClCompile Include="source\BackgroundVine.cpp" />
     <ClCompile Include="source\BeholderWave.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
     <ClCompile Include="source\BioTitanWave.cpp" />
@@ -125,6 +127,7 @@
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\PowerUpManager.h" />
+    <ClInclude Include="source\Ranking.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\RoboKrabsWave.h" />
     <ClInclude Include="source\ScoreManager.h" />

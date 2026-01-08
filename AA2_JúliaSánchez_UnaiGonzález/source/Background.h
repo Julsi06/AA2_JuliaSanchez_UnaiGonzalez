@@ -6,10 +6,11 @@
 class Background : public ImageObject
 {
 private:
+    static std::vector<Background*> _backgrounds;
     bool _stopScroll = false;
 public:
-    Background(Vector2 startPos) 
-        : ImageObject("resources/images/pattern.jpg", Vector2(0.0f, 0.0f), 
+    Background(std::string path, Vector2 startPos) 
+        : ImageObject(path, Vector2(0.0f, 0.0f), 
             Vector2(612.0f, 408.0f)) 
     {
         // setting the size of the background to be the same size as the screen
@@ -34,14 +35,10 @@ public:
 
     void OnCollisionEnter(Object* other) override { }
 
-    static void SetBackgrounds()
-    {
-        Background* background1 = new Background(Vector2(RM->WINDOW_WIDTH / 2.0f, 
-            RM->WINDOW_HEIGHT / 2.0f));
-        SPAWNER.SpawnObject(background1);
+    static void SetBackgrounds(int index);
 
-        Background* background2 = new Background(Vector2(RM->WINDOW_WIDTH 
-            + background1->GetTransform()->position.x, RM->WINDOW_HEIGHT / 2.0f));
-        SPAWNER.SpawnObject(background2);
+    static void DestroyBackgrounds()
+    {
+        
     }
 };
