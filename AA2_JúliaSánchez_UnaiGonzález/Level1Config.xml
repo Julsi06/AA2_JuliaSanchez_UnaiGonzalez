@@ -344,7 +344,7 @@
     <wave>
         <spawned_enemy_id>9</spawned_enemy_id>
         <amount>1</amount>
-		<startX>910</startX>
-		<startY>360</startY>
+		<startX>660</startX>
+		<startY>43</startY>
     </wave>
 </level>
