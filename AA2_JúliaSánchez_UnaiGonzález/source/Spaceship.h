@@ -44,6 +44,7 @@ public:
 	{
 		Vector2 velocity(0.0f, 0.0f);
 
+		// NEEDS FIXING -> add force
 		if (IM->GetEvent(SDLK_W, HOLD))
 			velocity.y = -_speed;
 		if (IM->GetEvent(SDLK_S, HOLD))
@@ -72,6 +73,7 @@ public:
 				_currentLaserEn -= 10.0f;
 			}
 
+			// NEEDS FINISHING -> Turrets
 			/*if (_turret1Active)
 			{
 				SPAWNER.SpawnObject(new Bullet(_transform->position + Vector2(-50.0f, -60.0f)));
