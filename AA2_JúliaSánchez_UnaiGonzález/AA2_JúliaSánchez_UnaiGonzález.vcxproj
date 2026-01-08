@@ -67,6 +67,7 @@
     <ClCompile Include="source\TorpedoWave.cpp" />
     <ClCompile Include="source\TrailBullet.cpp" />
     <ClCompile Include="source\TurboChainsawWave.cpp" />
+    <ClCompile Include="source\TurretBullet.h" />
     <ClCompile Include="source\UfoWave.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\VerticalMedusaWave.cpp" />
@@ -133,7 +134,7 @@
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\PowerUpManager.h" />
     <ClInclude Include="source\Ranking.h" />
-    <ClInclude Include="source\ReplenishHealthPowerUp.h" />
+    <ClInclude Include="source\ForceFieldPowerUp.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\RoboKrabsWave.h" />
     <ClInclude Include="source\ScoreManager.h" />

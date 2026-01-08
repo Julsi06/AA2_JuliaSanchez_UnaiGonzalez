@@ -31,6 +31,7 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
+    // NEEDS TO CREATE ALL WAVES
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);

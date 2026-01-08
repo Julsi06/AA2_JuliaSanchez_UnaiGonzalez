@@ -61,8 +61,6 @@ public:
 
 		BackgroundVine::SetVines(_levelIndex);
 
-		_waveManager->Start();
-
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
 
