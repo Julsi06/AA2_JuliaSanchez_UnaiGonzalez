@@ -46,15 +46,9 @@ public:
 	{
 		// FIX HERIARCHY OF APARITION
 		if (_levelIndex == 1)
-		{
 			Background::SetBackgrounds();
-			BackgroundVine::SetVines(1);
-		}
 		else if (_levelIndex == 2)
-		{
 			Background::SetBackgrounds();
-			BackgroundVine::SetVines(2);
-		}
 
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
@@ -64,6 +58,13 @@ public:
 			Level1Config(_spaceship->GetTransform());
 		else if (_levelIndex == 2)
 			Level2Config(_spaceship->GetTransform());
+
+		_waveManager->Start();
+
+		if (_levelIndex == 1)
+			BackgroundVine::SetVines(1);
+		else if (_levelIndex == 2)
+			BackgroundVine::SetVines(2);
 
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
@@ -82,7 +83,6 @@ public:
 		_extraLives->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 125.0f, RM->WINDOW_HEIGHT - 64.0f);
 		_ui.push_back(_extraLives);
 
-		_waveManager->Start();
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;
