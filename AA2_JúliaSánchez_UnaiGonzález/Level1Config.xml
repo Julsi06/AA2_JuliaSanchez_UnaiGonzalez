@@ -3,73 +3,348 @@
 	<wave>
 		<spawned_enemy_id>3</spawned_enemy_id>
 		<amount>12</amount>
+		<startX>1010</startX>
+		<spacingX>150</spacingX>
+		<startYTop>100</startYTop>
+		<startYBottom>620</startYBottom>
 	</wave>
 	<wave>
 		<spawned_enemy_id>8</spawned_enemy_id>
         <amount>3</amount>
+		<startX>1010</startX>
+		<spacingX>300</spacingX>
+		<startYTop>50</startYTop>
+		<startYBottom>670</startYBottom>
     </wave>
     <wave>
 	<spawned_enemy_id>6</spawned_enemy_id>
         <amount>12</amount>
+		<startX>1010</startX>
+		<minY>200</minY>
+		<maxY>640</maxY>
+		<minSpacingX>10</minSpacingX>
+		<maxSpacingX>100</maxSpacingX>
+		<velocity>200</velocity>
     </wave>
        <wave>
         <spawned_enemy_id>5</spawned_enemy_id>
         <amount>12</amount>
+		<startX>-50</startX>
+		<startY>50</startY>
     </wave>
     <wave>
         <spawned_enemy_id>7</spawned_enemy_id>
         <amount>12</amount>
+		<startY>620</startY>
+		<startX>300</startX>
+		<spacingX>125</spacingX>
     </wave>
     <wave>
         <spawned_enemy_id>2</spawned_enemy_id>
         <amount>12</amount>
+		<positions>
+			<position>
+				<x>-100</x>
+				<y>-50</y>
+				<dir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>50</x>
+				<y>-50</y>
+				<dir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>200</x>
+				<y>-50</y>
+				<dir x="1.0" y="1.0"/>
+			</position>
+			
+			<position>
+				<x>700</x>
+				<y>-50</y>
+				<dir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>850</x>
+				<y>-50</y>
+				<dir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>1000</x>
+				<y>-50</y>
+				<dir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-100</x>
+				<y>720</y>
+				<dir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>50</x>
+				<y>720</y>
+				<dir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>200</x>
+				<y>720</y>
+				<dir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>700</x>
+				<y>720</y>
+				<dir x="-1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>850</x>
+				<y>720</y>
+				<dir x="-1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>1000</x>
+				<y>720</y>
+				<dir x="-1.0" y="-1.0"/>
+			</position>
+		</positions>
     </wave>
     <wave>
         <spawned_enemy_id>8</spawned_enemy_id>
         <amount>3</amount>
+		<startX>1010</startX>
+		<spacingX>300</spacingX>
+		<startYTop>50</startYTop>
+		<startYBottom>670</startYBottom>
     </wave>
     <wave>
         <spawned_enemy_id>4</spawned_enemy_id>
         <amount>12</amount>
+		<startX>1010</startX>
+		<spacingY>50</spacingY>
+		<startY>100</startY>
     </wave>
     <wave>
         <spawned_enemy_id>1</spawned_enemy_id>
         <amount>8</amount>
+		<positions>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="-1.0" y="-1.0"/>
+				<groupDir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="0.0" y="-1.0"/>
+				<groupDir x="0.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="1.0" y="-1.0"/>
+				<groupDir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="-1.0" y="0.0"/>
+				<groupDir x="1.0" y="0.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="1.0" y="0.0"/>
+				<groupDir x="-1.0" y="0.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="-1.0" y="1.0"/>
+				<groupDir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="0.0" y="1.0"/>
+				<groupDir x="0.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="1.0" y="1.0"/>
+				<groupDir x="-1.0" y="-1.0"/>
+			</position>
+		</positions>
     </wave>
     <wave>
         <spawned_enemy_id>3</spawned_enemy_id>
         <amount>12</amount>
+		<startX>1010</startX>
+		<spacingX>150</spacingX>
+		<startYTop>100</startYTop>
+		<startYBottom>620</startYBottom>
     </wave>
     <wave>
         <spawned_enemy_id>8</spawned_enemy_id>
         <amount>3</amount>
+		<startX>1010</startX>
+		<spacingX>300</spacingX>
+		<startYTop>50</startYTop>
+		<startYBottom>670</startYBottom>
     </wave>
     <wave>
         <spawned_enemy_id>6</spawned_enemy_id>
         <amount>12</amount>
+		<startX>1010</startX>
+		<minY>200</minY>
+		<maxY>640</maxY>
+		<minSpacingX>10</minSpacingX>
+		<maxSpacingX>100</maxSpacingX>
+		<velocity>200</velocity>
     </wave>
     <wave>
         <spawned_enemy_id>5</spawned_enemy_id>
         <amount>12</amount>
+		<startX>-50</startX>
+		<startY>50</startY>
     </wave>
     <wave>
         <spawned_enemy_id>7</spawned_enemy_id>
         <amount>12</amount>
+		<startY>620</startY>
+		<startX>300</startX>
+		<spacingX>125</spacingX>
     </wave>
     <wave>
         <spawned_enemy_id>2</spawned_enemy_id>
         <amount>12</amount>
+		<positions>
+			<position>
+				<x>-100</x>
+				<y>-50</y>
+				<dir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>50</x>
+				<y>-50</y>
+				<dir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>200</x>
+				<y>-50</y>
+				<dir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>700</x>
+				<y>-50</y>
+				<dir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>850</x>
+				<y>-50</y>
+				<dir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>1000</x>
+				<y>-50</y>
+				<dir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-100</x>
+				<y>720</y>
+				<dir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>50</x>
+				<y>720</y>
+				<dir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>200</x>
+				<y>720</y>
+				<dir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>700</x>
+				<y>720</y>
+				<dir x="-1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>850</x>
+				<y>720</y>
+				<dir x="-1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>1000</x>
+				<y>720</y>
+				<dir x="-1.0" y="-1.0"/>
+			</position>
+		</positions>
     </wave>
     <wave>
         <spawned_enemy_id>4</spawned_enemy_id>
         <amount>12</amount>
+		<startX>1010</startX>
+		<spacingY>50</spacingY>
+		<startY>100</startY>
     </wave>
     <wave>
         <spawned_enemy_id>1</spawned_enemy_id>
         <amount>8</amount>
+		<positions>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="-1.0" y="-1.0"/>
+				<groupDir x="1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="0.0" y="-1.0"/>
+				<groupDir x="0.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="1.0" y="-1.0"/>
+				<groupDir x="-1.0" y="1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="-1.0" y="0.0"/>
+				<groupDir x="1.0" y="0.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="1.0" y="0.0"/>
+				<groupDir x="-1.0" y="0.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="-1.0" y="1.0"/>
+				<groupDir x="1.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="0.0" y="1.0"/>
+				<groupDir x="0.0" y="-1.0"/>
+			</position>
+			<position>
+				<x>-50</x>
+				<y>360</y>
+				<separateDir x="1.0" y="1.0"/>
+				<groupDir x="-1.0" y="-1.0"/>
+			</position>
+		</positions>
     </wave>
     <wave>
         <spawned_enemy_id>9</spawned_enemy_id>
         <amount>1</amount>
+		<startX>910</startX>
+		<startY>360</startY>
     </wave>
 </level>

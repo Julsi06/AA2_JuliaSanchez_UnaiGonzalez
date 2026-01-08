@@ -6,10 +6,9 @@ void CirclerWave::StartWave(const WaveData& waveData)
 	std::cout << "START CIRCLER WAVE";
 	_amount = waveData.amount;
 
-	float startX = -50.0f;
-	float startY = 50.0f;
+	Vector2 position(waveData.startX, waveData.startY);
+	_positions.push_back(position);
 
-	_positions.push_back(Vector2(startX, startY));
 	Circler* circler = new Circler(_positions[0]);
 
 	_enemies.push_back(circler);
