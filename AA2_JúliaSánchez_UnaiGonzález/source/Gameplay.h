@@ -69,9 +69,16 @@ public:
 		std::string textScore = std::to_string(SCORE->GetCurrentPoints());
 		_score = new TextObject(textScore);
 		_score->GetTransform()->position = Vector2(200.0f, RM->WINDOW_HEIGHT - 64.0f);
-		_ui.push_back(_score);
+		_ui.push_back(_score);	
 
-		_scoreUI->SetUpScore(_score);		
+		_extraLivesText = new TextObject("EXTRA LIVES");
+		_extraLivesText->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 200.0f, RM->WINDOW_HEIGHT - 5.0f);
+		_ui.push_back(_extraLivesText);
+
+		std::string textExtraLives = std::to_string(_playerExtraLives);
+		_extraLives = new TextObject(textExtraLives);
+		_extraLives->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 125.0f, RM->WINDOW_HEIGHT - 64.0f);
+		_ui.push_back(_extraLives);
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;

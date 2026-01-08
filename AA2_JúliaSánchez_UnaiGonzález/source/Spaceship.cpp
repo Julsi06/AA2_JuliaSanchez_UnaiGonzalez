@@ -34,3 +34,8 @@ void Spaceship::EnergyShield()
 {
 	_currentShieldEn = _maxShieldEn;
 }
+
+void Spaceship::ReplenishHealth()
+{
+	_health = _maxHealth;
+}

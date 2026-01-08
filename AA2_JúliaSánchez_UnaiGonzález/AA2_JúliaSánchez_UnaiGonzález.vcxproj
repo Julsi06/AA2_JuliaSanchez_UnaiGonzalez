@@ -133,6 +133,7 @@
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\PowerUpManager.h" />
     <ClInclude Include="source\Ranking.h" />
+    <ClInclude Include="source\ReplenishHealthPowerUp.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\RoboKrabsWave.h" />
     <ClInclude Include="source\ScoreManager.h" />

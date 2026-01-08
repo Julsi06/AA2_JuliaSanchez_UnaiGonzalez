@@ -45,6 +45,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/4.png");
 	RM->LoadTexture("resources/images/5.png");
 	RM->LoadTexture("resources/images/6.png");
+	RM->LoadTexture("resources/images/7.png");
 
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 

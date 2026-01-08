@@ -13,7 +13,7 @@ private:
 
 public:
     SpaceBoss(const Vector2& startPos)
-        : Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(6000.0f, 6000.0f), 1000.0f, 1000.0f)
+        : Enemy("resources/images/bubble.png", Vector2(0.0f, 0.0f), Vector2(6000.0f, 6000.0f), 1, 1, 6000.0f, 6000.0f, false, 1, 1000.0f, 1000.0f)
     {
         GetTransform()->position = startPos;
         GetTransform()->scale = Vector2(2.0f, 2.0f);

@@ -27,6 +27,6 @@ void BioTitan::Shoot()
         float posY = startY + i * spacingY;
         float startX = (float)(minX + (rand() % (int)(maxX - minX)));
 
-        SPAWNER.SpawnObject(new BossBullet(Vector2(startX, posY), 400.0f));
+        SPAWNER.SpawnObject(new BossBullet(Vector2(startX, posY)));
     }
 }

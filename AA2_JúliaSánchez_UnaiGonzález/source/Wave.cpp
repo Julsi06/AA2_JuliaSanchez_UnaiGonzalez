@@ -15,7 +15,7 @@ void Wave::UpdateWave()
 		}
 	}
 
-	if (counter == _enemies.size() && !_spawnPowerUp)
+	if (counter == _enemies.size() && !_spawnPowerUp && !_waveDone)
 	{
 		_spawnPowerUp = true;
 		_waveDone = true;
