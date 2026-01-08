@@ -98,15 +98,14 @@ void Gameplay::DeathUpdate()
 
 	if (_deathTimer >= 2.0f)
 	{
-		// show black screen and destroy all objects
+		// show black screen
+		DestroyGameplayElements();
 		if (_playerExtraLives > 0)
 		{
-			// respawn player and restart from last wave (?)
 			_playerExtraLives--;
-			RespawnPlayer();
-			_waveManager->Restart();
 			_deathTimer = 0.0f;
 			_playerDied = false;
+			RespawnGameplayElements(_levelIndex);
 			_currentState = GameplayState::GAMEPLAY;
 		}
 		else
@@ -122,6 +121,42 @@ void Gameplay::RespawnPlayer()
 
 	_spaceship = new Spaceship();
 	SPAWNER.SpawnObject(_spaceship);
+}
+
+void Gameplay::DestroyGameplayElements()
+{
+	// wavemanager has to stop
+	Background::DestroyBackgrounds();
+	_score->Destroy();
+	_scoreUI->Destroy();
+	_extraLives->Destroy();
+	_extraLivesText->Destroy();
+	BackgroundVine::DestroyVines();
+}
+
+void Gameplay::RespawnGameplayElements(int level)
+{
+	Background::SetBackgrounds(level);
+	RespawnPlayer();
+	_waveManager->Restart();
+	BackgroundVine::SetVines(level);
+
+	_scoreUI = new ScoreUI();
+	SPAWNER.SpawnObject(_scoreUI);
+
+	std::string textScore = std::to_string(SCORE->GetCurrentPoints());
+	_score = new TextObject(textScore);
+	_score->GetTransform()->position = Vector2(200.0f, RM->WINDOW_HEIGHT - 64.0f);
+	_ui.push_back(_score);
+
+	_extraLivesText = new TextObject("EXTRA LIVES");
+	_extraLivesText->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 200.0f, RM->WINDOW_HEIGHT - 5.0f);
+	_ui.push_back(_extraLivesText);
+
+	std::string textExtraLives = std::to_string(_playerExtraLives);
+	_extraLives = new TextObject(textExtraLives);
+	_extraLives->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 125.0f, RM->WINDOW_HEIGHT - 64.0f);
+	_ui.push_back(_extraLives);
 }
 
 void Gameplay::Level1Config(Transform* playerTransform)

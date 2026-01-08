@@ -30,6 +30,7 @@ private:
 
 	TextObject* _score = nullptr;
 	TextObject* _extraLives = nullptr;
+	TextObject* _extraLivesText = nullptr;
 	ScoreUI* _scoreUI = nullptr;
 
 	int _levelIndex;
@@ -45,10 +46,7 @@ public:
 	void OnEnter() override
 	{
 		// FIX HERIARCHY OF APARITION
-		if (_levelIndex == 1)
-			Background::SetBackgrounds();
-		else if (_levelIndex == 2)
-			Background::SetBackgrounds();
+		Background::SetBackgrounds(_levelIndex);
 
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
@@ -61,10 +59,7 @@ public:
 
 		_waveManager->Start();
 
-		if (_levelIndex == 1)
-			BackgroundVine::SetVines(1);
-		else if (_levelIndex == 2)
-			BackgroundVine::SetVines(2);
+		BackgroundVine::SetVines(_levelIndex);
 
 		_scoreUI = new ScoreUI();
 		SPAWNER.SpawnObject(_scoreUI);
@@ -74,15 +69,14 @@ public:
 		_score->GetTransform()->position = Vector2(200.0f, RM->WINDOW_HEIGHT - 64.0f);
 		_ui.push_back(_score);
 
-		TextObject* extraLives = new TextObject("EXTRA LIVES");
-		extraLives->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 200.0f, RM->WINDOW_HEIGHT - 5.0f);
-		_ui.push_back(extraLives);
+		_extraLivesText = new TextObject("EXTRA LIVES");
+		_extraLivesText->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 200.0f, RM->WINDOW_HEIGHT - 5.0f);
+		_ui.push_back(_extraLivesText);
 
 		std::string textExtraLives = std::to_string(_playerExtraLives);
 		_extraLives = new TextObject(textExtraLives);
 		_extraLives->GetTransform()->position = Vector2(RM->WINDOW_WIDTH - 125.0f, RM->WINDOW_HEIGHT - 64.0f);
 		_ui.push_back(_extraLives);
-
 	}
 	void OnExit() override { Scene::OnExit(); }
 	void Update() override;
@@ -95,6 +89,8 @@ public:
 	void DeathUpdate();
 
 	void RespawnPlayer();
+	void DestroyGameplayElements();
+	void RespawnGameplayElements(int level);
 
 	// configuration of waves on each level
 	void Level1Config(Transform* playerTransform);
