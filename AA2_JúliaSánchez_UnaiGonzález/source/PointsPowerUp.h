@@ -6,7 +6,7 @@ class PointsPowerUp : public PowerUp
 {
 public:
 	PointsPowerUp(std::string path, Vector2 startPos)
-		: PowerUp(path, Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f))
+		: PowerUp(path, Vector2(0.0f, 0.0f), Vector2(150.0f, 90.0f))
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(0.5f, 0.5f);

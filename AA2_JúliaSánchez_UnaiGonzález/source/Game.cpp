@@ -14,6 +14,7 @@ void Game::Init()
 	RM->Init();
 
 	RM->LoadTexture("resources/images/spaceship.png");
+	RM->LoadTexture("resources/images/Forward_Backwards.png");
 	RM->LoadTexture("resources/images/splashScreen.png");
 	RM->LoadTexture("resources/images/splashImage.png");
 	RM->LoadTexture("resources/images/bullet.png");
