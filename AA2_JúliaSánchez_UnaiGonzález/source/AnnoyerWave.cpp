@@ -3,7 +3,7 @@
 
 void AnnoyerWave::StartWave(const WaveData& waveData)
 {
-	std::cout << "START ANNOYER WAVE";
+	/*std::cout << "START ANNOYER WAVE";
 	_amount = waveData.amount;
 	int firstQuarter = _amount / 4;
 	int half = _amount / 2;
@@ -63,5 +63,5 @@ void AnnoyerWave::StartWave(const WaveData& waveData)
 		_enemies.push_back(annoyer);
 		SPAWNER.SpawnObject(annoyer);
 		annoyer->Start();
-	}
+	}*/
 }

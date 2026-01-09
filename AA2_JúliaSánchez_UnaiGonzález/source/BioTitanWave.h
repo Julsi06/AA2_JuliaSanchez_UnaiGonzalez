@@ -5,8 +5,7 @@
 class BioTitanWave : public Wave
 {
 public:
-    BioTitanWave() : Wave(40.0f) {}
+    BioTitanWave() = default;
     bool IsBossWave() const override { return true; }
-    void StartWave(const WaveData& waveData) override;
-    void EndWave() override {}
+    void StartWave(const WaveData& data) override;
 };

@@ -5,7 +5,6 @@
 class AngrygonsWave : public Wave
 {
 public:
-	AngrygonsWave() : Wave(18.0f) {}
+	AngrygonsWave() = default;
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
 };

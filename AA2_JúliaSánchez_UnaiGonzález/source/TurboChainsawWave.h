@@ -5,7 +5,6 @@
 class TurboChainsawWave : public Wave
 {
 public:
-	TurboChainsawWave() : Wave(14.0f) {}
+	TurboChainsawWave() = default;
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
 };

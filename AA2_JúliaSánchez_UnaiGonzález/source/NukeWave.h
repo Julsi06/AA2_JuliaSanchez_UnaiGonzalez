@@ -5,7 +5,6 @@
 class NukeWave : public Wave
 {
 public:
-	NukeWave() : Wave(4.0f) {}
+	NukeWave() = default;
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
 };

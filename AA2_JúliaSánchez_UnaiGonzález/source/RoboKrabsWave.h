@@ -8,8 +8,7 @@ private:
 	Transform* _playerTransform = nullptr;
 public:
 	RoboKrabsWave(Transform* playerTransform)
-		: Wave(18.0f), _playerTransform(playerTransform) {
+		: _playerTransform(playerTransform) {
 	}
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
 };

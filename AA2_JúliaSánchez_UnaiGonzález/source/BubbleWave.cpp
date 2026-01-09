@@ -3,39 +3,23 @@
 #include "CircularMoveState.h"
 #include "TimeManager.h"
 
-void BubbleWave::StartWave(const WaveData& waveData)
+void BubbleWave::StartWave(const WaveData& data)
 {
-    std::cout << "START BUBBLE WAVE";
-	_amount = waveData.amount;
+    std::cout << "SPAWN BUBBLE";
+    Wave::StartWave(data);
 
-    int half = _amount / 2;
-    int auxI = 0;
+    int dirY;
 
     for (int i = 0; i < _amount; i++)
     {
-        float startY;
-        float posX;
-        int dirY;
+        if (i < _amount / 2)
 
-        if (i < half)
-        {
-            startY = waveData.startYTop;
-            posX = waveData.startX + i * waveData.spacingX;
             dirY = 1;
-        }
         else
-        {
-            startY = waveData.startYBottom;
-            posX = waveData.startX + auxI * waveData.spacingX;
             dirY = -1;
-            auxI++;
-        }
 
-        Vector2 position(posX, startY);
-        _positions.push_back(position);
-
-        Bubble* bubble = new Bubble(position, dirY);
-
+        Vector2 pos = _waveData.positions[i];
+        Bubble* bubble = new Bubble(pos, dirY);
         _enemies.push_back(bubble);
         SPAWNER.SpawnObject(bubble);
         bubble->Start();

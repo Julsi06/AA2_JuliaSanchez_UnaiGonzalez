@@ -5,7 +5,6 @@
 class AmoebaWave : public Wave
 {
 public:
-	AmoebaWave() : Wave(12.0f) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	AmoebaWave() = default;
+	void StartWave(const WaveData& data) override;
 };

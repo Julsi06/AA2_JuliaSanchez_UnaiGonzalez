@@ -1,15 +1,12 @@
 #include "CirclerWave.h"
 
-void CirclerWave::StartWave(const WaveData& waveData)
+void CirclerWave::StartWave(const WaveData& data)
 {
-	// Needs to implement the rest of the body (bullets)
-	std::cout << "START CIRCLER WAVE";
-	_amount = waveData.amount;
+	Wave::StartWave(data);
 
-	Vector2 position(waveData.startX, waveData.startY);
-	_positions.push_back(position);
-
-	Circler* circler = new Circler(_positions[0]);
+	Vector2 pos = _waveData.positions[0];
+	
+	Circler* circler = new Circler(pos);
 
 	_enemies.push_back(circler);
 	SPAWNER.SpawnObject(circler);

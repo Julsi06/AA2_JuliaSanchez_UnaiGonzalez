@@ -5,7 +5,6 @@
 class ChomperWave : public Wave
 {
 public:
-	ChomperWave() : Wave(25.0f) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	ChomperWave() = default;
+	void StartWave(const WaveData& data) override;
 };

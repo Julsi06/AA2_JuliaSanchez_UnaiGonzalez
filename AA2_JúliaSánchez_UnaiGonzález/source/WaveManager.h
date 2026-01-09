@@ -23,7 +23,7 @@ private:
 
 	float _waveIntervalTime = 0.0f;
 	float _waveIntervalDuration = 5.0f;
-	bool _changeWave = false;
+	//bool _changeWave = false;
 
 	bool _powerUpSpawned = false;
 

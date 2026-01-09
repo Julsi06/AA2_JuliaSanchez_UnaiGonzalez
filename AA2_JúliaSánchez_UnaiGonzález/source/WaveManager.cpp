@@ -31,7 +31,7 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
-    // NEEDS TO CREATE ALL WAVES
+    _currentWaveIndex = 0;
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);
@@ -39,7 +39,6 @@ void WaveManager::Start()
 
 void WaveManager::Update()
 {
-    // NEEDS FIXING
     if (_currentWave == nullptr) return;
 
     _currentWave->UpdateWave();
@@ -63,10 +62,11 @@ void WaveManager::Update()
 
         if (_waveIntervalTime >= _waveIntervalDuration)
         {
+            _waveIntervalTime = 0.0f;
             _currentWaveIndex++;
             _powerUpSpawned = false;
 
-            if (_currentWaveIndex < _waves.size())
+            if (_currentWaveIndex < _waveData.size())
             {
                 _currentWave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
                 _currentWave->StartWave(_waveData[_currentWaveIndex]);

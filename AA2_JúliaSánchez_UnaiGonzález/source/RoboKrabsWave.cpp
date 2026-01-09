@@ -2,7 +2,7 @@
 
 void RoboKrabsWave::StartWave(const WaveData& waveData)
 {
-	_amount = waveData.amount;
+	/*_amount = waveData.amount;
 	int firstQuarter = _amount / 4;
 	int half = _amount / 2;
 	int thirdQuarter = 3 * _amount / 4;
@@ -61,5 +61,5 @@ void RoboKrabsWave::StartWave(const WaveData& waveData)
 		_enemies.push_back(roboKrabs);
 		SPAWNER.SpawnObject(roboKrabs);
 		roboKrabs->Start();
-	}
+	}*/
 }

@@ -1,20 +1,15 @@
 #include "ChomperWave.h"
 #include "Chomper.h"
 
-void ChomperWave::StartWave(const WaveData& waveData)
+void ChomperWave::StartWave(const WaveData& data)
 {
-	std::cout << "START CHOMPER WAVE";
-	_amount = waveData.amount;
+    Wave::StartWave(data);
 
     for (int i = 0; i < _amount; i++)
     {
-        float posX = waveData.startX;
-        float posY = waveData.startY + i * waveData.spacingY;
+        Vector2 pos = _waveData.positions[i];
 
-        Vector2 position(posX, posY);
-        _positions.push_back(position);
-
-        Chomper* chomper = new Chomper(position);
+        Chomper* chomper = new Chomper(pos);
 
         _enemies.push_back(chomper);
         SPAWNER.SpawnObject(chomper);

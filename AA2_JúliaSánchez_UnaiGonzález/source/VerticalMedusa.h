@@ -27,7 +27,7 @@ public:
 		AddState(new StayState(_transform, _physics, Vector2(0.0f, 0.0f), 1.0f));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 100.0f, 1.0f));
 		AddState(new StayState(_transform, _physics, Vector2(0.0f, 0.0f), 1.0f));
-		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 150.0f, 1.0f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 150.0f, 3.0f));
 	}
 	void Update() override { Enemy::Update(); }
 };

@@ -5,7 +5,6 @@
 class CirclerWave : public Wave
 {
 public:
-	CirclerWave() : Wave(10.0f) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	CirclerWave() = default;
+	void StartWave(const WaveData& data) override;
 };

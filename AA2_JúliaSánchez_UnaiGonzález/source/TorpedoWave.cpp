@@ -2,7 +2,7 @@
 
 void TorpedoWave::StartWave(const WaveData& waveData)
 {
-	std::cout << "START TORPEDO WAVE";
+	/*std::cout << "START TORPEDO WAVE";
 	_amount = waveData.amount;
 
 	for (int i = 0;i < _amount;i++)
@@ -16,5 +16,5 @@ void TorpedoWave::StartWave(const WaveData& waveData)
 		_enemies.push_back(torpedo);
 		SPAWNER.SpawnObject(torpedo);
 		torpedo->Start();
-	}
+	}*/
 }

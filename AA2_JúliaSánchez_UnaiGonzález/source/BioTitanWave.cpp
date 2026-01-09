@@ -2,14 +2,13 @@
 #include "Spawner.h"
 #include <iostream>
 
-void BioTitanWave::StartWave(const WaveData& waveData)
+void BioTitanWave::StartWave(const WaveData& data)
 {
-    std::cout << "START BIO TITAN WAVE\n";
+    Wave::StartWave(data);
 
-    Vector2 startPos(waveData.startX, waveData.startY);
-    _positions.push_back(startPos);
-
-    BioTitan* boss = new BioTitan(startPos);
+    Vector2 pos = _waveData.positions[0];
+    
+    BioTitan* boss = new BioTitan(pos);
 
     _enemies.push_back(boss);
     SPAWNER.SpawnObject(boss);

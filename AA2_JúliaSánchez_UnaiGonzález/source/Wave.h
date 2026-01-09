@@ -7,21 +7,23 @@
 class Wave
 {
 protected:
-	// These variables have to be read from the XML file
-	std::vector<Vector2> _positions;
+	WaveData _waveData;
+	std::vector<Enemy*> _enemies;
 	int _amount;
 	float _duration;
 	float _elapsedTime = 0.0f;
 	bool _waveDone = false;
 	bool _spawnPowerUp = false;
 	Vector2 _lastEnemyPosition;
-
-	std::vector<Enemy*> _enemies;
 public:
-	Wave(float duration) : _duration(duration) { }
-	virtual void StartWave(const WaveData& waveData) = 0;
+	virtual void StartWave(const WaveData& data)
+	{
+		_waveData = data;
+		_duration = data.duration;
+		_amount = data.amount;
+	}
 	virtual void UpdateWave();
-	virtual void EndWave() = 0;
+	virtual void EndWave();
 	virtual void ResetWave();
 	virtual bool IsFinished() const { return _waveDone; }
 	virtual bool SpawnPowerUp() const { return _spawnPowerUp; }

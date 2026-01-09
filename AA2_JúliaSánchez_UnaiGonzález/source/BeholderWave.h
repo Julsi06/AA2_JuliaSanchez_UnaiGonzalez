@@ -6,10 +6,8 @@ class BeholderWave : public Wave
 {
 private:
 	Transform* _playerTransform = nullptr;
-	int _counter = 0;
 public:
 	BeholderWave(Transform* playerTransform)
-		: Wave(15.0f), _playerTransform(playerTransform) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+		: _playerTransform(playerTransform) { }
+	void StartWave(const WaveData& data) override;
 };
