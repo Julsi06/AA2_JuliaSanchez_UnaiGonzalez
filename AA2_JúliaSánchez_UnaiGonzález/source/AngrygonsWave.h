@@ -7,4 +7,5 @@ class AngrygonsWave : public Wave
 public:
 	AngrygonsWave() = default;
 	void StartWave(const WaveData& waveData) override;
+	bool IsBossWave() const override { return false; }
 };

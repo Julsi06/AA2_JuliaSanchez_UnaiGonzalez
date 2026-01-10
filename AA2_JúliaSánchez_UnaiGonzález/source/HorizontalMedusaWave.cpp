@@ -9,7 +9,7 @@ void HorizontalMedusaWave::StartWave(const WaveData& data)
 	for (int i = 0; i < _amount; i++)
 	{
 		Vector2 pos = _waveData.positions[i];
-		float velocity = 10.0f + (float)(rand() % (50 - 10 + 1));
+		float velocity = 250.0f + (float)(rand() % (250 - 200 + 1));
 
 		HorizontalMedusa* hMedusa = new HorizontalMedusa(pos, velocity);
 

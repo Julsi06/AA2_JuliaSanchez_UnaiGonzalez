@@ -10,32 +10,41 @@
 #include "AmoebaWave.h"
 #include "CirclerWave.h"
 #include "BioTitanWave.h"
-#include "Background.h"
+
+#include "AnnoyerWave.h"
+#include "AngrygonsWave.h"
+#include "DanielsWave.h"
+#include "MissileWave.h"
+#include "NukeWave.h"
+#include "RoboKrabsWave.h"
+#include "SpaceBossWave.h"
+#include "TorpedoWave.h"
+#include "TurboChainsawWave.h"
+#include "UfoWave.h"
+
 #include "Level.h"
 
 class WaveManager
 {
 private:
-	std::vector<Wave*> _waves;
 	int _currentWaveIndex = 0;
 	Wave* _currentWave = nullptr;
 	std::vector<WaveData> _waveData;
 
 	float _waveIntervalTime = 0.0f;
-	float _waveIntervalDuration = 5.0f;
-	//bool _changeWave = false;
+	float _waveIntervalDuration = 2.5f;
 
 	bool _powerUpSpawned = false;
 
-	Background* _background;
 	Transform* _playerTransform;
 
 public:
+	WaveManager(Transform* playerTransform)
+		: _playerTransform(playerTransform) { }
 	void LoadLevel(const Level& level);
-	void AddWave(Wave* wave) { _waves.push_back(wave); }
 	void Start();
 	void Update();
 	void Restart();
-	bool EndedWaves() { return _currentWaveIndex >= _waves.size(); }
+	bool EndedWaves() { return _currentWaveIndex >= _waveData.size(); }
 };
 

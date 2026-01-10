@@ -10,4 +10,5 @@ public:
 	BeholderWave(Transform* playerTransform)
 		: _playerTransform(playerTransform) { }
 	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };

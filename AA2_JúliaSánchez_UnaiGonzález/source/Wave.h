@@ -28,5 +28,5 @@ public:
 	virtual bool IsFinished() const { return _waveDone; }
 	virtual bool SpawnPowerUp() const { return _spawnPowerUp; }
 	Vector2 GetLastEnemyPosition() { return _lastEnemyPosition; }
-	virtual bool IsBossWave() const { return false; }
+	virtual bool IsBossWave() const = 0;
 };

@@ -2,6 +2,7 @@
 
 void AngrygonsWave::StartWave(const WaveData& waveData)
 {
+    Wave::StartWave(waveData);
     //std::cout << "START ANGRYGONS WAVE";
     //_amount = waveData.amount;
 

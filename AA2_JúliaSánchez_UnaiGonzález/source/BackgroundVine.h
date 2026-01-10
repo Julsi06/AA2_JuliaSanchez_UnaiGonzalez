@@ -32,5 +32,13 @@ public:
     void OnCollisionEnter(Object* other) override {}
 
     static void SetVines(int index);
+    static void StopAllScroll() 
+    {
+        for (BackgroundVine* vine : _vines)
+        {
+            if (vine)
+                vine->StopScroll();
+        }
+    }
     static void DestroyVines();
 };

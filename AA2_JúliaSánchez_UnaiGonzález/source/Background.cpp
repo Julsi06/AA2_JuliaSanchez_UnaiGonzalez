@@ -18,7 +18,7 @@ void Background::SetBackgrounds(int index)
     }
     else if (index == 2)
     {
-
+        // TO BE FINISHED
     }
     
 }

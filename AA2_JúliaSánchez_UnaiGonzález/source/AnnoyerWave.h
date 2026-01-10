@@ -10,4 +10,5 @@ public:
 	AnnoyerWave(Transform* playerTransform)
 		: _playerTransform(playerTransform) { }
 	void StartWave(const WaveData& waveData) override;
+	bool IsBossWave() const override { return false; }
 };

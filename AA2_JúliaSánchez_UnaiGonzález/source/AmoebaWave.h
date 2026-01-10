@@ -7,4 +7,5 @@ class AmoebaWave : public Wave
 public:
 	AmoebaWave() = default;
 	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };

@@ -7,4 +7,5 @@ class HorizontalMedusaWave : public Wave
 public:
 	HorizontalMedusaWave() = default;
 	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };

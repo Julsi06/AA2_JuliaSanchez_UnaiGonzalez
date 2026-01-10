@@ -7,4 +7,5 @@ class BubbleWave : public Wave
 public:
 	BubbleWave() = default;
 	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };

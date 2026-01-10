@@ -58,26 +58,26 @@
 	<wave>
 		<spawned_enemy_id>8</spawned_enemy_id>
         <amount>3</amount>
-		<duration>14</duration>
+		<duration>19</duration>
 		<positions>
 			<position>
 				<x>1350</x>
-				<y>670</y>
+				<y>430</y>
 			</position>
 			<position>
 				<x>1650</x>
-				<y>50</y>
+				<y>40</y>
 			</position>
 			<position>
 				<x>1950</x>
-				<y>670</y>
+				<y>430</y>
 			</position>
 		</positions>
     </wave>
     <wave>
 	<spawned_enemy_id>6</spawned_enemy_id>
         <amount>12</amount>
-		<duration>14</duration>
+		<duration>6</duration>
 		<positions>
 			<position>
 				<x>1350</x>
@@ -132,7 +132,7 @@
     <wave>
         <spawned_enemy_id>5</spawned_enemy_id>
         <amount>12</amount>
-		<duration>14</duration>
+		<duration>11</duration>
 		<positions>
 			<position>
 				<x>-50</x>
@@ -143,7 +143,7 @@
     <wave>
         <spawned_enemy_id>7</spawned_enemy_id>
         <amount>8</amount>
-		<duration>14</duration>
+		<duration>9</duration>
 		<positions>
 			<position>
 				<x>300</x>
@@ -182,7 +182,7 @@
     <wave>
         <spawned_enemy_id>2</spawned_enemy_id>
         <amount>12</amount>
-		<duration>14</duration>
+		<duration>12</duration>
 		<positions>
 			<position>
 				<x>-100</x>
@@ -197,113 +197,113 @@
 				<y>-50</y>
 			</position>
 			<position>
-				<x>700</x>
+				<x>1100</x>
 				<y>-50</y>
 			</position>
 			<position>
-				<x>850</x>
+				<x>1250</x>
 				<y>-50</y>
 			</position>
 			<position>
-				<x>1000</x>
+				<x>1400</x>
 				<y>-50</y>
 			</position>
 			<position>
 				<x>-100</x>
-				<y>720</y>
+				<y>650</y>
 			</position>
 			<position>
 				<x>50</x>
-				<y>720</y>
+				<y>650</y>
 			</position>
 			<position>
 				<x>200</x>
-				<y>720</y>
+				<y>650</y>
 			</position>
 			<position>
-				<x>700</x>
-				<y>720</y>
+				<x>1100</x>
+				<y>650</y>
 			</position>
 			<position>
-				<x>850</x>
-				<y>720</y>
+				<x>1250</x>
+				<y>650</y>
 			</position>
 			<position>
-				<x>1000</x>
-				<y>720</y>
+				<x>1400</x>
+				<y>650</y>
 			</position>
 		</positions>
     </wave>
 	<wave>
 		<spawned_enemy_id>8</spawned_enemy_id>
 		<amount>3</amount>
-		<duration>14</duration>
+		<duration>19</duration>
 		<positions>
 			<position>
 				<x>1350</x>
-				<y>670</y>
+				<y>430</y>
 			</position>
 			<position>
 				<x>1650</x>
-				<y>50</y>
+				<y>40</y>
 			</position>
 			<position>
 				<x>1950</x>
-				<y>670</y>
+				<y>430</y>
 			</position>
 		</positions>
 	</wave>
 	<wave>
         <spawned_enemy_id>4</spawned_enemy_id>
         <amount>12</amount>
-		<duration>14</duration>
+		<duration>22</duration>
 		<positions>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>100</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>135</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>170</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>205</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>240</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>275</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>310</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>345</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>380</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>415</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>450</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>485</y>
 			</position>
 		</positions>
@@ -311,11 +311,11 @@
     <wave>
         <spawned_enemy_id>1</spawned_enemy_id>
         <amount>8</amount>
-		<duration>14</duration>
+		<duration>13</duration>
 		<positions>
 			<position>
-				<x>-50</x>
-				<y>360</y>
+				<x>-125</x>
+				<y>280</y>
 			</position>
 		</positions>
     </wave>
@@ -377,26 +377,26 @@
 	<wave>
 		<spawned_enemy_id>8</spawned_enemy_id>
 		<amount>3</amount>
-		<duration>14</duration>
+		<duration>19</duration>
 		<positions>
 			<position>
 				<x>1350</x>
-				<y>670</y>
+				<y>430</y>
 			</position>
 			<position>
 				<x>1650</x>
-				<y>50</y>
+				<y>40</y>
 			</position>
 			<position>
 				<x>1950</x>
-				<y>670</y>
+				<y>430</y>
 			</position>
 		</positions>
 	</wave>
 	<wave>
 		<spawned_enemy_id>6</spawned_enemy_id>
 		<amount>12</amount>
-		<duration>14</duration>
+		<duration>6</duration>
 		<positions>
 			<position>
 				<x>1350</x>
@@ -451,7 +451,7 @@
 	<wave>
 		<spawned_enemy_id>5</spawned_enemy_id>
 		<amount>12</amount>
-		<duration>14</duration>
+		<duration>11</duration>
 		<positions>
 			<position>
 				<x>-50</x>
@@ -462,7 +462,7 @@
 	<wave>
 		<spawned_enemy_id>7</spawned_enemy_id>
 		<amount>8</amount>
-		<duration>14</duration>
+		<duration>9</duration>
 		<positions>
 			<position>
 				<x>300</x>
@@ -501,7 +501,7 @@
 	<wave>
 		<spawned_enemy_id>2</spawned_enemy_id>
 		<amount>12</amount>
-		<duration>14</duration>
+		<duration>12</duration>
 		<positions>
 			<position>
 				<x>-100</x>
@@ -516,94 +516,94 @@
 				<y>-50</y>
 			</position>
 			<position>
-				<x>700</x>
+				<x>1100</x>
 				<y>-50</y>
 			</position>
 			<position>
-				<x>850</x>
+				<x>1250</x>
 				<y>-50</y>
 			</position>
 			<position>
-				<x>1000</x>
+				<x>1400</x>
 				<y>-50</y>
 			</position>
 			<position>
 				<x>-100</x>
-				<y>720</y>
+				<y>650</y>
 			</position>
 			<position>
 				<x>50</x>
-				<y>720</y>
+				<y>650</y>
 			</position>
 			<position>
 				<x>200</x>
-				<y>720</y>
+				<y>650</y>
 			</position>
 			<position>
-				<x>700</x>
-				<y>720</y>
+				<x>1100</x>
+				<y>650</y>
 			</position>
 			<position>
-				<x>850</x>
-				<y>720</y>
+				<x>1250</x>
+				<y>650</y>
 			</position>
 			<position>
-				<x>1000</x>
-				<y>720</y>
+				<x>1400</x>
+				<y>650</y>
 			</position>
 		</positions>
 	</wave>
 	<wave>
 		<spawned_enemy_id>4</spawned_enemy_id>
 		<amount>12</amount>
-		<duration>14</duration>
+		<duration>22</duration>
 		<positions>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>100</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>135</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>170</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>205</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>240</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>275</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>310</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>345</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>380</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>415</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>450</y>
 			</position>
 			<position>
-				<x>1010</x>
+				<x>1300</x>
 				<y>485</y>
 			</position>
 		</positions>
@@ -611,11 +611,11 @@
 	<wave>
 		<spawned_enemy_id>1</spawned_enemy_id>
 		<amount>8</amount>
-		<duration>14</duration>
+		<duration>13</duration>
 		<positions>
 			<position>
-				<x>-50</x>
-				<y>360</y>
+				<x>-125</x>
+				<y>280</y>
 			</position>
 		</positions>
 	</wave>
@@ -623,7 +623,11 @@
         <spawned_enemy_id>9</spawned_enemy_id>
         <amount>1</amount>
 		<duration>40</duration>
-		<startX>660</startX>
-		<startY>43</startY>
+		<positions>
+			<position>
+				<x>660</x>
+				<y>43</y>
+			</position>
+		</positions>
     </wave>
 </level>
