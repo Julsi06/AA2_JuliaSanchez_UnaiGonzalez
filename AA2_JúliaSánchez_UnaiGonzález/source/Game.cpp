@@ -32,6 +32,16 @@ void Game::Init()
 	RM->LoadTexture("resources/images/HMedusa.png");
 	RM->LoadTexture("resources/images/VMedusa.png");
 	RM->LoadTexture("resources/images/KillerWhale.png");
+	RM->LoadTexture("resources/images/Angrygons.png");
+	RM->LoadTexture("resources/images/Annoyer.png");
+	RM->LoadTexture("resources/images/Daniels.png");
+	RM->LoadTexture("resources/images/Missile.png");
+	RM->LoadTexture("resources/images/Nuke.png");
+	RM->LoadTexture("resources/images/Robokrabs.png");
+	RM->LoadTexture("resources/images/SpaceBossAlive.png");
+	RM->LoadTexture("resources/images/Torpedo.png");
+	RM->LoadTexture("resources/images/Turbo.png");
+	RM->LoadTexture("resources/images/UFO.png");
 	RM->LoadTexture("resources/images/pattern.jpg");
 	RM->LoadTexture("resources/images/topVine1.png");
 	RM->LoadTexture("resources/images/topVine2.png");

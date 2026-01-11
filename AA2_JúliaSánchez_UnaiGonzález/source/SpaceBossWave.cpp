@@ -4,15 +4,16 @@
 
 void SpaceBossWave::StartWave(const WaveData& waveData)
 {
-    /*std::cout << "START SPACE BOSS WAVE\n";
+    Wave::StartWave(waveData);
+    std::cout << "START SPACE BOSS WAVE\n";
 
-    Vector2 startPos(RM->WINDOW_WIDTH - 100.0f, RM->WINDOW_HEIGHT / 2.0f);
+    Vector2 pos = _waveData.positions[0];
 
-    SpaceBoss* boss = new SpaceBoss(startPos);
+    SpaceBoss* boss = new SpaceBoss(pos);
 
     _enemies.push_back(boss);
 
     SPAWNER.SpawnObject(boss);
 
-    boss->Start();*/
+    boss->Start();
 }
