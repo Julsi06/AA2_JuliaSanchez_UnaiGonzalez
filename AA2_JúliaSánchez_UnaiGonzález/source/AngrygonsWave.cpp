@@ -3,23 +3,17 @@
 void AngrygonsWave::StartWave(const WaveData& waveData)
 {
     Wave::StartWave(waveData);
-    //std::cout << "START ANGRYGONS WAVE";
-    //_amount = waveData.amount;
+    std::cout << "START ANGRYGONS WAVE";
+    _amount = waveData.amount;
 
-    //// This will have to be changed
-    //float spacingX = 100.0f;
-    //float startX = -50.0f;
+    for (int i = 0; i < _amount; i++)
+    {
+        Vector2 pos = _waveData.positions[i];
 
-    //for (int i = 0; i < _amount; i++)
-    //{
-    //    float startY = 100.0f;
-    //    float posX = startX - i * spacingX;
+        Angrygons* angrygons = new Angrygons(pos);
 
-    //    _positions.push_back(Vector2(posX, startY));
-    //    Angrygons* angrygons = new Angrygons(_positions[i]);
-
-    //    _enemies.push_back(angrygons);
-    //    SPAWNER.SpawnObject(angrygons);
-    //    angrygons->Start();
-    //}
+        _enemies.push_back(angrygons);
+        SPAWNER.SpawnObject(angrygons);
+        angrygons->Start();
+    }
 }
