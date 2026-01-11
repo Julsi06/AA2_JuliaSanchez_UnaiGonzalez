@@ -6,7 +6,7 @@ class Missile : public Enemy
 {
 public:
 	Missile(Vector2 startPos)
-		: Enemy("resources/images/buble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 1, 1, 5000, 5000, false, 1, 100.0f, 100)
+		: Enemy("resources/images/Missile.png", Vector2(0.0f, 0.0f), Vector2(150.0f, 34.0f), 2, 1, 150, 34, true, 0.05, 100.0f, 100)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);

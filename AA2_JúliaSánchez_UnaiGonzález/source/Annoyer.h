@@ -8,7 +8,7 @@ class Annoyer : public Enemy
 {
 public:
 	Annoyer(Vector2 startPos, Transform* player, Vector2 dir)
-		: Enemy("resources/images/buble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 1, 1, 5000, 5000, false, 1, 150.0f, 100)
+		: Enemy("resources/images/Annoyer.png", Vector2(0.0f, 0.0f), Vector2(80.0f, 11.0f), 8, 3, 80, 115, true, 0.05, 150.0f, 100)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);
