@@ -7,7 +7,7 @@ class Torpedo : public Enemy
 {
 public:
 	Torpedo(Vector2 startPos)
-		: Enemy("resources/images/buble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 1, 1, 5000, 5000, false, 1, 100.0f, 300)
+		: Enemy("resources/images/Torpedo.png", Vector2(0.0f, 0.0f), Vector2(129.0f, 91.0f), 8, 2, 129, 91, true, 0.05, 100.0f, 300)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);

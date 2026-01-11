@@ -7,7 +7,7 @@ class Ufo : public Enemy
 {
 public:
 	Ufo(Vector2 startPos)
-		: Enemy("resources/images/buble.png", Vector2(0.0f, 0.0f), Vector2(5000.0f, 5000.0f), 1, 1, 5000, 5000, false, 1, 150.0f, 100)
+		: Enemy("resources/images/UFO.png", Vector2(0.0f, 0.0f), Vector2(173.0f, 160.0f), 1, 1, 173, 160, false, 1, 150.0f, 100)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
 		_transform->scale = Vector2(1.0f, 1.0f);
