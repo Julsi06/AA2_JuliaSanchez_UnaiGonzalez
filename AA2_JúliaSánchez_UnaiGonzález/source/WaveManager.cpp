@@ -2,7 +2,8 @@
 #include "TimeManager.h"
 #include "PowerUpManager.h"
 #include "Background.h"
-#include "Gameplay.h"
+#include "BackgroundVine.h"
+#include "BackgroundDecor.h"
 
 void WaveManager::LoadLevel(const Level& level)
 {
@@ -13,6 +14,7 @@ Wave* CreateWave(const WaveData& data, Transform* playerTransform)
 {
     switch (data.enemyType)
     {
+    // LEVEL 1
     case EnemyType::AMOEBA:        return new AmoebaWave();
     case EnemyType::BUBBLE:        return new BubbleWave();
     case EnemyType::BEHOLDER:      return new BeholderWave(playerTransform);
@@ -22,6 +24,17 @@ Wave* CreateWave(const WaveData& data, Transform* playerTransform)
     case EnemyType::VMEDUSA:       return new VerticalMedusaWave();
     case EnemyType::KILLERWHALE:   return new KillerWhaleWave();
     case EnemyType::BIOTITAN:      return new BioTitanWave();
+    // LEVEL 2
+    case EnemyType::ANGRYGONS:     return new AngrygonsWave();
+    case EnemyType::ANNOYER:       return new AnnoyerWave(playerTransform);
+    case EnemyType::DANIELS:       return new DanielsWave();
+    case EnemyType::MISSILE:       return new MissileWave();
+    case EnemyType::NUKE:          return new NukeWave();
+    case EnemyType::ROBOKRABS:     return new RoboKrabsWave(playerTransform);
+    case EnemyType::TORPEDO:       return new TorpedoWave();
+    case EnemyType::TURBOCHAINSAW: return new TurboChainsawWave();
+    case EnemyType::UFO:           return new UfoWave();
+    case EnemyType::SPACEBOSS:     return new SpaceBossWave();
     default: return nullptr;
     }
 }
@@ -31,7 +44,7 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
-    // NEEDS TO CREATE ALL WAVES
+    _currentWaveIndex = 0;
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);
@@ -39,13 +52,16 @@ void WaveManager::Start()
 
 void WaveManager::Update()
 {
-    // NEEDS FIXING
     if (_currentWave == nullptr) return;
 
     _currentWave->UpdateWave();
 
-    if (_background && _currentWave->IsBossWave())
-        _background->StopScroll();
+    if (_currentWave->IsBossWave())
+    {
+        Background::StopAllScroll();
+        BackgroundVine::StopAllScroll();
+        // NEEDS TO IMPLEMENT STOP SCROLL FOR DECOR
+    }
 
     if (_currentWave->IsFinished())
     {
@@ -63,10 +79,11 @@ void WaveManager::Update()
 
         if (_waveIntervalTime >= _waveIntervalDuration)
         {
+            _waveIntervalTime = 0.0f;
             _currentWaveIndex++;
             _powerUpSpawned = false;
 
-            if (_currentWaveIndex < _waves.size())
+            if (_currentWaveIndex < _waveData.size())
             {
                 _currentWave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
                 _currentWave->StartWave(_waveData[_currentWaveIndex]);

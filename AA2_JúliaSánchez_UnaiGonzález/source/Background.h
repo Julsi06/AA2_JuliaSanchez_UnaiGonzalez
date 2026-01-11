@@ -36,9 +36,17 @@ public:
     void OnCollisionEnter(Object* other) override { }
 
     static void SetBackgrounds(int index);
+    static void StopAllScroll()
+    {
+        for (Background* background : _backgrounds)
+        {
+            if (background) 
+                background->StopScroll();
+        }
+    }
 
     static void DestroyBackgrounds()
     {
-        
+        // TO BE FINISHED
     }
 };

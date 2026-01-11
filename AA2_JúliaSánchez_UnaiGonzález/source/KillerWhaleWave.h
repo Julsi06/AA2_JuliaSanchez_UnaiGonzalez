@@ -5,8 +5,8 @@
 class KillerWhaleWave : public Wave
 {
 public:
-	KillerWhaleWave() : Wave(17.0f) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override { }
+	KillerWhaleWave() = default;
+	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };
 

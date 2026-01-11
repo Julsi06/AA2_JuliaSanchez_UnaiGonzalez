@@ -5,7 +5,7 @@
 class VerticalMedusaWave : public Wave
 {
 public:
-	VerticalMedusaWave() : Wave(10.0f) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	VerticalMedusaWave() = default;
+	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };

@@ -1,17 +1,14 @@
 #include "VerticalMedusaWave.h"
 
-void VerticalMedusaWave::StartWave(const WaveData& waveData)
+void VerticalMedusaWave::StartWave(const WaveData& data)
 {
-	std::cout << "START V MEDUSA WAVE";
-	_amount = waveData.amount;
+    Wave::StartWave(data);
 
     for (int i = 0; i < _amount; i++)
     {
-        float posX = waveData.startX + i * waveData.spacingX;
-        float posY = waveData.startY;
+        Vector2 pos = _waveData.positions[i];
 
-        _positions.push_back(Vector2(posX, posY));
-        VerticalMedusa* vMedusa = new VerticalMedusa(_positions[i]);
+        VerticalMedusa* vMedusa = new VerticalMedusa(pos);
 
         _enemies.push_back(vMedusa);
         SPAWNER.SpawnObject(vMedusa);

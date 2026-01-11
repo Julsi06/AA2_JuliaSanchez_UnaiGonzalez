@@ -5,7 +5,7 @@
 class DanielsWave : public Wave
 {
 public:
-	DanielsWave() : Wave(12.0f) {}
+	DanielsWave() = default;
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	bool IsBossWave() const override { return false; }
 };

@@ -3,20 +3,23 @@
 #include "SimpleMoveState.h"
 #include "TimeManager.h"
 
-void KillerWhaleWave::StartWave(const WaveData& waveData)
+void KillerWhaleWave::StartWave(const WaveData& data)
 {
-	std::cout << "START WHALE WAVE";
-	_amount = waveData.amount;
+    std::cout << "SPAWN KILLER WHALE";
+    Wave::StartWave(data);
 
     for (int i = 0; i < _amount; i++)
     {
-        float posX = waveData.startX + i * waveData.spacingX;
+        int dirY;
 
-        float posY = (i % 2 == 0) ? waveData.startYTop : waveData.startYBottom;
-        int dirY = (i % 2 == 0) ? -1 : 1;
+        if (i % 2 == 0)
+            dirY = -1;
+        else
+            dirY = 1;
+        
+        Vector2 pos = _waveData.positions[i];
 
-        _positions.push_back(Vector2(posX, posY));
-        KillerWhale* whale = new KillerWhale(_positions[i], dirY);
+        KillerWhale* whale = new KillerWhale(pos, dirY);
 
         _enemies.push_back(whale);
         SPAWNER.SpawnObject(whale);

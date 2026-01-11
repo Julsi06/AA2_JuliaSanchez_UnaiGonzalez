@@ -5,7 +5,7 @@
 class TorpedoWave : public Wave
 {
 public:
-	TorpedoWave() : Wave(22.0f) {}
+	TorpedoWave() = default;
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	bool IsBossWave() const override { return false; }
 };

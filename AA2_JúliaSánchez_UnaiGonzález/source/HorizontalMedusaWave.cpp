@@ -2,18 +2,16 @@
 #include "HorizontalMedusa.h"
 #include <ctime>
 
-void HorizontalMedusaWave::StartWave(const WaveData& waveData)
+void HorizontalMedusaWave::StartWave(const WaveData& data)
 {
-	std::cout << "START H MEDUSA WAVE";
-	_amount = waveData.amount;
+	Wave::StartWave(data);
 
 	for (int i = 0; i < _amount; i++)
 	{
-		float posX = waveData.startX + i * waveData.spacingX;
-		float posY = waveData.startY;
+		Vector2 pos = _waveData.positions[i];
+		float velocity = 250.0f + (float)(rand() % (250 - 200 + 1));
 
-		_positions.push_back(Vector2(posX, posY));
-		HorizontalMedusa* hMedusa = new HorizontalMedusa(_positions[i], waveData.velocity);
+		HorizontalMedusa* hMedusa = new HorizontalMedusa(pos, velocity);
 
 		_enemies.push_back(hMedusa);
 		SPAWNER.SpawnObject(hMedusa);

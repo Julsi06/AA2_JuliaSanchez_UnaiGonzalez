@@ -4,18 +4,18 @@
 void Wave::UpdateWave()
 {
 	_elapsedTime += TM.GetDeltaTime();
-	int counter = 0;
+	int deadCounter = 0;
 
 	for (Enemy* e : _enemies)
 	{
 		if (!e->IsAlive())
 		{
-			counter++;
+			deadCounter++;
 			_lastEnemyPosition = e->GetLastPosition();
 		}
 	}
 
-	if (counter == _enemies.size() && !_spawnPowerUp && !_waveDone)
+	if (deadCounter == _enemies.size() && !_spawnPowerUp && !_waveDone)
 	{
 		_spawnPowerUp = true;
 		_waveDone = true;
@@ -23,6 +23,21 @@ void Wave::UpdateWave()
 		
 	if (_elapsedTime >= _duration)
 		_waveDone = true;
+}
+
+void Wave::EndWave()
+{
+	/*for (Enemy* e : _enemies)
+	{
+		if (e && e->IsAlive())
+			e->Destroy();
+	}
+
+	_enemies.clear();
+
+	_elapsedTime = 0.0f;
+	_waveDone = false;
+	_spawnPowerUp = false;*/
 }
 
 void Wave::ResetWave()

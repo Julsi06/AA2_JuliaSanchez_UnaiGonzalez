@@ -5,7 +5,7 @@
 class BubbleWave : public Wave
 {
 public:
-	BubbleWave() : Wave(14.0f) { }
-	void StartWave(const WaveData& waveData) override;
-	void EndWave() override { }
+	BubbleWave() = default;
+	void StartWave(const WaveData& data) override;
+	bool IsBossWave() const override { return false; }
 };

@@ -5,7 +5,7 @@
 class UfoWave : public Wave
 {
 public:
-	UfoWave() : Wave(14.0f) {}
+	UfoWave() = default;
 	void StartWave(const WaveData& waveData) override;
-	void EndWave() override {}
+	bool IsBossWave() const override { return false; }
 };

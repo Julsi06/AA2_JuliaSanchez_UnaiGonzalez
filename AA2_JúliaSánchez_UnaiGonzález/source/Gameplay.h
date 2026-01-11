@@ -52,7 +52,7 @@ public:
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
 
-		_waveManager = new WaveManager();
+		_waveManager = new WaveManager(_spaceship->GetTransform());
 		Level level = LoadLevelFromFile("Level1Config.xml");
 		std::cout << "LEVEL WAVES: " << level.waves.size() << std::endl;
 		_waveManager->LoadLevel(level);
@@ -91,8 +91,4 @@ public:
 	void RespawnPlayer();
 	void DestroyGameplayElements();
 	void RespawnGameplayElements(int level);
-
-	// configuration of waves on each level
-	void Level1Config(Transform* playerTransform);
-	void Level2Config(Transform* playerTransform);
 };

@@ -12,7 +12,7 @@ class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
 private:
 	int _points = 0;
-	float _speed = 150.0f;
+	float _speed = 300.0f;
 	float _maxHealth = 2500.0f;
 	float _currentCannonEn;
 	float _maxCannonEn = 2000.0f;
@@ -30,7 +30,8 @@ public:
 			Vector2(205.0f, 135.0f)), IDamagable(2500.0f), 
 		_currentCannonEn(0.0f), _currentLaserEn(0.0f)
 	{
-		_transform->position = Vector2(50.0f, RM->WINDOW_HEIGHT / 2.0f);
+		//_transform->position = Vector2(50.0f, RM->WINDOW_HEIGHT / 2.0f);
+		_transform->position = Vector2(50.0f, 100.0f);
 		_transform->scale = Vector2(1.0f, 1.0f);
 		_transform->rotation = 0.0f;
 
