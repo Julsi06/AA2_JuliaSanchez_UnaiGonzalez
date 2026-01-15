@@ -67,7 +67,9 @@
     <ClCompile Include="source\TorpedoWave.cpp" />
     <ClCompile Include="source\TrailBullet.cpp" />
     <ClCompile Include="source\TurboChainsawWave.cpp" />
-    <ClCompile Include="source\TurretBullet.h" />
+    <ClCompile Include="source\Turret.cpp" />
+    <ClCompile Include="source\Turret.h" />
+    <ClCompile Include="source\TurretBullet.cpp" />
     <ClCompile Include="source\UfoWave.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
     <ClCompile Include="source\VerticalMedusaWave.cpp" />
@@ -161,6 +163,7 @@
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\TurboChainsaw.h" />
     <ClInclude Include="source\TurboChainsawWave.h" />
+    <ClInclude Include="source\TurretBullet.h" />
     <ClInclude Include="source\TwinTurretsPowerUp.h" />
     <ClInclude Include="source\Ufo.h" />
     <ClInclude Include="source\UfoWave.h" />
