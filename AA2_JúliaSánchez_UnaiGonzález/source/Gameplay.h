@@ -53,7 +53,8 @@ public:
 		SPAWNER.SpawnObject(_spaceship);
 
 		_waveManager = new WaveManager(_spaceship->GetTransform());
-		Level level = LoadLevelFromFile("Level1Config.xml");
+		std::string levelPath = "Level" + std::to_string(_levelIndex) + "Config.xml";
+		Level level = LoadLevelFromFile(levelPath);
 		std::cout << "LEVEL WAVES: " << level.waves.size() << std::endl;
 		_waveManager->LoadLevel(level);
 
