@@ -6,6 +6,7 @@
 #include "IAttacker.h"
 #include "Spaceship.h"
 #include "ScoreManager.h"
+#include "Explosion.h"
 
 class Enemy : public AnimatedImageObject, public IAttacker, public IDamagable
 {
@@ -37,6 +38,11 @@ public:
 
 			if (!IsAlive())
 			{
+				Vector2 deathPos = _transform->position;
+
+				AM->PlaySound("resources/sounds/explosion.wav");
+				SPAWNER.SpawnObject(new Explosion(deathPos));
+
 				SCORE->AddPoints(_pointsToGive);
 				Destroy();
 			}

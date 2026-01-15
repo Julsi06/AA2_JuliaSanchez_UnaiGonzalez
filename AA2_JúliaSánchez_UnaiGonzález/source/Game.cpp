@@ -9,9 +9,21 @@
 #include "LevelSelector.h"
 #include "Ranking.h"
 #include <cassert>
+#include "AudioManager.h"
 
 void Game::Init()
 {
+	if (SDL_Init(SDL_INIT_AUDIO) < 0)
+	{
+		std::cout << "SDL AUDIO INIT ERROR: " << SDL_GetError() << std::endl;
+		return;
+	}
+
+	AM->Init();
+
+	AM->LoadSoundData("resources/audio/shoot.wav");
+	AM->LoadSoundData("resources/audio/explosion.wav");
+
 	RM->Init();
 
 	RM->LoadTexture("resources/images/spaceship.png");
@@ -48,6 +60,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/bottomVine1.png");
 	RM->LoadTexture("resources/images/bottomVine2.png");
 	RM->LoadTexture("resources/images/scoreUI.png");
+	RM->LoadTexture("resources/images/explosion.png");
 
 	RM->LoadTexture("resources/images/1.png");
 	RM->LoadTexture("resources/images/2.png");
@@ -56,6 +69,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/5.png");
 	RM->LoadTexture("resources/images/6.png");
 	RM->LoadTexture("resources/images/7.png");
+
 
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 

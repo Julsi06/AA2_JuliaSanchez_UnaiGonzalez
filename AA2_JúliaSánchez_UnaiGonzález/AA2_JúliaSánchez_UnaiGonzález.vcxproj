@@ -83,6 +83,8 @@
     <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Annoyer.h" />
     <ClInclude Include="source\AnnoyerWave.h" />
+    <ClInclude Include="source\AtomicWrapper.h" />
+    <ClInclude Include="source\AudioManager.h" />
     <ClInclude Include="source\BackgroundDecor.h" />
     <ClInclude Include="source\BioTitan.h" />
     <ClInclude Include="source\BioTitanWave.h" />
@@ -92,6 +94,7 @@
     <ClInclude Include="source\DanielsWave.h" />
     <ClInclude Include="source\EnemyType.h" />
     <ClInclude Include="source\EngineEnergyPowerUp.h" />
+    <ClInclude Include="source\Explosion.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
     <ClInclude Include="source\JumpToPlayerState.h" />
     <ClInclude Include="source\LaserEnergyPowerUp.h" />
@@ -154,6 +157,7 @@
     <ClInclude Include="source\Spaceship.h" />
     <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\StayState.h" />
+    <ClInclude Include="source\Stream.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />

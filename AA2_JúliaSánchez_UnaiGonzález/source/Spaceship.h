@@ -8,6 +8,7 @@
 #include "IPowerUpEffects.h"
 #include "ScoreManager.h"
 #include "Turret.h"
+#include "AudioManager.h"
 
 class Spaceship : public ImageObject, public IDamagable, public IPowerUpEffects
 {
@@ -95,6 +96,7 @@ public:
 		if (IM->GetEvent(SDLK_SPACE, DOWN))
 		{
 			SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 0.0f)));
+			AM->PlaySound("resources/audio/shoot.wav");
 
 			if (_cannonsActive && _currentCannonEn > 0.0f)
 			{
