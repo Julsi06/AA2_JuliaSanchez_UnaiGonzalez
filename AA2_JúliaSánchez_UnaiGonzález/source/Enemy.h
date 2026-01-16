@@ -33,19 +33,21 @@ public:
 		PlayerBullet* bullet = dynamic_cast<PlayerBullet*>(other);
 		if (bullet != nullptr)
 		{
-			if (_health <= 0)
-				_lastPosition = _transform->position;
 
 			if (!IsAlive())
 			{
 				Vector2 deathPos = _transform->position;
 
 				AM->PlaySound("resources/sounds/explosion.wav");
-				SPAWNER.SpawnObject(new Explosion(deathPos));
+				Explosion* explosion = new Explosion(deathPos);
+				SPAWNER.SpawnObject(explosion);
 
 				SCORE->AddPoints(_pointsToGive);
 				Destroy();
 			}
+
+			if (_health <= 0)
+				_lastPosition = _transform->position;
 		}
 
 		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);

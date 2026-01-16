@@ -183,6 +183,9 @@
     <ClCompile Include="source\TurretBullet.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="source\HighScoreManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Background.h">
@@ -464,7 +467,7 @@
     <ClInclude Include="source\PlayerBullet.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="source\Ranking.h">
+    <ClInclude Include="source\RankingScene.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="source\SpaceBoss.h">
@@ -489,6 +492,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="source\Explosion.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="source\HighScoreManager.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="source\NameInput.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

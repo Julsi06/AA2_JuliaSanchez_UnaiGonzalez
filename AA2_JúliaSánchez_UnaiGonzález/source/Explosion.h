@@ -4,29 +4,24 @@
 class Explosion : public AnimatedImageObject
 {
 private:
-    int _currentFrame = 0;
-    bool _finished = false;
-    int _frames = 6;
+    float _lifeTime = 0.3f;
+    float _deltaTime = 0.0f;
 
 public:
     Explosion(Vector2 position)
-        : AnimatedImageObject("resources/images/explosion.png", position, Vector2(48.0f, 48.0f), _frames, 1, 48.0f, 48.0f, true, 0.05f)
+        : AnimatedImageObject("resources/images/explosion.png", position, Vector2(48.0f, 48.0f), 6, 1, 48.0f, 48.0f, false, 0.05f)
     {
         _transform->position = position;
     }
 
     void Update() override
     {
-        if (_finished)
-            return;
-
+        _deltaTime == TM.GetDeltaTime();
+        _lifeTime -= _deltaTime;
         AnimatedImageObject::Update();
 
-        if (_currentFrame >= _frames)
-        {
-            _finished = true;
+        if (_lifeTime <= 0)
             Destroy();
-        }
     }
 
     void Render() override

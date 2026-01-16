@@ -34,6 +34,7 @@
     <ClCompile Include="source\CirclerWave.cpp" />
     <ClCompile Include="source\DanielsWave.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\HighScoreManager.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
     <ClCompile Include="source\JumpToPlayerState.cpp" />
     <ClCompile Include="source\KillerWhaleWave.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="source\EnemyType.h" />
     <ClInclude Include="source\EngineEnergyPowerUp.h" />
     <ClInclude Include="source\Explosion.h" />
+    <ClInclude Include="source\HighScoreManager.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
     <ClInclude Include="source\JumpToPlayerState.h" />
     <ClInclude Include="source\LaserEnergyPowerUp.h" />
@@ -102,6 +104,7 @@
     <ClInclude Include="source\LevelSelector.h" />
     <ClInclude Include="source\Missile.h" />
     <ClInclude Include="source\MissileWave.h" />
+    <ClInclude Include="source\NameInput.h" />
     <ClInclude Include="source\Nuke.h" />
     <ClInclude Include="source\NukeWave.h" />
     <ClInclude Include="source\PlayerBullet.h" />
@@ -138,7 +141,7 @@
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\PowerUpManager.h" />
-    <ClInclude Include="source\Ranking.h" />
+    <ClInclude Include="source\RankingScene.h" />
     <ClInclude Include="source\ForceFieldPowerUp.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\RoboKrabsWave.h" />
