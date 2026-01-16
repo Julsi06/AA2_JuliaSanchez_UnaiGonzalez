@@ -36,18 +36,15 @@ public:
 
 			if (!IsAlive())
 			{
-				Vector2 deathPos = _transform->position;
+				_lastPosition = _transform->position;
 
 				AM->PlaySound("resources/sounds/explosion.wav");
-				Explosion* explosion = new Explosion(deathPos);
+				Explosion* explosion = new Explosion(_lastPosition);
 				SPAWNER.SpawnObject(explosion);
 
 				SCORE->AddPoints(_pointsToGive);
 				Destroy();
 			}
-
-			if (_health <= 0)
-				_lastPosition = _transform->position;
 		}
 
 		Spaceship* spaceship = dynamic_cast<Spaceship*>(other);
