@@ -43,6 +43,8 @@ void Gameplay::Update()
 
 void Gameplay::GameplayUpdate()
 {
+	AM->PlaySound("resources/audio/background.wav");
+
 	_score->SetText(std::to_string(SCORE->GetCurrentPoints()));
 	_extraLives->SetText(std::to_string(_playerExtraLives));
 

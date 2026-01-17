@@ -23,6 +23,7 @@ void Game::Init()
 
 	AM->LoadSoundData("resources/audio/shoot.wav");
 	AM->LoadSoundData("resources/audio/explosion.wav");
+	AM->LoadSoundData("resources/audio/background.wav");
 
 	RM->Init();
 

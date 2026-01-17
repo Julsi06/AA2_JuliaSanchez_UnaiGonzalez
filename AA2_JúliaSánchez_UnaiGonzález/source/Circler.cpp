@@ -4,9 +4,10 @@ void Circler::Update()
 {
 	if (_health <= 0)
 	{
-		for (auto b : _trail)
+		for (int i = 0; i < _trail.size(); i++)
 		{
-			delete b;
+			Destroy();
+			delete _trail[i];
 		}
 		_trail.clear();
 		return;
