@@ -15,12 +15,12 @@ public:
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
 
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH / 4.0f, false));
-		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, 1.0f), 200.0f, 2.3f));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, 1.0f), 200.0f, 1.8f));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH / 2.0f, false));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, -1.0f), 200.0f, 1.0f));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, 3.0f * RM->WINDOW_WIDTH / 4.0f, false));
 		AddState(new SimpleMoveState(_transform, _physics, Vector2(0.0f, 1.0f), 200.0f, 1.0f));
-		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH + 50.0f, false));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(1.0f, 0.0f), 200.0f, RM->WINDOW_WIDTH + 100.0f, false));
 	}
 	void Update() override { Enemy::Update(); }
 };

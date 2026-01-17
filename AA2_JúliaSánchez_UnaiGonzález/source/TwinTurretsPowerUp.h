@@ -36,6 +36,7 @@ public:
 
 	void SpawnNextPowerUp(Vector2 lastPos) override
 	{
-		PUM->SpawnPowerUp(Shield, lastPos);
+		PUM->SetPosition(lastPos);
+		PUM->SpawnPowerUp(Shield);
 	}
 };

@@ -4,6 +4,7 @@
 void Wave::UpdateWave()
 {
 	_elapsedTime += TM.GetDeltaTime();
+
 	int deadCounter = 0;
 
 	for (Enemy* e : _enemies)
@@ -11,7 +12,6 @@ void Wave::UpdateWave()
 		if (!e->IsAlive())
 		{
 			deadCounter++;
-			_lastEnemyPosition = e->GetLastPosition();
 		}
 	}
 

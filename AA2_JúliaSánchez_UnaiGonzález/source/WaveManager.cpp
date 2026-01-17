@@ -27,7 +27,7 @@ Wave* CreateWave(const WaveData& data, Transform* playerTransform)
     // LEVEL 2
     case EnemyType::ANGRYGONS:     return new AngrygonsWave();
     case EnemyType::ANNOYER:       return new AnnoyerWave(playerTransform);
-    case EnemyType::DANIELS:       return new DanielsWave(); // COMPLETE FROM HERE
+    case EnemyType::DANIELS:       return new DanielsWave();
     case EnemyType::MISSILE:       return new MissileWave();
     case EnemyType::NUKE:          return new NukeWave();
     case EnemyType::ROBOKRABS:     return new RoboKrabsWave(playerTransform); // FIX JUMP AND TRANSFORM ROTATION
@@ -44,7 +44,7 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
-    _currentWaveIndex = 5; // DANIELS INDEX
+    _currentWaveIndex = 1;
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);
@@ -71,7 +71,7 @@ void WaveManager::Update()
         {
             std::cout << "PowerUp spawned: " << _currentWave->GetLastEnemyPosition().x << ", "
                 << _currentWave->GetLastEnemyPosition().y << std::endl;
-            PUM->SpawnPowerUp(Points, _currentWave->GetLastEnemyPosition());
+            PUM->SpawnPowerUp(Points);
             _powerUpSpawned = true;
         }
 
@@ -79,12 +79,12 @@ void WaveManager::Update()
 
         if (_waveIntervalTime >= _waveIntervalDuration)
         {
-            _waveIntervalTime = 0.0f;
             _currentWaveIndex++;
             _powerUpSpawned = false;
 
             if (_currentWaveIndex < _waveData.size())
             {
+                _waveIntervalTime = 0.0f;
                 _currentWave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
                 _currentWave->StartWave(_waveData[_currentWaveIndex]);
             }

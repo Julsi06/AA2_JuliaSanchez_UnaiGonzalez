@@ -10,11 +10,17 @@ protected:
 	WaveData _waveData;
 	std::vector<Enemy*> _enemies;
 	int _amount;
+
 	float _duration;
 	float _elapsedTime = 0.0f;
+	bool _durationEnded = false;
+
 	bool _waveDone = false;
 	bool _spawnPowerUp = false;
-	Vector2 _lastEnemyPosition;
+	std::vector<bool> _enemyWasAlive;
+	int _aliveEnemies = 0;
+
+	Vector2 _lastEnemyPosition = Vector2(0.0f, 0.0f);
 public:
 	virtual void StartWave(const WaveData& data)
 	{
@@ -22,17 +28,17 @@ public:
 		_duration = data.duration;
 		_amount = data.amount;
 
+		_elapsedTime = 0.0f;
+		_waveDone = false;
+		_spawnPowerUp = false;
+
 		for (Enemy* e : _enemies)
 		{
-			if (e && e->IsAlive())
+			if (e)
 				e->Destroy();
 		}
 
 		_enemies.clear();
-
-		_elapsedTime = 0.0f;
-		_waveDone = false;
-		_spawnPowerUp = false;
 	}
 	virtual void UpdateWave();
 	virtual void EndWave();

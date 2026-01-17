@@ -30,7 +30,7 @@ void PlayerBullet::OnCollisionEnter(Object* other)
 	Enemy* enemy = dynamic_cast<Enemy*>(other);
 	if (enemy != nullptr)
 	{
-		AddDamage(enemy);
+		//AddDamage(enemy);
 		Destroy();
 	}
 }

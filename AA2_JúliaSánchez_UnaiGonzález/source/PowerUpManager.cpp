@@ -7,37 +7,37 @@
 #include "PointsPowerUp.h"
 #include "ForceFieldPowerUp.h"
 
-void PowerUpManager::SpawnPowerUp(PowerUpType type, Vector2 position)
+void PowerUpManager::SpawnPowerUp(PowerUpType type)
 {
 	switch (type)
 	{
 	case PowerUpType::Points:
 		_currentPowerUp = new PointsPowerUp("resources/images/1.png",
-			position);
+			_spawnPos);
 		break;
 	case PowerUpType::Cannons:
 		_currentPowerUp = new CannonEnergyPowerUp("resources/images/2.png",
-			position);
+			_spawnPos);
 		break;
 	case PowerUpType::Lasers:
 		_currentPowerUp = new LaserEnergyPowerUp("resources/images/3.png",
-			position);
+			_spawnPos);
 		break;
 	case PowerUpType::Engine:
 		_currentPowerUp = new EngineEnergyPowerUp("resources/images/4.png",
-			position);
+			_spawnPos);
 		break;
 	case PowerUpType::Turrets:
 		_currentPowerUp = new TwinTurretsPowerUp("resources/images/5.png",
-			position);
+			_spawnPos);
 		break;
 	case PowerUpType::Shield:
 		_currentPowerUp = new ForceFieldPowerUp("resources/images/6.png",
-			position);
+			_spawnPos);
 		break;
 	case PowerUpType::Health:
 		_currentPowerUp = new ShieldEnergyPowerUp("resources/images/7.png",
-			position);
+			_spawnPos);
 		break;
 	}
 

@@ -6,6 +6,7 @@
 #include "IAttacker.h"
 #include "Spaceship.h"
 #include "ScoreManager.h"
+#include "PowerUpManager.h"
 
 class Enemy : public AnimatedImageObject, public IAttacker, public IDamagable
 {
@@ -15,9 +16,13 @@ protected:
 	int _currentStateIndex = 0;
 	Vector2 _lastPosition;
 	int _pointsToGive;
+	bool _deathHandled = false;
 public:
 	Enemy(std::string path, Vector2 offset, Vector2 size, int frames, int columns, float width, float height, bool loop, float frameDuration, float health, int points)
-		: AnimatedImageObject(path, offset, size, frames, columns, width, height, loop, frameDuration), IDamagable(health), IAttacker(10.0f), _pointsToGive(points) {}
+		: AnimatedImageObject(path, offset, size, frames, columns, width, height, loop, frameDuration), IDamagable(health), IAttacker(10.0f), _pointsToGive(points) 
+	{
+		_lastPosition = Vector2(0.0f, 0.0f);
+	}
 
 	void AddState(EnemyState* state)
 	{
@@ -32,12 +37,13 @@ public:
 		PlayerBullet* bullet = dynamic_cast<PlayerBullet*>(other);
 		if (bullet != nullptr)
 		{
-			if (_health <= 0)
-				_lastPosition = _transform->position;
+			TakeDamage(50.0f);
 
-			if (!IsAlive())
+			if (!IsAlive() && !_deathHandled)
 			{
 				SCORE->AddPoints(_pointsToGive);
+				PUM->SetPosition(_transform->position);
+				_deathHandled = true;
 				Destroy();
 			}
 		}

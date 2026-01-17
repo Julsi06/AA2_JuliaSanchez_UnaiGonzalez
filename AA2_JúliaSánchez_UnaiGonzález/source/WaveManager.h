@@ -32,9 +32,11 @@ private:
 	std::vector<WaveData> _waveData;
 
 	float _waveIntervalTime = 0.0f;
-	float _waveIntervalDuration = 2.5f;
+	float _waveIntervalDuration = 4.0f;
 
 	bool _powerUpSpawned = false;
+	float _spawnPowerUpTime = 0.0f;
+	float _spawnPowerUpMaxTime = 2.0f;
 
 	Transform* _playerTransform;
 
