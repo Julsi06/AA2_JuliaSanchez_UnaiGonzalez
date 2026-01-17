@@ -174,13 +174,13 @@
     <ClCompile Include="source\BackgroundVine.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="source\Turret.h">
+    <ClCompile Include="source\TurretBullet.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="source\Turret.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="source\TurretBullet.cpp">
+    <ClCompile Include="source\BackgroundDecor.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -477,6 +477,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="source\TurretBullet.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Turret.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,11 +9,9 @@ private:
     static std::vector<Background*> _backgrounds;
     bool _stopScroll = false;
 public:
-    Background(std::string path, Vector2 startPos) 
-        : ImageObject(path, Vector2(0.0f, 0.0f), 
-            Vector2(612.0f, 408.0f)) 
+    Background(std::string path, Vector2 startPos, Vector2 size) 
+        : ImageObject(path, Vector2(0.0f, 0.0f), size) 
     {
-        // setting the size of the background to be the same size as the screen
         _transform->position = startPos;
         _transform->size = Vector2(RM->WINDOW_WIDTH, RM->WINDOW_HEIGHT);
 
@@ -33,8 +31,6 @@ public:
         Object::Update();
     }
 
-    void OnCollisionEnter(Object* other) override { }
-
     static void SetBackgrounds(int index);
     static void StopAllScroll()
     {
@@ -47,6 +43,12 @@ public:
 
     static void DestroyBackgrounds()
     {
-        // TO BE FINISHED
+        for (Background* background : _backgrounds)
+        {
+            if (background)
+                background->Destroy();
+        }
+
+        _backgrounds.clear();
     }
 };

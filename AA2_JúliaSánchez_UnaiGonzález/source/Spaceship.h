@@ -29,8 +29,8 @@ private:
 
 	bool _cannonsActive = false;
 	bool _lasersActive = false;
-	bool _turret1Active = false;
-	bool _turret2Active = false;
+	bool _turret1Active = true;
+	bool _turret2Active = true;
 	bool _haveForceField = false;
 
 	Turret* _turret1 = nullptr;
@@ -43,7 +43,7 @@ public:
 	{
 		//_transform->position = Vector2(50.0f, RM->WINDOW_HEIGHT / 2.0f);
 		_transform->position = Vector2(50.0f, 100.0f);
-		_transform->scale = Vector2(1.0f, 1.0f);
+		_transform->scale = Vector2(1.25f, 1.25f);
 		_transform->rotation = 0.0f;
 
 		_lastPosX = _transform->position.x;
@@ -53,10 +53,11 @@ public:
 		_physics->SetLinearDrag(0.0f);
 		_physics->SetAngularDrag(0.0f);
 
-		//_turret1 = new Turret(Vector2(_transform->position.x - 50.0f,
-		//	_transform->position.y - 50.0f));
-		//_turret1Active = true;
-		//SPAWNER.SpawnObject(_turret1);
+		_turret1 = new Turret(_transform->position + Vector2(-50.0f, -50.0f));
+		SPAWNER.SpawnObject(_turret1);
+
+		_turret2 = new Turret(_transform->position + Vector2(-50.0f, 50.0f));
+		SPAWNER.SpawnObject(_turret2);
 	}
 
 	void Update() override
@@ -96,14 +97,40 @@ public:
 		// Turrets' position updates with the player's position
 		if (_turret1Active)
 		{
-			/*_turret1->SetPosition(_transform->position + Vector2(-50.0f, -50.0f));
-			_turret1->GetTransform()->rotation -= rotationOnX;*/
+			if (distanceX > 0 && _turret1->GetTransform()->rotation > -180.0f)
+			{
+				_turret1->GetTransform()->rotation -= std::abs(rotationOnX);
+				if (_turret1->GetTransform()->rotation <= -180.0f)
+					_turret1->GetTransform()->rotation = -180.0f;
+			}
+
+			if (distanceX < 0 && _turret1->GetTransform()->rotation < 0.0f)
+			{
+				_turret1->GetTransform()->rotation += std::abs(rotationOnX);
+				if (_turret1->GetTransform()->rotation >= 0.0f)
+					_turret1->GetTransform()->rotation = 0.0f;
+			}
+
+			_turret1->GetTransform()->position = _transform->position + Vector2(-50.0f, -50.0f);
 		}
 
 		if (_turret2Active)
 		{
-			/*_turret2->SetPosition(_transform->position + Vector2(-50.0f, 50.0f));
-			_turret2->GetTransform()->rotation += rotationOnX;*/
+			if (distanceX > 0 && _turret2->GetTransform()->rotation < 180.0f)
+			{
+				_turret2->GetTransform()->rotation += std::abs(rotationOnX);
+				if (_turret2->GetTransform()->rotation >= 180.0f)
+					_turret2->GetTransform()->rotation = 180.0f;
+			}
+
+			if (distanceX < 0 && _turret2->GetTransform()->rotation > 0.0f)
+			{
+				_turret2->GetTransform()->rotation -= std::abs(rotationOnX);
+				if (_turret2->GetTransform()->rotation <= 0.0f)
+					_turret2->GetTransform()->rotation = 0.0f;
+			}
+
+			_turret2->GetTransform()->position = _transform->position + Vector2(-50.0f, 50.0f);
 		}
 
 		// NEEDS FIXING
@@ -125,12 +152,12 @@ public:
 
 			if (_turret1Active)
 			{
-				//_turret1->Shoot();
+				_turret1->Shoot();
 			}
 
 			if (_turret2Active)
 			{
-				//_turret2->Shoot();
+				_turret2->Shoot();
 			}
 		}
 

@@ -3,6 +3,7 @@
 #include "Spaceship.h"
 #include "Background.h"
 #include "BackgroundVine.h"
+#include "BackgroundDecor.h"
 #include "WaveManager.h"
 #include "WaveManager.h"
 #include "PointsPowerUp.h"
@@ -52,25 +53,22 @@ public:
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
 
-		std::string path;
 		_waveManager = new WaveManager(_spaceship->GetTransform());
+
+		std::string path;
 		if (_levelIndex == 1)
 			path = "Level1Config.xml";
+
 		else if(_levelIndex == 2)
 			path = "Level2Config.xml";
 
-		//std::string levelPath = "Level" + std::to_string(_levelIndex) + "Config.xml";
 		Level level = LoadLevelFromFile(path);
-		if (level.waves.empty())
-		{
-			std::cerr << "ERROR: Level " << _levelIndex << " has no waves\n";
-			return;
-		}
 		std::cout << "LEVEL WAVES: " << level.waves.size() << std::endl;
 		_waveManager->LoadLevel(level);
 
 		_waveManager->Start();
 
+		BackgroundDecor::SetDecor(_levelIndex);
 		BackgroundVine::SetVines(_levelIndex);
 
 		_scoreUI = new ScoreUI();

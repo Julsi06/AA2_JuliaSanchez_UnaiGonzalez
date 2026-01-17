@@ -44,7 +44,7 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
-    _currentWaveIndex = 1;
+    _currentWaveIndex = 0;
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);
@@ -60,7 +60,7 @@ void WaveManager::Update()
     {
         Background::StopAllScroll();
         BackgroundVine::StopAllScroll();
-        // NEEDS TO IMPLEMENT STOP SCROLL FOR DECOR
+        BackgroundDecor::StopAllScroll();
     }
 
     if (_currentWave->IsFinished())

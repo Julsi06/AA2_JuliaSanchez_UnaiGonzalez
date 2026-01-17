@@ -69,8 +69,6 @@ void Gameplay::GameplayUpdate()
 
 void Gameplay::PausedUpdate()
 {
-	// NEEDS FINISHING, add resume button
-
 	if (IM->GetEvent(SDLK_P, DOWN))
 	{
 		TM.ResetDeltaTime();
@@ -81,6 +79,13 @@ void Gameplay::PausedUpdate()
 void Gameplay::FinishedUpdate()
 {
 	// TO BE DONE
+	// "Game Completed"
+	// Additional 1000 points for every extra life
+	int additionalPoints = 10000 * _playerExtraLives;
+	SCORE->AddPoints(additionalPoints);
+
+	int totalLevelScore = SCORE->GetCurrentPoints();
+	// show score
 	// asks player for name and saves score
 }
 
@@ -90,7 +95,7 @@ void Gameplay::DeathUpdate()
 
 	if (_deathTimer >= 1.0f && !_playerDied)
 	{
-		// play spaceship death animation
+		// PLAY SPACESHIP DEATH ANIMATION
 		_deathTimer = 0.0f;
 		_playerDied = true;
 		return;
@@ -98,7 +103,6 @@ void Gameplay::DeathUpdate()
 
 	if (_deathTimer >= 2.0f)
 	{
-		// show black screen
 		DestroyGameplayElements();
 		if (_playerExtraLives > 0)
 		{
@@ -131,6 +135,7 @@ void Gameplay::DestroyGameplayElements()
 	_scoreUI->Destroy();
 	_extraLives->Destroy();
 	_extraLivesText->Destroy();
+	BackgroundDecor::DestroyDecor();
 	BackgroundVine::DestroyVines();
 }
 
@@ -139,6 +144,7 @@ void Gameplay::RespawnGameplayElements(int level)
 	Background::SetBackgrounds(level);
 	RespawnPlayer();
 	_waveManager->Restart();
+	BackgroundDecor::SetDecor(level);
 	BackgroundVine::SetVines(level);
 
 	_scoreUI = new ScoreUI();

@@ -23,6 +23,7 @@
     <ClCompile Include="source\AngrygonsWave.cpp" />
     <ClCompile Include="source\AnnoyerWave.cpp" />
     <ClCompile Include="source\Background.cpp" />
+    <ClCompile Include="source\BackgroundDecor.cpp" />
     <ClCompile Include="source\BackgroundVine.cpp" />
     <ClCompile Include="source\BeholderWave.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
@@ -68,7 +69,6 @@
     <ClCompile Include="source\TrailBullet.cpp" />
     <ClCompile Include="source\TurboChainsawWave.cpp" />
     <ClCompile Include="source\Turret.cpp" />
-    <ClCompile Include="source\Turret.h" />
     <ClCompile Include="source\TurretBullet.cpp" />
     <ClCompile Include="source\UfoWave.cpp" />
     <ClCompile Include="source\Vector2.cpp" />
@@ -163,6 +163,7 @@
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\TurboChainsaw.h" />
     <ClInclude Include="source\TurboChainsawWave.h" />
+    <ClInclude Include="source\Turret.h" />
     <ClInclude Include="source\TurretBullet.h" />
     <ClInclude Include="source\TwinTurretsPowerUp.h" />
     <ClInclude Include="source\Ufo.h" />

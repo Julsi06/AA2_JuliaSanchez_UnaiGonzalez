@@ -43,11 +43,26 @@ void Game::Init()
 	RM->LoadTexture("resources/images/Turbo.png");
 	RM->LoadTexture("resources/images/UFO.png");
 	RM->LoadTexture("resources/images/pattern.jpg");
+	RM->LoadTexture("resources/images/lvl1background.png");
+	RM->LoadTexture("resources/images/lvl2background.png");
 	RM->LoadTexture("resources/images/topVine1.png");
 	RM->LoadTexture("resources/images/topVine2.png");
 	RM->LoadTexture("resources/images/bottomVine1.png");
 	RM->LoadTexture("resources/images/bottomVine2.png");
 	RM->LoadTexture("resources/images/scoreUI.png");
+
+	RM->LoadTexture("resources/images/lvl1decor1.png");
+	RM->LoadTexture("resources/images/lvl1decor2.png");
+	RM->LoadTexture("resources/images/lvl1decor3.png");
+	RM->LoadTexture("resources/images/lvl1decor4.png");
+	RM->LoadTexture("resources/images/lvl1decor5.png");
+	RM->LoadTexture("resources/images/lvl1decor6.png");
+	RM->LoadTexture("resources/images/lvl2decor1.png");
+	RM->LoadTexture("resources/images/lvl2decor2.png");
+	RM->LoadTexture("resources/images/lvl2decor3.png");
+	RM->LoadTexture("resources/images/lvl2decor4.png");
+	RM->LoadTexture("resources/images/lvl2decor5.png");
+	RM->LoadTexture("resources/images/lvl2decor6.png");
 
 	RM->LoadTexture("resources/images/1.png");
 	RM->LoadTexture("resources/images/2.png");
