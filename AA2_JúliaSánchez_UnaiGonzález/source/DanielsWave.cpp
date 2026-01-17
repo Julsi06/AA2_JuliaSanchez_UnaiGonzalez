@@ -4,7 +4,8 @@ void DanielsWave::StartWave(const WaveData& waveData)
 {
     Wave::StartWave(waveData);
     std::cout << "START DANIELS WAVE";
-    _amount = waveData.amount;
+
+    Vector2 dir;
     
     for (int i = 0; i < _amount; i++)
     {

@@ -3,12 +3,18 @@
 void RoboKrabsWave::StartWave(const WaveData& waveData)
 {
 	Wave::StartWave(waveData);
-	_amount = waveData.amount;
+	std::cout << "START ROBO KRABS WAVE";
+
+	Vector2 dir;
 
 	for (int i = 0;i < _amount;i++)
 	{
 		Vector2 pos = _waveData.positions[i];
-		Vector2 dir = _waveData.directions[i];;
+
+		if (i < _amount / 2)
+			dir = Vector2(1.0f, 0.0f);
+		else
+			dir = Vector2(-1.0f, 0.0f);
 
 		RoboKrabs* roboKrabs = new RoboKrabs(pos, _playerTransform, dir);
 

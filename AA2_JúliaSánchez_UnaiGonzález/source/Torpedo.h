@@ -17,7 +17,7 @@ public:
 
 		AddState(new StayState(_transform, _physics, Vector2(-1.0f, 0.0f), Vector2(RM->WINDOW_WIDTH / 2.0f, _transform->position.y)));
 		//AddState(new StayState(_transform, _physics, Vector2(-1.0f, 0.0f), 2.0f));
-		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), 200.0f, -50.0f, true));
+		AddState(new SimpleMoveState(_transform, _physics, Vector2(-1.0f, 0.0f), 200.0f, -200.0f, true));
 	}
 	void Update() override { Enemy::Update(); }
 };

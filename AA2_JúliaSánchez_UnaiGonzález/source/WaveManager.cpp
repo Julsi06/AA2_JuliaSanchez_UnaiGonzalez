@@ -27,10 +27,10 @@ Wave* CreateWave(const WaveData& data, Transform* playerTransform)
     // LEVEL 2
     case EnemyType::ANGRYGONS:     return new AngrygonsWave();
     case EnemyType::ANNOYER:       return new AnnoyerWave(playerTransform);
-    case EnemyType::DANIELS:       return new DanielsWave();
+    case EnemyType::DANIELS:       return new DanielsWave(); // COMPLETE FROM HERE
     case EnemyType::MISSILE:       return new MissileWave();
     case EnemyType::NUKE:          return new NukeWave();
-    case EnemyType::ROBOKRABS:     return new RoboKrabsWave(playerTransform);
+    case EnemyType::ROBOKRABS:     return new RoboKrabsWave(playerTransform); // FIX JUMP AND TRANSFORM ROTATION
     case EnemyType::TORPEDO:       return new TorpedoWave();
     case EnemyType::TURBOCHAINSAW: return new TurboChainsawWave();
     case EnemyType::UFO:           return new UfoWave();
@@ -44,7 +44,7 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
-    _currentWaveIndex = 0;
+    _currentWaveIndex = 5; // DANIELS INDEX
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);

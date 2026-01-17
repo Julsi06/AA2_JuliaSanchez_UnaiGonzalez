@@ -52,9 +52,20 @@ public:
 		_spaceship = new Spaceship();
 		SPAWNER.SpawnObject(_spaceship);
 
+		std::string path;
 		_waveManager = new WaveManager(_spaceship->GetTransform());
-		std::string levelPath = "Level" + std::to_string(_levelIndex) + "Config.xml";
-		Level level = LoadLevelFromFile(levelPath);
+		if (_levelIndex == 1)
+			path = "Level1Config.xml";
+		else if(_levelIndex == 2)
+			path = "Level2Config.xml";
+
+		//std::string levelPath = "Level" + std::to_string(_levelIndex) + "Config.xml";
+		Level level = LoadLevelFromFile(path);
+		if (level.waves.empty())
+		{
+			std::cerr << "ERROR: Level " << _levelIndex << " has no waves\n";
+			return;
+		}
 		std::cout << "LEVEL WAVES: " << level.waves.size() << std::endl;
 		_waveManager->LoadLevel(level);
 

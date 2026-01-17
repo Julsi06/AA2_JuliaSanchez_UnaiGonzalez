@@ -25,8 +25,8 @@ public:
 		if (dirX == 1)
 		{
 			_rotDirX = -1;
-			_startDir = RM->WINDOW_WIDTH / 2.5f;
-			_endDir = -50.0f;
+			_startDir = RM->WINDOW_WIDTH / 2.8f;
+			_endDir = -110.0f;
 			_startComp = false;
 			_endComp = true;
 		}

@@ -4,7 +4,6 @@ void NukeWave::StartWave(const WaveData& waveData)
 {
     Wave::StartWave(waveData);
     std::cout << "START NUKE WAVE";
-    _amount = waveData.amount;
 
     for (int i = 0; i < _amount; i++)
     {

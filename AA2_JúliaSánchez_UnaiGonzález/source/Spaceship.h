@@ -24,7 +24,7 @@ private:
 
 	bool _cannonsActive = false;
 	bool _lasersActive = false;
-	bool _turret1Active = true;
+	bool _turret1Active = false;
 	bool _turret2Active = false;
 	bool _haveForceField = false;
 
@@ -48,10 +48,10 @@ public:
 		_physics->SetLinearDrag(0.0f);
 		_physics->SetAngularDrag(0.0f);
 
-		_turret1 = new Turret(Vector2(_transform->position.x - 50.0f,
-			_transform->position.y - 50.0f));
+		//_turret1 = new Turret(Vector2(_transform->position.x - 50.0f,
+		//	_transform->position.y - 50.0f));
 		//_turret1Active = true;
-		SPAWNER.SpawnObject(_turret1);
+		//SPAWNER.SpawnObject(_turret1);
 	}
 
 	void Update() override
@@ -81,14 +81,14 @@ public:
 		// Turrets' position updates with the player's position
 		if (_turret1Active)
 		{
-			_turret1->SetPosition(_transform->position + Vector2(-50.0f, -50.0f));
-			_turret1->GetTransform()->rotation -= rotationOnX;
+			/*_turret1->SetPosition(_transform->position + Vector2(-50.0f, -50.0f));
+			_turret1->GetTransform()->rotation -= rotationOnX;*/
 		}
 
 		if (_turret2Active)
 		{
-			_turret2->SetPosition(_transform->position + Vector2(-50.0f, 50.0f));
-			_turret2->GetTransform()->rotation += rotationOnX;
+			/*_turret2->SetPosition(_transform->position + Vector2(-50.0f, 50.0f));
+			_turret2->GetTransform()->rotation += rotationOnX;*/
 		}
 
 		// NEEDS FIXING
@@ -110,12 +110,12 @@ public:
 
 			if (_turret1Active)
 			{
-				_turret1->Shoot();
+				//_turret1->Shoot();
 			}
 
 			if (_turret2Active)
 			{
-				_turret2->Shoot();
+				//_turret2->Shoot();
 			}
 		}
 

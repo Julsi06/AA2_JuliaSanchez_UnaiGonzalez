@@ -21,6 +21,18 @@ public:
 		_waveData = data;
 		_duration = data.duration;
 		_amount = data.amount;
+
+		for (Enemy* e : _enemies)
+		{
+			if (e && e->IsAlive())
+				e->Destroy();
+		}
+
+		_enemies.clear();
+
+		_elapsedTime = 0.0f;
+		_waveDone = false;
+		_spawnPowerUp = false;
 	}
 	virtual void UpdateWave();
 	virtual void EndWave();
