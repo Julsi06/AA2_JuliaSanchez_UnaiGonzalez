@@ -21,7 +21,7 @@ public:
 		Object::Update();
 	}
 
-	void ApplyPowerUp(IPowerUpEffects* player)
+	void ApplyPowerUp(IPowerUpEffects* player) override
 	{
 		player->ForceField();
 	}
@@ -29,6 +29,6 @@ public:
 	void SpawnNextPowerUp(Vector2 lastPos) override
 	{
 		PUM->SetPosition(lastPos);
-		PUM->SpawnPowerUp(Health);
+		PUM->SpawnPowerUp(Shield);
 	}
 };

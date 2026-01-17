@@ -21,13 +21,13 @@ public:
 		Object::Update();
 	}
 
-	void ApplyPowerUp(IPowerUpEffects* player)
+	void ApplyPowerUp(IPowerUpEffects* player) override
 	{
 		player->EnergyShield();
 	}
 
 	void SpawnNextPowerUp(Vector2 lastPos) override
 	{
-		//PUM->SpawnPowerUp(Health, lastPos);
+		// LAST ONE SO NOTHING
 	}
 };

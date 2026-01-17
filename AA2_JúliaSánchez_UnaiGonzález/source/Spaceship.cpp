@@ -36,18 +36,15 @@ void Spaceship::SpawnTwinTurrets()
 	_turret1Active = true;
 	SPAWNER.SpawnObject(_turret1);
 
-	if (_turret1Active)
-	{
-		_turret2 = new Turret(Vector2(_transform->position.x - 50.0f, 
-			_transform->position.y + 50.0f));
-		_turret2Active = true;
-		SPAWNER.SpawnObject(_turret2);
-	}
+	_turret2 = new Turret(Vector2(_transform->position.x - 50.0f, 
+		_transform->position.y + 50.0f));
+	_turret2Active = true;
+	SPAWNER.SpawnObject(_turret2);
 }
 
 void Spaceship::ForceField()
 {
-	// FORCE FIELD TRUE
+	_forceFieldActive = true;
 }
 
 void Spaceship::EnergyShield()

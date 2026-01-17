@@ -43,7 +43,7 @@ void Gameplay::Update()
 
 void Gameplay::GameplayUpdate()
 {
-	AM->PlaySound("resources/audio/background.wav");
+	//AM->PlaySound("resources/audio/background.wav");
 
 	_score->SetText(std::to_string(SCORE->GetCurrentPoints()));
 	_extraLives->SetText(std::to_string(_playerExtraLives));
@@ -97,7 +97,6 @@ void Gameplay::DeathUpdate()
 
 	if (_deathTimer >= 1.0f && !_playerDied)
 	{
-		// PLAY SPACESHIP DEATH ANIMATION
 		_deathTimer = 0.0f;
 		_playerDied = true;
 		return;

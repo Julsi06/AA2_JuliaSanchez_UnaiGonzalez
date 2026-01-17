@@ -29,7 +29,7 @@ public:
 		Object::Update();
 	}
 
-	void ApplyPowerUp(IPowerUpEffects* player)
+	void ApplyPowerUp(IPowerUpEffects* player) override
 	{
 		player->AddPoints();
 	}

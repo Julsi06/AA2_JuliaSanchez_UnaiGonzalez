@@ -45,7 +45,7 @@ public:
 			{
 				SCORE->AddPoints(_pointsToGive);
 				PUM->SetPosition(_transform->position);
-				AM->PlaySound("resources/sounds/explosion.wav");
+				//AM->PlaySound("resources/sounds/explosion.wav");
 				SPAWNER.SpawnObject(new Explosion(_transform->position));
 				_deathHandled = true;
 				Destroy();

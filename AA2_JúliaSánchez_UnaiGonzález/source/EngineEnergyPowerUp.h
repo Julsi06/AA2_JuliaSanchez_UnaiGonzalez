@@ -29,9 +29,9 @@ public:
 		Object::Update();
 	}
 
-	void ApplyPowerUp(IPowerUpEffects* player)
+	void ApplyPowerUp(IPowerUpEffects* player) override
 	{
-		player->IncreaseSpeed(10.0f);
+		player->IncreaseSpeed(50.0f);
 	}
 
 	void SpawnNextPowerUp(Vector2 lastPos) override

@@ -26,9 +26,12 @@ private:
 
 	bool _cannonsActive = false;
 	bool _lasersActive = false;
-	bool _turret1Active = true;
-	bool _turret2Active = true;
-	bool _haveForceField = false;
+	bool _turret1Active = false;
+	bool _turret2Active = false;
+	bool _forceFieldActive = false;
+
+	float _forceFieldTimer = 0.0f;
+	float _forceFieldDuration = 5.0f;
 
 	Turret* _turret1 = nullptr;
 	Turret* _turret2 = nullptr;
@@ -49,17 +52,13 @@ public:
 
 		_physics->SetLinearDrag(0.0f);
 		_physics->SetAngularDrag(0.0f);
-
-		_turret1 = new Turret(_transform->position + Vector2(-50.0f, -50.0f));
-		SPAWNER.SpawnObject(_turret1);
-
-		_turret2 = new Turret(_transform->position + Vector2(-50.0f, 50.0f));
-		SPAWNER.SpawnObject(_turret2);
 	}
 
 	void Update() override
 	{
-		std::cout << "HEALTH: " << _health;
+		std::cout << "HEALTH: " << _health << std::endl;
+		std::cout << "SPEED: " << _speed << std::endl;
+
 		Vector2 velocity(0.0f, 0.0f);
 
 		// NEEDS FIXING -> add force
@@ -81,8 +80,6 @@ public:
 
 		float rotationOnX = distanceX * 0.45f;
 
-		//NEEDS FIXING
-		// Turrets' position updates with the player's position
 		if (_turret1Active)
 		{
 			if (distanceX > 0 && _turret1->GetTransform()->rotation > -180.0f)
@@ -121,11 +118,21 @@ public:
 			_turret2->GetTransform()->position = _transform->position + Vector2(-50.0f, 50.0f);
 		}
 
+		if (_forceFieldActive)
+		{
+			_forceFieldTimer += TM.GetDeltaTime();
+			if (_forceFieldTimer >= _forceFieldDuration)
+			{
+				_forceFieldActive = false;
+				_forceFieldTimer = 0.0f;
+			}
+		}
+
 		// NEEDS FIXING
 		if (IM->GetEvent(SDLK_SPACE, DOWN))
 		{
 			SPAWNER.SpawnObject(new PlayerBullet(_transform->position + Vector2(70.0f, 0.0f)));
-			AM->PlaySound("resources/audio/shoot.wav");
+			//AM->PlaySound("resources/audio/shoot.wav");
 
 			if (_cannonsActive && _currentCannonEn > 0.0f)
 			{
@@ -151,9 +158,25 @@ public:
 		}
 
 		if (!IsAlive())
+		{
+			if (_turret1Active)
+				_turret1->Destroy();
+
+			if (_turret2Active)
+				_turret2->Destroy();
+
 			Destroy();
+		}
 
 		Object::Update();
+	}
+
+	void TakeDamage(float dmg) override
+	{
+		if (_forceFieldActive)
+			return;
+
+		IDamagable::TakeDamage(dmg);
 	}
 
 	void AddPoints() override;

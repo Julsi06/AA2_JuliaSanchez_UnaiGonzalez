@@ -31,11 +31,11 @@ void PowerUpManager::SpawnPowerUp(PowerUpType type)
 		_currentPowerUp = new TwinTurretsPowerUp("resources/images/5.png",
 			_spawnPos);
 		break;
-	case PowerUpType::Shield:
+	case PowerUpType::Field:
 		_currentPowerUp = new ForceFieldPowerUp("resources/images/6.png",
 			_spawnPos);
 		break;
-	case PowerUpType::Health:
+	case PowerUpType::Shield:
 		_currentPowerUp = new ShieldEnergyPowerUp("resources/images/7.png",
 			_spawnPos);
 		break;

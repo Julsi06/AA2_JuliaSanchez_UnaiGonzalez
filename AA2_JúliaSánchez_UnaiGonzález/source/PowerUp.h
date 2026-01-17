@@ -10,8 +10,8 @@ enum PowerUpType
 	Lasers,
 	Engine,
 	Turrets,
-	Shield,
-	Health
+	Field,
+	Shield
 };
 
 class PowerUp : public ImageObject, public IDamagable
@@ -32,10 +32,7 @@ public:
 
 		if (player != nullptr)
 		{
-			// NEEDS FIXING -> changing values of idamagable and iattacker
-			// Only receive the power up when fully charged
-			if (_health == _maxHealth / 2)
-				ApplyPowerUp(player);
+			ApplyPowerUp(player);
 			Destroy();
 		}
 	}

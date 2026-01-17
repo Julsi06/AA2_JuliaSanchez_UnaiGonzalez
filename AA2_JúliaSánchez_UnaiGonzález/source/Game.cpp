@@ -13,17 +13,18 @@
 
 void Game::Init()
 {
-	if (SDL_Init(SDL_INIT_AUDIO) < 0)
+	// NOT INCLUDING AUDIO BECAUSE IT LAGS GAME
+	/*if (SDL_Init(SDL_INIT_AUDIO) < 0)
 	{
 		std::cout << "SDL AUDIO INIT ERROR: " << SDL_GetError() << std::endl;
 		return;
-	}
+	}*/
 
-	AM->Init();
+	//AM->Init();
 
-	AM->LoadSoundData("resources/audio/shoot.wav");
+	/*AM->LoadSoundData("resources/audio/shoot.wav");
 	AM->LoadSoundData("resources/audio/explosion.wav");
-	AM->LoadSoundData("resources/audio/background.wav");
+	AM->LoadSoundData("resources/audio/background.wav");*/
 
 	RM->Init();
 
@@ -96,7 +97,7 @@ void Game::Init()
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 
-	assert(SM.InitFirstScene("MainMenu"));
+	assert(SM.InitFirstScene("SplashScreen"));
 
 	_isRunning = true;
 }

@@ -29,7 +29,7 @@ public:
 		Object::Update();
 	}
 
-	void ApplyPowerUp(IPowerUpEffects* player)
+	void ApplyPowerUp(IPowerUpEffects* player) override
 	{
 		player->SpawnTwinTurrets();
 	}
@@ -37,6 +37,6 @@ public:
 	void SpawnNextPowerUp(Vector2 lastPos) override
 	{
 		PUM->SetPosition(lastPos);
-		PUM->SpawnPowerUp(Shield);
+		PUM->SpawnPowerUp(Field);
 	}
 };
