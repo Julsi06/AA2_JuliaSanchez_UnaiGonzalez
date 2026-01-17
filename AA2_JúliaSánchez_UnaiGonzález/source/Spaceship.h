@@ -21,10 +21,6 @@ private:
 	float _currentLaserEn;
 	float _maxLaserEn = 2000.0f;
 
-	bool _isImmune = false;
-	float _immunityTimer = 0.0f;
-	float _immunityDuration = 0.5;
-
 	float _lastPosX = 0.0f;
 
 	bool _cannonsActive = false;
@@ -62,6 +58,7 @@ public:
 
 	void Update() override
 	{
+		std::cout << "HEALTH: " << _health;
 		Vector2 velocity(0.0f, 0.0f);
 
 		// NEEDS FIXING -> add force
@@ -75,16 +72,6 @@ public:
 			velocity.x = _speed;
 
 		_physics->SetVelocity(velocity);
-
-		if (_isImmune)
-		{
-			_immunityTimer += TM.GetDeltaTime();
-			if (_immunityTimer >= _immunityDuration)
-			{
-				_isImmune = false;
-				_immunityTimer = 0.0f;
-			}
-		}
 
 		// Rotation of turret (0.45 degrees) every unit on X
 		float currentPosX = _transform->position.x;
@@ -165,15 +152,6 @@ public:
 			Destroy();
 
 		Object::Update();
-	}
-
-	void TakeDamage(float dmg) override
-	{
-		if (_isImmune)
-			return;
-
-		_isImmune = true;
-		_immunityTimer = 0.0f;
 	}
 
 	void AddPoints() override;
