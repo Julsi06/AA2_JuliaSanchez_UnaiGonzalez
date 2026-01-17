@@ -11,7 +11,7 @@ public:
 		: Enemy("resources/images/Beholder.png", Vector2(0.0f, 0.0f), Vector2(155.0f, 111.5f), 11, 3, 155.0f, 111.5f, true, 0.15, 200.0f, 200)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
-		_transform->scale = Vector2(0.65f, 0.65f);
+		_transform->scale = Vector2(0.85f, 0.75f);
 		_transform->rotation = 0.0f;
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));

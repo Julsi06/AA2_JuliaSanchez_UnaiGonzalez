@@ -11,7 +11,7 @@ public:
 		: Enemy("resources/images/Amoeba.png", Vector2(0.0f, 0.0f), Vector2(160.0f, 120.0f), 13, 3, 160.0f, 120.0f, true, 0.05, 100.0f, 300)
 	{
 		_transform->position = Vector2(startPos.x, startPos.y);
-		_transform->scale = Vector2(0.8f, 0.8f);
+		_transform->scale = Vector2(1.0f, 1.0f);
 		_transform->rotation = 0.0f;
 
 		_physics->AddCollider(new AABB(_transform->position, _transform->size));
