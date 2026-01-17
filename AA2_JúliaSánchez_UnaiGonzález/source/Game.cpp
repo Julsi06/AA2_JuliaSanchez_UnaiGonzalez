@@ -7,11 +7,23 @@
 #include "MainMenu.h"
 #include "SplashScreen.h"
 #include "LevelSelector.h"
-#include "Ranking.h"
+#include "RankingScene.h"
 #include <cassert>
+#include "AudioManager.h"
 
 void Game::Init()
 {
+	if (SDL_Init(SDL_INIT_AUDIO) < 0)
+	{
+		std::cout << "SDL AUDIO INIT ERROR: " << SDL_GetError() << std::endl;
+		return;
+	}
+
+	AM->Init();
+
+	AM->LoadSoundData("resources/audio/shoot.wav");
+	AM->LoadSoundData("resources/audio/explosion.wav");
+
 	RM->Init();
 
 	RM->LoadTexture("resources/images/spaceship.png");
@@ -50,6 +62,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/bottomVine1.png");
 	RM->LoadTexture("resources/images/bottomVine2.png");
 	RM->LoadTexture("resources/images/scoreUI.png");
+	RM->LoadTexture("resources/images/explosion.png");
 
 	RM->LoadTexture("resources/images/lvl1decor1.png");
 	RM->LoadTexture("resources/images/lvl1decor2.png");
@@ -72,12 +85,13 @@ void Game::Init()
 	RM->LoadTexture("resources/images/6.png");
 	RM->LoadTexture("resources/images/7.png");
 
+
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
 	assert(SM.AddScene("Gameplay1", new Gameplay(1)));
 	assert(SM.AddScene("Gameplay2", new Gameplay(2)));
 	assert(SM.AddScene("LevelSelector", new LevelSelector()));
-	assert(SM.AddScene("Ranking", new Ranking()));
+	assert(SM.AddScene("Ranking", new RankingScene()));
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 

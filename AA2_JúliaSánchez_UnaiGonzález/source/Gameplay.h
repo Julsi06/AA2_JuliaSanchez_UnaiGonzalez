@@ -13,6 +13,9 @@
 #include "TextObject.h"
 #include "InputManager.h"
 #include "Level.h"
+#include "NameInput.h"
+#include "HighScoreManager.h"
+#include "SceneManager.h"
 
 enum GameplayState
 {
@@ -41,6 +44,10 @@ private:
 	float _deathTimer = 0.0f;
 	bool _gamePaused = false;
 	bool _playerDied = false;
+
+	NameInput* _nameInput = nullptr;
+	bool _waitingForName = false;
+	TextObject* _nameDisplay = nullptr;
 
 public:
 	Gameplay(int levelIndex) : _levelIndex(levelIndex), _currentState(GameplayState::GAMEPLAY) {}

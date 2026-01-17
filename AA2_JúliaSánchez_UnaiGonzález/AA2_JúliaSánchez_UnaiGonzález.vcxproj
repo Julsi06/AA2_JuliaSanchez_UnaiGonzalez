@@ -35,6 +35,7 @@
     <ClCompile Include="source\CirclerWave.cpp" />
     <ClCompile Include="source\DanielsWave.cpp" />
     <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\HighScoreManager.cpp" />
     <ClCompile Include="source\HorizontalMedusaWave.cpp" />
     <ClCompile Include="source\JumpToPlayerState.cpp" />
     <ClCompile Include="source\KillerWhaleWave.cpp" />
@@ -83,6 +84,8 @@
     <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\Annoyer.h" />
     <ClInclude Include="source\AnnoyerWave.h" />
+    <ClInclude Include="source\AtomicWrapper.h" />
+    <ClInclude Include="source\AudioManager.h" />
     <ClInclude Include="source\BackgroundDecor.h" />
     <ClInclude Include="source\BioTitan.h" />
     <ClInclude Include="source\BioTitanWave.h" />
@@ -92,6 +95,8 @@
     <ClInclude Include="source\DanielsWave.h" />
     <ClInclude Include="source\EnemyType.h" />
     <ClInclude Include="source\EngineEnergyPowerUp.h" />
+    <ClInclude Include="source\Explosion.h" />
+    <ClInclude Include="source\HighScoreManager.h" />
     <ClInclude Include="source\IPowerUpEffects.h" />
     <ClInclude Include="source\JumpToPlayerState.h" />
     <ClInclude Include="source\LaserEnergyPowerUp.h" />
@@ -99,6 +104,7 @@
     <ClInclude Include="source\LevelSelector.h" />
     <ClInclude Include="source\Missile.h" />
     <ClInclude Include="source\MissileWave.h" />
+    <ClInclude Include="source\NameInput.h" />
     <ClInclude Include="source\Nuke.h" />
     <ClInclude Include="source\NukeWave.h" />
     <ClInclude Include="source\PlayerBullet.h" />
@@ -135,7 +141,7 @@
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\PowerUpManager.h" />
-    <ClInclude Include="source\Ranking.h" />
+    <ClInclude Include="source\RankingScene.h" />
     <ClInclude Include="source\ForceFieldPowerUp.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\RoboKrabsWave.h" />
@@ -154,6 +160,7 @@
     <ClInclude Include="source\Spaceship.h" />
     <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\StayState.h" />
+    <ClInclude Include="source\Stream.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />

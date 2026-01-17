@@ -104,6 +104,7 @@ void Gameplay::DeathUpdate()
 	if (_deathTimer >= 2.0f)
 	{
 		DestroyGameplayElements();
+
 		if (_playerExtraLives > 0)
 		{
 			_playerExtraLives--;
@@ -114,7 +115,33 @@ void Gameplay::DeathUpdate()
 		}
 		else
 		{
-			// show stage stats and ask player for their name, save score
+			if (!_waitingForName)
+			{
+				_waitingForName = true;
+				_nameInput = new NameInput();
+				_nameInput->Start();
+
+				_nameDisplay = new TextObject("Enter your name: ");
+				_nameDisplay->GetTransform()->position = Vector2(RM->WINDOW_WIDTH / 2.0f - 100.0f, RM->WINDOW_HEIGHT / 2.0f);
+				_ui.push_back(_nameDisplay);
+			}
+
+			_nameInput->HandleEvents();
+
+			_nameDisplay->SetText("Enter your name: " + _nameInput->GetName());
+
+			if (_nameInput->Finished())
+			{
+				_nameInput->Stop();
+				std::string playerName = _nameInput->GetName();
+				if (playerName.empty())
+					playerName = "Player";
+
+				HighscoreManager hm("ranking.bin");
+				hm.AddScore(playerName, SCORE->GetCurrentPoints());
+
+				SM.SetNextScene("MainMenu");
+			}
 		}
 	}
 }
