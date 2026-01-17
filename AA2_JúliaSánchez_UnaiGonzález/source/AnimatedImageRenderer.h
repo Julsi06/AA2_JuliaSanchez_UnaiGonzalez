@@ -32,11 +32,13 @@ public:
 
 	virtual void Update(float dt) override
 	{
-		_destinationRect.x = _transform->position.x;
+		ImageRenderer::Update(dt);
+
+		/*_destinationRect.x = _transform->position.x;
 		_destinationRect.y = _transform->position.y;
 
 		_destinationRect.w = _sourceRect.w * _transform->scale.x;
-		_destinationRect.h = _sourceRect.h * _transform->scale.y;
+		_destinationRect.h = _sourceRect.h * _transform->scale.y;*/
 
 		//Temps transcorregut des de l'inici del frame
 		_currentFrameTime += dt;

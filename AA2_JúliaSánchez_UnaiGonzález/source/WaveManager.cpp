@@ -44,7 +44,8 @@ void WaveManager::Start()
     if (_waveData.empty())
         return;
 
-    _currentWaveIndex = 5; // DANIELS INDEX
+    //_currentWaveIndex = 5; // DANIELS INDEX
+    _currentWaveIndex = 0;
     Wave* wave = CreateWave(_waveData[_currentWaveIndex], _playerTransform);
     _currentWave = wave;
     _currentWave->StartWave(_waveData[_currentWaveIndex]);

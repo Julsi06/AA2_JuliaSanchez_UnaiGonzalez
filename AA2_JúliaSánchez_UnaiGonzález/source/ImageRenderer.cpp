@@ -30,7 +30,6 @@ void ImageRenderer::Update(float dt)
 	offset.x = (-_transform->size.x / 2.0f) * _transform->scale.x;
 	offset.y = (-_transform->size.y / 2.0f) * _transform->scale.y;
 
-
 	_destinationRect.x = _transform->position.x + offset.x;
 	_destinationRect.y = _transform->position.y + offset.y;
 
