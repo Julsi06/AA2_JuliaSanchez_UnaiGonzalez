@@ -53,11 +53,10 @@ void Gameplay::GameplayUpdate()
 		_currentState = GameplayState::DEATH;
 
 	// NEEDS TO BE FINISHED AND MODIFIED
-	/*if (_waveManager->EndedWaves())
-		_currentState = GameplayState::FINISHED;*/
+	if (_waveManager->EndedWaves())
+		_currentState = GameplayState::FINISHED;
 
 	_waveManager->Update();
-	_spaceship->AddScore();
 
 	while (SPAWNER.AreObjectsPendingSpawn())
 	{

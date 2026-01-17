@@ -2,7 +2,8 @@
 
 void Spaceship::AddPoints()
 {
-	_points += 1000;
+	//_points += 1000;
+	SCORE->AddPoints(1000);
 }
 
 void Spaceship::EnergyCannons()
